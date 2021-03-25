@@ -207,23 +207,43 @@ summary {
 <pre class="r"><code>knitr::opts_chunk$set(message = FALSE)</code></pre>
 <div id="overview" class="section level1">
 <h1>Overview</h1>
-<p>This notebook combines recruit data collected from the cfbscrapR package (original recruit data sourced from 247sports.com) with county data for the hometown cities that recruits are from. The point of this county data being merged in is to ain in creating heap maps at the county level for future analysis.</p>
+<p>This notebook combines recruit data collected from the cfbscrapR package (original recruit data sourced from 247sports.com) with county data for the hometown cities that recruits are from along with geolocation data for recruit cities and committed schools. The point of this county data being merged in is to aid in creating heap maps at the county level for future analysis. The point of this location data is to aid in distance analysis of recruits and schools.</p>
+<p><em>This code needs a valid Google API key to run</em></p>
+<p><em>Location, final merge, and export sections commented out for knitting purposes</em></p>
 </div>
 <div id="methodology" class="section level1">
 <h1>Methodology</h1>
 <p>Load relevant packages</p>
 <pre class="r"><code>library(tidyverse)
+library(janitor)
 library(cfbscrapR)
 library(assertr)
-library(assertable)</code></pre>
+library(assertable)
+library(ggmap)
+library(geosphere)</code></pre>
 <div id="county-data" class="section level2">
 <h2>County Data</h2>
 <div id="collection" class="section level3">
 <h3>Collection</h3>
-<p>Load data for <code>uscities</code> and <code>uszips</code> to be later joined with the recruit data. This will allow for creation of heat maps in future analysis. * <a href="https://simplemaps.com/data/us-cities">uscities data</a> * <a href="https://simplemaps.com/data/us-zips">uszips data</a></p>
-<pre class="r"><code>setwd(&#39;C:/Users/kingl/Desktop/Projects/football/vanderbilt-recruiting-study/preliminary-data/&#39;)
-uscities &lt;- read.csv(&#39;uscities.csv&#39;)
-uszips &lt;- read.csv(&#39;uszips.csv&#39;)</code></pre>
+<p>Load data for <code>uscities</code> and <code>uszips</code> to be later joined with the recruit data. This will allow for creation of heat maps in future analysis.</p>
+<ul>
+<li><a href="https://simplemaps.com/data/us-cities">uscities data</a></li>
+<li><a href="https://simplemaps.com/data/us-zips">uszips data</a></li>
+</ul>
+<p>Load data for <code>school_locs</code> to be later joined with recruit data. This will allow for distance analysis of recruits and schools.</p>
+<ul>
+<li>Courtesy of Conor McQuiston, Twitter: <span class="citation">@ConorMcQ5</span></li>
+</ul>
+<pre class="r"><code>#saved csv files
+setwd(&#39;C:/Users/kingl/Desktop/Projects/football/vanderbilt-recruiting-study/preliminary-data/&#39;)
+uscities &lt;- read.csv(&#39;uscities.csv&#39;) %&gt;% clean_names()
+uszips &lt;- read.csv(&#39;uszips.csv&#39;) %&gt;% clean_names()
+
+#fileEcnoding takes care of the weird text added to the first column name
+school_locs &lt;- read.csv(&#39;edu_ranks.csv&#39;, fileEncoding=&quot;UTF-8-BOM&quot;) %&gt;% clean_names()
+
+#api key to be used later for recruit locations
+register_google(&#39;YOUR API KEY HERE&#39;)</code></pre>
 </div>
 <div id="cleaning" class="section level3">
 <h3>Cleaning</h3>
@@ -342,7 +362,8 @@ zip_cities &lt;- zip_cities %&gt;%
 <h3>Collection</h3>
 <p>Pull recruiting player data from cfbscrapr</p>
 <pre class="r"><code>#specify years
-years &lt;- seq(2000,2020)
+current_year &lt;- Sys.Date() %&gt;% format(&#39;%Y&#39;) %&gt;% as.numeric()
+years &lt;- seq(2000, current_year)
 #initialize empty dataframe for data to be stored in
 recruiting_player &lt;- NULL
 
@@ -354,8 +375,22 @@ for(i in years) {
 #remove duplicate observations, provinces outside of the US, and countries other than US (US is NA)
 recruiting_player &lt;- recruiting_player %&gt;% 
   unique() %&gt;% 
-  filter(!state_province %in% c(&#39;QC&#39;, &#39;ON&#39;, &#39;AS&#39;, &#39;BC&#39;, &#39;SW&#39;, &#39;NR&#39;, &#39;QL&#39;, &#39;AB&#39;, &#39;EN&#39;),
-         is.na(country))</code></pre>
+  filter(country == &#39;USA&#39;,
+         !state_province %in% c(&#39;QC&#39;, &#39;ON&#39;, &#39;AS&#39;, &#39;BC&#39;, &#39;SW&#39;, &#39;NR&#39;, &#39;QL&#39;, &#39;AB&#39;, &#39;EN&#39;,
+                                &#39;NA&#39;, &#39;&#39;, &#39;GERM&#39;, &#39;AUST&#39;, &#39;CANA&#39;, &#39;FINL&#39;, &#39;ITAL&#39;, &#39;SWED&#39;,
+                                &#39;ENGL&#39;, &#39;BELG&#39;, &#39;DENM&#39;, &#39;FRAN&#39;, &#39;UK&#39;, &#39;AMER&#39;, &#39;NETH&#39;, &#39;VC&#39;, &#39;NEW&#39;))</code></pre>
+<p>Remove duplicated player observations that are not perfect duplicates. This will not catch every instance (player names not matching, etc.), but it is a good start.</p>
+<pre class="r"><code>duplicates &lt;- recruiting_player %&gt;% 
+  group_by(year, name, city, committed_to) %&gt;% 
+  summarize(count = n(),
+            highest_ranking = min(ranking),
+            lowest_ranking = max(ranking)) %&gt;% 
+  filter(count == 2,
+         !is.na(committed_to)) %&gt;% 
+  select(-count, -highest_ranking)
+
+recruiting_player &lt;- recruiting_player %&gt;% 
+  anti_join(duplicates, by = c(&#39;year&#39;, &#39;name&#39;, &#39;city&#39;, &#39;committed_to&#39;, &#39;ranking&#39; = &#39;lowest_ranking&#39;))</code></pre>
 </div>
 <div id="cleaning-1" class="section level3">
 <h3>Cleaning</h3>
@@ -618,7 +653,7 @@ assertable::assert_nrows(recruiting_player, nrow(final_df))</code></pre>
 <p>Display proportion pf missing county data in <code>final_df</code></p>
 <pre class="r"><code>#divide sum of NA fips codes by the total number of observations
 sum(is.na(final_df$county_fips))/nrow(final_df)</code></pre>
-<pre><code>## [1] 0.01771144</code></pre>
+<pre><code>## [1] 0.0003705326</code></pre>
 <p>Create column for position groups in <code>final_df</code></p>
 <pre class="r"><code>final_df$position_group &lt;- NA
 for(i in 1:nrow(final_df)) {
@@ -638,10 +673,51 @@ for(i in 1:nrow(final_df)) {
   select(-country,-city_updated) %&gt;% 
   arrange(year, ranking)</code></pre>
 </div>
+<div id="add-location-data" class="section level2">
+<h2>Add Location Data</h2>
+<p>Get locations of colleges</p>
+<pre class="r"><code># #select unique committed schools and join in school city data
+# school_locs_final &lt;- final_df %&gt;% 
+#   select(committed_to) %&gt;% 
+#   unique() %&gt;% 
+#   inner_join(school_locs, by = c(&#39;committed_to&#39; = &#39;school&#39;)) %&gt;% 
+#   mutate(city_state = paste0(school_city, &#39;, &#39;, state_province))
+# 
+# #get latitude and longitude data for schools
+# school_lat_lon &lt;- mutate_geocode(school_locs_final, city_state)
+# 
+# #assert no NA values for latlon data and select/rename relevant columns
+# school_lat_lon &lt;- school_lat_lon %&gt;% 
+#   assert(not_na, lon:lat) %&gt;% 
+#   select(committed_to, lon, lat) %&gt;% 
+#   rename(school_lon = lon, school_lat = lat)</code></pre>
+<p>Get locations of recruits</p>
+<pre class="r"><code># #select unique recruit city states and get latlon data
+# recruit_locs_final &lt;- final_df %&gt;% 
+#   select(city, state_province) %&gt;% 
+#   unique() %&gt;%
+#   mutate(city_state = paste0(city, &#39;, &#39;, state_province)) %&gt;% 
+#   mutate_geocode(city_state)
+# 
+# #assert no NA values for latlon data and select/rename relevant columns
+# recruit_lat_lon &lt;- recruit_locs_final %&gt;% 
+#   assert(not_na, lon:lat) %&gt;% 
+#   select(-city_state) %&gt;% 
+#   rename(recruit_lon = lon, recruit_lat = lat)</code></pre>
+<p>Join distance data to <code>final_df</code> and calculate distance</p>
+<pre class="r"><code># final_df &lt;- final_df %&gt;% 
+#   left_join(recruit_lat_lon, by = c(&#39;city&#39;, &#39;state_province&#39;)) %&gt;% 
+#   left_join(school_lat_lon, by = &#39;committed_to&#39;)
+# 
+# export &lt;- final_df %&gt;% 
+#   #distHaversine calculates distance on a globe surface and divided by 1609 converts to mileage
+#   mutate(dist_mi = purrr::pmap_dbl(., ~ distm(x = c(..17, ..18), y = c(..19, ..20),
+#                                               fun = distHaversine) / 1609))</code></pre>
+</div>
 <div id="export-final-dataset" class="section level2">
 <h2>Export Final Dataset</h2>
-<p>Write csv for complete recruiting data with county data</p>
-<pre class="r"><code>write.csv(final_df, &#39;clean-data/recruiting_player.csv&#39;, row.names = F)</code></pre>
+<p>Write csv for complete recruiting data with county and distance data</p>
+<pre class="r"><code># write.csv(export, &#39;clean-data/recruiting_player.csv&#39;, row.names = F)</code></pre>
 </div>
 </div>
 

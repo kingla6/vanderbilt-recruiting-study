@@ -12,16 +12,23 @@ knitr::opts_chunk$set(message = FALSE)
 
 # Overview
 
-This notebook combines recruit data collected from the cfbscrapR package (original recruit data sourced from 247sports.com) with county data for the hometown cities that recruits are from. The point of this county data being merged in is to ain in creating heap maps at the county level for future analysis.
+This notebook combines recruit data collected from the cfbscrapR package (original recruit data sourced from 247sports.com) with county data for the hometown cities that recruits are from along with geolocation data for recruit cities and committed schools. The point of this county data being merged in is to aid in creating heap maps at the county level for future analysis. The point of this location data is to aid in distance analysis of recruits and schools.
+
+*This code needs a valid Google API key to run*  
+  
+*Location, final merge, and export sections commented out for knitting purposes*
 
 # Methodology 
 
 Load relevant packages
 ```{r}
 library(tidyverse)
+library(janitor)
 library(cfbscrapR)
 library(assertr)
 library(assertable)
+library(ggmap)
+library(geosphere)
 ```
 
 ## County Data
@@ -29,13 +36,25 @@ library(assertable)
 ### Collection
 
 Load data for `uscities` and `uszips` to be later joined with the recruit data. This will allow for creation of heat maps in future analysis.
+
 * [uscities data](https://simplemaps.com/data/us-cities)
 * [uszips data](https://simplemaps.com/data/us-zips)
+
+Load data for `school_locs` to be later joined with recruit data. This will allow for distance analysis of recruits and schools. 
+
+* Courtesy of Conor McQuiston, Twitter: @ConorMcQ5
  
 ```{r}
+#saved csv files
 setwd('C:/Users/kingl/Desktop/Projects/football/vanderbilt-recruiting-study/preliminary-data/')
-uscities <- read.csv('uscities.csv')
-uszips <- read.csv('uszips.csv')
+uscities <- read.csv('uscities.csv') %>% clean_names()
+uszips <- read.csv('uszips.csv') %>% clean_names()
+
+#fileEcnoding takes care of the weird text added to the first column name
+school_locs <- read.csv('edu_ranks.csv', fileEncoding="UTF-8-BOM") %>% clean_names()
+
+#api key to be used later for recruit locations
+register_google('YOUR API KEY HERE')
 ```
 
 ### Cleaning
@@ -160,7 +179,8 @@ zip_cities <- zip_cities %>%
 Pull recruiting player data from cfbscrapr
 ```{r}
 #specify years
-years <- seq(2000,2020)
+current_year <- Sys.Date() %>% format('%Y') %>% as.numeric()
+years <- seq(2000, current_year)
 #initialize empty dataframe for data to be stored in
 recruiting_player <- NULL
 
@@ -172,8 +192,27 @@ for(i in years) {
 #remove duplicate observations, provinces outside of the US, and countries other than US (US is NA)
 recruiting_player <- recruiting_player %>% 
   unique() %>% 
-  filter(!state_province %in% c('QC', 'ON', 'AS', 'BC', 'SW', 'NR', 'QL', 'AB', 'EN'),
-         is.na(country))
+  filter(country == 'USA',
+         !state_province %in% c('QC', 'ON', 'AS', 'BC', 'SW', 'NR', 'QL', 'AB', 'EN',
+                                'NA', '', 'GERM', 'AUST', 'CANA', 'FINL', 'ITAL', 'SWED',
+                                'ENGL', 'BELG', 'DENM', 'FRAN', 'UK', 'AMER', 'NETH', 'VC', 'NEW'))
+
+```
+
+Remove duplicated player observations that are not perfect duplicates.
+This will not catch every instance (player names not matching, etc.), but it is a good start.
+```{r}
+duplicates <- recruiting_player %>% 
+  group_by(year, name, city, committed_to) %>% 
+  summarize(count = n(),
+            highest_ranking = min(ranking),
+            lowest_ranking = max(ranking)) %>% 
+  filter(count == 2,
+         !is.na(committed_to)) %>% 
+  select(-count, -highest_ranking)
+
+recruiting_player <- recruiting_player %>% 
+  anti_join(duplicates, by = c('year', 'name', 'city', 'committed_to', 'ranking' = 'lowest_ranking'))
 ```
 
 ### Cleaning
@@ -481,10 +520,59 @@ final_df <- final_df %>%
   arrange(year, ranking)
 ```
 
+## Add Location Data
+
+Get locations of colleges
+```{r}
+# #select unique committed schools and join in school city data
+# school_locs_final <- final_df %>% 
+#   select(committed_to) %>% 
+#   unique() %>% 
+#   inner_join(school_locs, by = c('committed_to' = 'school')) %>% 
+#   mutate(city_state = paste0(school_city, ', ', state_province))
+# 
+# #get latitude and longitude data for schools
+# school_lat_lon <- mutate_geocode(school_locs_final, city_state)
+# 
+# #assert no NA values for latlon data and select/rename relevant columns
+# school_lat_lon <- school_lat_lon %>% 
+#   assert(not_na, lon:lat) %>% 
+#   select(committed_to, lon, lat) %>% 
+#   rename(school_lon = lon, school_lat = lat)
+```
+
+Get locations of recruits
+```{r}
+# #select unique recruit city states and get latlon data
+# recruit_locs_final <- final_df %>% 
+#   select(city, state_province) %>% 
+#   unique() %>%
+#   mutate(city_state = paste0(city, ', ', state_province)) %>% 
+#   mutate_geocode(city_state)
+# 
+# #assert no NA values for latlon data and select/rename relevant columns
+# recruit_lat_lon <- recruit_locs_final %>% 
+#   assert(not_na, lon:lat) %>% 
+#   select(-city_state) %>% 
+#   rename(recruit_lon = lon, recruit_lat = lat)
+```
+
+Join distance data to `final_df` and calculate distance
+```{r}
+# final_df <- final_df %>% 
+#   left_join(recruit_lat_lon, by = c('city', 'state_province')) %>% 
+#   left_join(school_lat_lon, by = 'committed_to')
+# 
+# export <- final_df %>% 
+#   #distHaversine calculates distance on a globe surface and divided by 1609 converts to mileage
+#   mutate(dist_mi = purrr::pmap_dbl(., ~ distm(x = c(..17, ..18), y = c(..19, ..20),
+#                                               fun = distHaversine) / 1609))
+```
+
 ## Export Final Dataset
 
-Write csv for complete recruiting data with county data
+Write csv for complete recruiting data with county and distance data
 ```{r}
-write.csv(final_df, 'clean-data/recruiting_player.csv', row.names = F)
+# write.csv(export, 'clean-data/recruiting_player.csv', row.names = F)
 ```
 
