@@ -18,6 +18,8 @@ This notebook combines recruit data collected from the cfbscrapR package (origin
   
 *Location, final merge, and export sections commented out for knitting purposes*
 
+*Many sections commented out, as cfbscrapR is now deprecated.*
+
 # Methodology 
 
 Load relevant packages
@@ -178,346 +180,346 @@ zip_cities <- zip_cities %>%
 
 Pull recruiting player data from cfbscrapr
 ```{r}
-#specify years
-current_year <- Sys.Date() %>% format('%Y') %>% as.numeric()
-years <- seq(2000, current_year)
-#initialize empty dataframe for data to be stored in
-recruiting_player <- NULL
-
-#run function for each year, append to previously initialized dataframe
-for(i in years) {
-  recruiting_player = rbind(recruiting_player, cfb_recruiting_player(year = i))
-}
-
-#remove duplicate observations, provinces outside of the US, and countries other than US (US is NA)
-recruiting_player <- recruiting_player %>% 
-  unique() %>% 
-  filter(country == 'USA',
-         !state_province %in% c('QC', 'ON', 'AS', 'BC', 'SW', 'NR', 'QL', 'AB', 'EN',
-                                'NA', '', 'GERM', 'AUST', 'CANA', 'FINL', 'ITAL', 'SWED',
-                                'ENGL', 'BELG', 'DENM', 'FRAN', 'UK', 'AMER', 'NETH', 'VC', 'NEW'))
+# #specify years
+# current_year <- Sys.Date() %>% format('%Y') %>% as.numeric()
+# years <- seq(2000, current_year)
+# #initialize empty dataframe for data to be stored in
+# recruiting_player <- NULL
+# 
+# #run function for each year, append to previously initialized dataframe
+# for(i in years) {
+#   recruiting_player = rbind(recruiting_player, cfb_recruiting_player(year = i))
+# }
+# 
+# #remove duplicate observations, provinces outside of the US, and countries other than US (US is NA)
+# recruiting_player <- recruiting_player %>% 
+#   unique() %>% 
+#   filter(country == 'USA',
+#          !state_province %in% c('QC', 'ON', 'AS', 'BC', 'SW', 'NR', 'QL', 'AB', 'EN',
+#                                 'NA', '', 'GERM', 'AUST', 'CANA', 'FINL', 'ITAL', 'SWED',
+#                                 'ENGL', 'BELG', 'DENM', 'FRAN', 'UK', 'AMER', 'NETH', 'VC', 'NEW'))
 
 ```
 
 Remove duplicated player observations that are not perfect duplicates.
 This will not catch every instance (player names not matching, etc.), but it is a good start.
 ```{r}
-duplicates <- recruiting_player %>% 
-  group_by(year, name, city, committed_to) %>% 
-  summarize(count = n(),
-            highest_ranking = min(ranking),
-            lowest_ranking = max(ranking)) %>% 
-  filter(count == 2,
-         !is.na(committed_to)) %>% 
-  select(-count, -highest_ranking)
-
-recruiting_player <- recruiting_player %>% 
-  anti_join(duplicates, by = c('year', 'name', 'city', 'committed_to', 'ranking' = 'lowest_ranking'))
+# duplicates <- recruiting_player %>% 
+#   group_by(year, name, city, committed_to) %>% 
+#   summarize(count = n(),
+#             highest_ranking = min(ranking),
+#             lowest_ranking = max(ranking)) %>% 
+#   filter(count == 2,
+#          !is.na(committed_to)) %>% 
+#   select(-count, -highest_ranking)
+# 
+# recruiting_player <- recruiting_player %>% 
+#   anti_join(duplicates, by = c('year', 'name', 'city', 'committed_to', 'ranking' = 'lowest_ranking'))
 ```
 
 ### Cleaning
 
 Clean city and state_province columns within recruiting data
 ```{r}
-recruiting_player <- recruiting_player %>% 
-  #convert na strings to NA for city and state
-  mutate(city = ifelse(mgsub::mgsub(city, 
-                                    pattern = c("[^[:alnum:] ]", " "), 
-                                    replacement = '', 
-                                    recycle = T) %>% tolower() == 'na',
-                       NA, city),
-         state_province = ifelse(mgsub::mgsub(state_province, 
-                                              pattern = c("[^[:alnum:] ]", " "), 
-                                              replacement = '', 
-                                              recycle = T) %>% tolower() == 'na',
-                                 NA, state_province)
-         #below alterations to city were to account for cities which were present in recruiting data, but absent in uscities, adding these cities in did not substantially improve upon the amount of observations missing county data (<.5%) and increased the run time, so it will be left as commented out (also in the interest of reproducibility).
-         # ,
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'elmendorfafb' &
-         #                 school %in% c('Bartlett') &
-         #                 state_province == 'AK',
-         #               'Anchorage', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'bmgoldwaterafrange' &
-         #                 school %in% c('Buckeye Union', 'Youngker', 'Verrado') &
-         #                 state_province == 'AZ',
-         #               'Buckeye', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'coronadontlforest' &
-         #                 school %in% c('Cienega') &
-         #                 state_province == 'AZ',
-         #               'Vail', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'mtmeadowsarea' &
-         #                 school %in% c('Lassen') &
-         #                 state_province == 'CA',
-         #               'Susanville', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'plumasntlforest' &
-         #                 state_province == 'CA',
-         #               'Quincy', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'westtehamacounty' &
-         #                 school %in% c('Red Bluff') &
-         #                 state_province == 'CA',
-         #               'Red Bluff', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'pikentlforest' &
-         #                 school %in% c('The Classical Academy') &
-         #                 state_province == 'CO',
-         #               'Colorado Springs', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'lakeminneola' &
-         #                 school %in% c('Lake Minneola') &
-         #                 state_province == 'FL',
-         #               'Minneola', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'southwestbrevardcnty' &
-         #                 grepl('rockledge', school, ignore.case = T) == T &
-         #                 state_province == 'FL',
-         #               'Rockledge', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'mcrae' &
-         #                 school %in% c('Telfair County') &
-         #                 state_province == 'GA',
-         #               'McRae-Helena', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'hoffmanforest' &
-         #                 school %in% c('Richlands') &
-         #                 state_province == 'NC',
-         #               'Richlands', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'ladysisland' &
-         #                 school %in% c('Beaufort') &
-         #                 state_province == 'SC',
-         #               'Beaufort', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'alief' &
-         #                 school %in% c('Taylor') &
-         #                 state_province == 'TX',
-         #               'Houston', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'brock' &
-         #                 school %in% c('Brock') &
-         #                 state_province == 'TX',
-         #               'Weatherford', city),
-         # city = ifelse(mgsub::mgsub(city,
-         #                            pattern = c("[^[:alnum:] ]", " "),
-         #                            replacement = '',
-         #                            recycle = T) %>% tolower() == 'adna' &
-         #                 school %in% c('Adna') &
-         #                 state_province == 'WA',
-         #               'Chehalis', city)
-)
+# recruiting_player <- recruiting_player %>% 
+#   #convert na strings to NA for city and state
+#   mutate(city = ifelse(mgsub::mgsub(city, 
+#                                     pattern = c("[^[:alnum:] ]", " "), 
+#                                     replacement = '', 
+#                                     recycle = T) %>% tolower() == 'na',
+#                        NA, city),
+#          state_province = ifelse(mgsub::mgsub(state_province, 
+#                                               pattern = c("[^[:alnum:] ]", " "), 
+#                                               replacement = '', 
+#                                               recycle = T) %>% tolower() == 'na',
+#                                  NA, state_province)
+#          #below alterations to city were to account for cities which were present in recruiting data, but absent in uscities, adding these cities in did not substantially improve upon the amount of observations missing county data (<.5%) and increased the run time, so it will be left as commented out (also in the interest of reproducibility).
+#          # ,
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'elmendorfafb' &
+#          #                 school %in% c('Bartlett') &
+#          #                 state_province == 'AK',
+#          #               'Anchorage', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'bmgoldwaterafrange' &
+#          #                 school %in% c('Buckeye Union', 'Youngker', 'Verrado') &
+#          #                 state_province == 'AZ',
+#          #               'Buckeye', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'coronadontlforest' &
+#          #                 school %in% c('Cienega') &
+#          #                 state_province == 'AZ',
+#          #               'Vail', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'mtmeadowsarea' &
+#          #                 school %in% c('Lassen') &
+#          #                 state_province == 'CA',
+#          #               'Susanville', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'plumasntlforest' &
+#          #                 state_province == 'CA',
+#          #               'Quincy', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'westtehamacounty' &
+#          #                 school %in% c('Red Bluff') &
+#          #                 state_province == 'CA',
+#          #               'Red Bluff', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'pikentlforest' &
+#          #                 school %in% c('The Classical Academy') &
+#          #                 state_province == 'CO',
+#          #               'Colorado Springs', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'lakeminneola' &
+#          #                 school %in% c('Lake Minneola') &
+#          #                 state_province == 'FL',
+#          #               'Minneola', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'southwestbrevardcnty' &
+#          #                 grepl('rockledge', school, ignore.case = T) == T &
+#          #                 state_province == 'FL',
+#          #               'Rockledge', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'mcrae' &
+#          #                 school %in% c('Telfair County') &
+#          #                 state_province == 'GA',
+#          #               'McRae-Helena', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'hoffmanforest' &
+#          #                 school %in% c('Richlands') &
+#          #                 state_province == 'NC',
+#          #               'Richlands', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'ladysisland' &
+#          #                 school %in% c('Beaufort') &
+#          #                 state_province == 'SC',
+#          #               'Beaufort', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'alief' &
+#          #                 school %in% c('Taylor') &
+#          #                 state_province == 'TX',
+#          #               'Houston', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'brock' &
+#          #                 school %in% c('Brock') &
+#          #                 state_province == 'TX',
+#          #               'Weatherford', city),
+#          # city = ifelse(mgsub::mgsub(city,
+#          #                            pattern = c("[^[:alnum:] ]", " "),
+#          #                            replacement = '',
+#          #                            recycle = T) %>% tolower() == 'adna' &
+#          #                 school %in% c('Adna') &
+#          #                 state_province == 'WA',
+#          #               'Chehalis', city)
+# )
 ```
 
 Construct universal city_updated column to make future joins easier
 ```{r}
-#for recruit_player, uscities, and zip_cities data, make a column called city_updated with all non-alphanumeric characters removed and converted to lowercase. This will help in joining the data in the following steps.
-
-recruiting_player <- recruiting_player %>% 
-  mutate(city_updated = mgsub::mgsub(city, 
-                                     pattern = c("[^[:alnum:] ]", " "), 
-                                     replacement = '', recycle = T) %>% tolower())
-
-uscities <- uscities %>% 
-  mutate(city_updated = mgsub::mgsub(city_ascii, 
-                                     pattern = c("[^[:alnum:] ]", " "), 
-                                     replacement = '', recycle = T) %>% tolower())
-
-zip_cities <- zip_cities %>% 
-  mutate(city_updated = mgsub::mgsub(city, 
-                                     pattern = c("[^[:alnum:] ]", " "), 
-                                     replacement = '', recycle = T) %>% tolower())
+# #for recruit_player, uscities, and zip_cities data, make a column called city_updated with all non-alphanumeric characters removed and converted to lowercase. This will help in joining the data in the following steps.
+# 
+# recruiting_player <- recruiting_player %>% 
+#   mutate(city_updated = mgsub::mgsub(city, 
+#                                      pattern = c("[^[:alnum:] ]", " "), 
+#                                      replacement = '', recycle = T) %>% tolower())
+# 
+# uscities <- uscities %>% 
+#   mutate(city_updated = mgsub::mgsub(city_ascii, 
+#                                      pattern = c("[^[:alnum:] ]", " "), 
+#                                      replacement = '', recycle = T) %>% tolower())
+# 
+# zip_cities <- zip_cities %>% 
+#   mutate(city_updated = mgsub::mgsub(city, 
+#                                      pattern = c("[^[:alnum:] ]", " "), 
+#                                      replacement = '', recycle = T) %>% tolower())
 ```
 
 ## Combining Recruit and County Data
 
 Join in data from `uscities`
 ```{r}
-#join data and create separate dataframes depending on whether or not there is county data
-
-#dataframe for observations with county data
-recruiting_player_cty <- recruiting_player %>% 
-  left_join(uscities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
-            by = c('city_updated', 'state_province' = 'state_id')) %>% 
-  filter(!is.na(county_name))
-
-#dataframe for observations without county data
-recruiting_player_n_cty <- recruiting_player %>% 
-  left_join(uscities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
-            by = c('city_updated', 'state_province' = 'state_id')) %>% 
-  filter(is.na(county_name)) %>% 
-  select(-county_fips, -county_name)
-
-#assert that there are an equivalent amount of rows for the original recruiting_player dataframe and the sum of rows between both new dataframes with/without county data
-assertable::assert_nrows(recruiting_player, nrow(recruiting_player_cty) + nrow(recruiting_player_n_cty))
+# #join data and create separate dataframes depending on whether or not there is county data
+# 
+# #dataframe for observations with county data
+# recruiting_player_cty <- recruiting_player %>% 
+#   left_join(uscities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
+#             by = c('city_updated', 'state_province' = 'state_id')) %>% 
+#   filter(!is.na(county_name))
+# 
+# #dataframe for observations without county data
+# recruiting_player_n_cty <- recruiting_player %>% 
+#   left_join(uscities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
+#             by = c('city_updated', 'state_province' = 'state_id')) %>% 
+#   filter(is.na(county_name)) %>% 
+#   select(-county_fips, -county_name)
+# 
+# #assert that there are an equivalent amount of rows for the original recruiting_player dataframe and the sum of rows between both new dataframes with/without county data
+# assertable::assert_nrows(recruiting_player, nrow(recruiting_player_cty) + nrow(recruiting_player_n_cty))
 ```
 
 Join in `zip_cities` to fill in missing county data
 ```{r}
-#join data and create separate dataframes depending on whether or not there is county data
-
-#dataframe for observations with county data
-complete_obs <- recruiting_player_n_cty %>% 
-  left_join(zip_cities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
-            by = c('city_updated', 'state_province' = 'state_id')) %>% 
-  filter(!is.na(county_name))
-
-#dataframe for observations without county data
-incomplete_obs <- recruiting_player_n_cty %>% 
-  left_join(zip_cities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
-            by = c('city_updated', 'state_province' = 'state_id')) %>% 
-  filter(is.na(county_name)) %>% 
-  select(-county_fips, -county_name)
+# #join data and create separate dataframes depending on whether or not there is county data
+# 
+# #dataframe for observations with county data
+# complete_obs <- recruiting_player_n_cty %>% 
+#   left_join(zip_cities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
+#             by = c('city_updated', 'state_province' = 'state_id')) %>% 
+#   filter(!is.na(county_name))
+# 
+# #dataframe for observations without county data
+# incomplete_obs <- recruiting_player_n_cty %>% 
+#   left_join(zip_cities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
+#             by = c('city_updated', 'state_province' = 'state_id')) %>% 
+#   filter(is.na(county_name)) %>% 
+#   select(-county_fips, -county_name)
 ```
 
 Create final dataframe with complete data
 ```{r}
-#create final dataframe for recruiting data merged with county data
-final_df <- rbind(recruiting_player_cty, complete_obs)
+# #create final dataframe for recruiting data merged with county data
+# final_df <- rbind(recruiting_player_cty, complete_obs)
 ```
 
 Address incomplete data
 ```{r}
-#from observations with no county, create dataframe for observations with a school listed
-inc_school <- incomplete_obs %>% 
-  filter(!is.na(school))
-
-#from observations with no county, create dataframe for observations with no school listed
-#initialize empty columns for county data (since it will not be joined in for these observations)
-inc_no_school <- incomplete_obs %>% 
-  filter(is.na(school)) %>% 
-  mutate(county_fips = NA,
-         county_name = NA)
-
-#create a dataframe of school names which only appear once
-#these will be used to fill in data for observations with a school, but no other location info listed
-single_schools <- final_df %>% 
-  #group completed data by school, county, county name
-  group_by(school, county_fips, county_name) %>% 
-  #find the count of each group (the number of observations from a school in a given county)
-  summarize(count = n()) %>% 
-  #ungroup
-  ungroup() %>% 
-  #group result by school
-  group_by(school) %>% 
-  #find count of each group (number of time a school appears)
-  summarize(count = n()) %>% 
-  #ungroup
-  ungroup() %>% 
-  #filter to display number of schools that only appear once
-  filter(count == 1) %>% 
-  #join in location information for these schools
-  left_join(final_df %>% select(school, state_province, county_fips, county_name) %>% unique()) %>% 
-  #drop count variable
-  select(-count)
-
-#create dataframe for schools which are only located within a single county
-single_county_schools <- final_df %>% 
-  #group by school, state, county 
-  group_by(school, state_province, county_fips, county_name) %>% 
-  #find the count of each group (number of observations from a school in a given state/county)
-  summarize(count = n()) %>% 
-  #ungroup
-  ungroup() %>% 
-  #group by school and state
-  group_by(school, state_province) %>% 
-  #find count of each group (number of times a school appears in a given state)
-  summarize(count = n()) %>% 
-  #ungroup
-  ungroup() %>% 
-  #display school/county groups which only appear once
-  filter(count == 1) %>% 
-  #join in location information for these schools
-  left_join(final_df %>% select(school, state_province, county_fips, county_name) %>% unique()) %>%
-  #drop count variable
-  select(-count)
-
-#create dataframe of incomplete data with schools listed and accompanying counties
-added_schools <- inc_school %>% 
-  #join single_schools dataframe
-  left_join(single_schools, by = 'school') %>% 
-  #join single_county_schools dataframe
-  left_join(single_county_schools, by = c('school', 'state_province.x' = 'state_province')) %>% 
-  #condense data from joins into single column
-  mutate(state_province = ifelse(is.na(state_province.x), state_province.y, state_province.x),
-         county_fips = ifelse(is.na(county_fips.x), county_fips.y, county_fips.x),
-         county_name = ifelse(is.na(county_name.x), county_name.y, county_name.x)) %>% 
-  #remove irrelevant columns
-  select(-state_province.x, -state_province.y, 
-         -county_fips.x, -county_fips.y, 
-         -county_name.x, -county_name.y)  %>% 
-  #reorder dataframe
-  relocate(state_province, .before = country)
+# #from observations with no county, create dataframe for observations with a school listed
+# inc_school <- incomplete_obs %>% 
+#   filter(!is.na(school))
+# 
+# #from observations with no county, create dataframe for observations with no school listed
+# #initialize empty columns for county data (since it will not be joined in for these observations)
+# inc_no_school <- incomplete_obs %>% 
+#   filter(is.na(school)) %>% 
+#   mutate(county_fips = NA,
+#          county_name = NA)
+# 
+# #create a dataframe of school names which only appear once
+# #these will be used to fill in data for observations with a school, but no other location info listed
+# single_schools <- final_df %>% 
+#   #group completed data by school, county, county name
+#   group_by(school, county_fips, county_name) %>% 
+#   #find the count of each group (the number of observations from a school in a given county)
+#   summarize(count = n()) %>% 
+#   #ungroup
+#   ungroup() %>% 
+#   #group result by school
+#   group_by(school) %>% 
+#   #find count of each group (number of time a school appears)
+#   summarize(count = n()) %>% 
+#   #ungroup
+#   ungroup() %>% 
+#   #filter to display number of schools that only appear once
+#   filter(count == 1) %>% 
+#   #join in location information for these schools
+#   left_join(final_df %>% select(school, state_province, county_fips, county_name) %>% unique()) %>% 
+#   #drop count variable
+#   select(-count)
+# 
+# #create dataframe for schools which are only located within a single county
+# single_county_schools <- final_df %>% 
+#   #group by school, state, county 
+#   group_by(school, state_province, county_fips, county_name) %>% 
+#   #find the count of each group (number of observations from a school in a given state/county)
+#   summarize(count = n()) %>% 
+#   #ungroup
+#   ungroup() %>% 
+#   #group by school and state
+#   group_by(school, state_province) %>% 
+#   #find count of each group (number of times a school appears in a given state)
+#   summarize(count = n()) %>% 
+#   #ungroup
+#   ungroup() %>% 
+#   #display school/county groups which only appear once
+#   filter(count == 1) %>% 
+#   #join in location information for these schools
+#   left_join(final_df %>% select(school, state_province, county_fips, county_name) %>% unique()) %>%
+#   #drop count variable
+#   select(-count)
+# 
+# #create dataframe of incomplete data with schools listed and accompanying counties
+# added_schools <- inc_school %>% 
+#   #join single_schools dataframe
+#   left_join(single_schools, by = 'school') %>% 
+#   #join single_county_schools dataframe
+#   left_join(single_county_schools, by = c('school', 'state_province.x' = 'state_province')) %>% 
+#   #condense data from joins into single column
+#   mutate(state_province = ifelse(is.na(state_province.x), state_province.y, state_province.x),
+#          county_fips = ifelse(is.na(county_fips.x), county_fips.y, county_fips.x),
+#          county_name = ifelse(is.na(county_name.x), county_name.y, county_name.x)) %>% 
+#   #remove irrelevant columns
+#   select(-state_province.x, -state_province.y, 
+#          -county_fips.x, -county_fips.y, 
+#          -county_name.x, -county_name.y)  %>% 
+#   #reorder dataframe
+#   relocate(state_province, .before = country)
 ```
 
 Complete final dataframe of recruit data and county data `final_df`
 ```{r}
-#append existing final_df, added_schools, and inc_no_school
-final_df <- rbind(final_df, added_schools, inc_no_school)
-
-#assert that final_df has the same number of observations as the original recruit_player dataframe
-assertable::assert_nrows(recruiting_player, nrow(final_df))
+# #append existing final_df, added_schools, and inc_no_school
+# final_df <- rbind(final_df, added_schools, inc_no_school)
+# 
+# #assert that final_df has the same number of observations as the original recruit_player dataframe
+# assertable::assert_nrows(recruiting_player, nrow(final_df))
 ```
 
 Display proportion pf missing county data in `final_df`
 ```{r}
-#divide sum of NA fips codes by the total number of observations
-sum(is.na(final_df$county_fips))/nrow(final_df)
+# #divide sum of NA fips codes by the total number of observations
+# sum(is.na(final_df$county_fips))/nrow(final_df)
 ```
 
 Create column for position groups in `final_df`
 ```{r}
-final_df$position_group <- NA
-for(i in 1:nrow(final_df)) {
-  if(final_df$position[i] %in% c('ILB', 'OLB')) {final_df$position_group[i] = 'LB'}
-  if(final_df$position[i] %in% c('PRO', 'DUAL')) {final_df$position_group[i] = 'QB'}
-  if(final_df$position[i] %in% c('WR')) {final_df$position_group[i] = 'WR'}
-  if(final_df$position[i] %in% c('RB', 'APB', 'FB', 'SF')) {final_df$position_group[i] = 'RB'}
-  if(final_df$position[i] %in% c('OT', 'OC', 'OG')) {final_df$position_group[i] = 'OL'}
-  if(final_df$position[i] %in% c('CB', 'S')) {final_df$position_group[i] = 'DB'}
-  if(final_df$position[i] %in% c('DT', 'SDE', 'WDE')) {final_df$position_group[i] = 'DL'}
-  if(final_df$position[i] %in% c('TE')) {final_df$position_group[i] = 'TE'}
-  if(final_df$position[i] %in% c('ATH')) {final_df$position_group[i] = 'ATH'}
-  if(final_df$position[i] %in% c('K', 'P', 'LS', 'RET')) {final_df$position_group[i] = 'ST'}
-}
+# final_df$position_group <- NA
+# for(i in 1:nrow(final_df)) {
+#   if(final_df$position[i] %in% c('ILB', 'OLB')) {final_df$position_group[i] = 'LB'}
+#   if(final_df$position[i] %in% c('PRO', 'DUAL')) {final_df$position_group[i] = 'QB'}
+#   if(final_df$position[i] %in% c('WR')) {final_df$position_group[i] = 'WR'}
+#   if(final_df$position[i] %in% c('RB', 'APB', 'FB', 'SF')) {final_df$position_group[i] = 'RB'}
+#   if(final_df$position[i] %in% c('OT', 'OC', 'OG')) {final_df$position_group[i] = 'OL'}
+#   if(final_df$position[i] %in% c('CB', 'S')) {final_df$position_group[i] = 'DB'}
+#   if(final_df$position[i] %in% c('DT', 'SDE', 'WDE')) {final_df$position_group[i] = 'DL'}
+#   if(final_df$position[i] %in% c('TE')) {final_df$position_group[i] = 'TE'}
+#   if(final_df$position[i] %in% c('ATH')) {final_df$position_group[i] = 'ATH'}
+#   if(final_df$position[i] %in% c('K', 'P', 'LS', 'RET')) {final_df$position_group[i] = 'ST'}
+# }
 ```
 
 Remove/Reorder columns of `final_df`
 ```{r}
-final_df <- final_df %>% 
-  select(-country,-city_updated) %>% 
-  arrange(year, ranking)
+# final_df <- final_df %>% 
+#   select(-country,-city_updated) %>% 
+#   arrange(year, ranking)
 ```
 
 ## Add Location Data
