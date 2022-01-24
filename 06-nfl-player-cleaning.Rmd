@@ -21,7 +21,7 @@ college_locations <- read.csv('preliminary-data/edu_ranks.csv', fileEncoding="UT
   clean_names()
 
 #api key to be used later for recruit locations
-register_google('AIzaSyCWUpQwDz9l8YXm6L0wEwNdpVxfQg6hbWE')
+register_google('your api key here')
 ```
 
 ```{r}
