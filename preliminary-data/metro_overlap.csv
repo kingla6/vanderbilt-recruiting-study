@@ -1,0 +1,385 @@
+"metro_area","state","county_fips1","county_fips2","county_fips3","county_fips4","county_fips5","estimate_2019","actual_2010","growth","combided_statistical_area","V1","V2","V3","V4","V5","V6"
+"New York City-Newark-Jersey City","NY","36061","34013","34017",NA,NA,"19,216,182","18,897,109","1.69%","New York-Newark, NY-NJ-CT-PA CSA",NA,NA,NA,NA,NA,NA
+"Los Angeles-Long Beach-Anaheim","CA","06037","06059",NA,NA,NA,"13,214,799","12,828,837","3.01%","Los Angeles-Long Beach, CA CSA",62,68,NA,NA,NA,NA
+"Chicago-Naperville-Elgin","IL","17031","17043","17197","17089",NA,"9,458,539","9,461,105","?0.03%","Chicago-Naperville, IL-IN-WI CSA",271,NA,NA,NA,NA,NA
+"Dallas-Fort Worth-Arlington","TX","48113","48439",NA,NA,NA,"7,573,136","6,366,542","18.95%","Dallas-Fort Worth, TX-OK CSA",NA,NA,NA,NA,NA,NA
+"Houston-The Woodlands-Sugar Land","TX","48201","48339","48157",NA,NA,"7,066,141","5,920,416","19.35%","Houston-The Woodlands, TX CSA",NA,NA,NA,NA,NA,NA
+"Washington-Arlington-Alexandria","DC","11001","51013","51510",NA,NA,"6,280,487","5,649,540","11.17%","Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA",NA,NA,NA,NA,NA,NA
+"Miami-Fort Lauderdale-West Palm Beach","FL","12086","12011","12099",NA,NA,"6,166,488","5,564,635","10.82%","Miami-Port St. Lucie-Fort Lauderdale, FL CSA",142,NA,NA,NA,NA,NA
+"Philadelphia-Camden-Wilmington","PA","42101","34007","10003",NA,NA,"6,102,434","5,965,343","2.30%","Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA",NA,NA,NA,NA,NA,NA
+"Atlanta-Sandy Springs-Alpharetta","GA","13121",NA,NA,NA,NA,"6,020,364","5,286,728","13.88%","Atlanta–Athens-Clarke County–Sandy Springs, GA-AL CSA",NA,NA,NA,NA,NA,NA
+"Phoenix-Mesa-Chandler","AZ","04013",NA,NA,NA,NA,"4,948,203","4,192,887","18.01%","Phoenix-Mesa, AZ CSA",53,196,211,NA,NA,NA
+"Boston-Cambridge-Newton","MA","25025","25017",NA,NA,NA,"4,873,019","4,552,402","7.04%","Boston-Worcester-Providence, MA-RI-NH-CT CSA",NA,NA,NA,NA,NA,NA
+"San Francisco-Oakland-Berkeley","CA","06075","06001",NA,NA,NA,"4,731,803","4,335,391","9.14%","San Jose-San Francisco-Oakland, CA CSA",NA,NA,NA,NA,NA,NA
+"Riverside-San Bernardino-Ontario","CA","06065","06071",NA,NA,NA,"4,650,631","4,224,851","10.08%","Los Angeles-Long Beach, CA CSA",17,234,NA,NA,NA,NA
+"Detroit–Warren–Dearborn","MI","26163","26099",NA,NA,NA,"4,319,629","4,296,250","0.54%","Detroit-Warren-Ann Arbor, MI CSA",147,279,NA,NA,NA,NA
+"Seattle-Tacoma-Bellevue","WA","53033","53053",NA,NA,NA,"3,979,845","3,439,809","15.70%","Seattle-Tacoma, WA CSA",180,191,330,NA,NA,NA
+"Minneapolis-St. Paul-Bloomington","MN","27053","27123",NA,NA,NA,"3,654,908","3,346,859","9.20%","Minneapolis-St. Paul, MN-WI CSA",223,NA,NA,NA,NA,NA
+"San Diego-Chula Vista-Carlsbad","CA","06073",NA,NA,NA,NA,"3,338,330","3,095,313","7.85%","",13,234,NA,NA,NA,NA
+"Tampa-St. Petersburg-Clearwater","FL","12057","12103",NA,NA,NA,"3,194,831","2,783,243","14.79%","",81,NA,NA,NA,NA,NA
+"Denver-Aurora-Lakewood","CO","08031","08005","08059",NA,NA,"2,967,239","2,543,482","16.66%","Denver-Aurora, CO CSA",NA,NA,NA,NA,NA,NA
+"St. Louis","MO","29510",NA,NA,NA,NA,"2,803,228","2,787,701","0.56%","St. Louis-St. Charles-Farmington, MO-IL CSA",NA,NA,NA,NA,NA,NA
+"Baltimore-Columbia-Towson","MD","24510","24027","24005",NA,NA,"2,800,053","2,710,489","3.30%","Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA",NA,NA,NA,NA,NA,NA
+"Charlotte-Concord-Gastonia","NC","37119","37025","37071",NA,NA,"2,636,883","2,243,960","17.51%","Charlotte-Concord, NC-SC CSA",NA,NA,NA,NA,NA,NA
+"Orlando-Kissimmee-Sanford","FL","12095","12097","12117",NA,NA,"2,608,147","2,134,411","22.20%","Orlando-Lakeland-Deltona, FL CSA",81,88,96,NA,NA,NA
+"San Antonio-New Braunfels","TX","48029","48091",NA,NA,NA,"2,550,960","2,142,508","19.06%","",NA,NA,NA,NA,NA,NA
+"Portland-Vancouver-Hillsboro","OR","41051","53011","41067",NA,NA,"2,492,412","2,226,009","11.97%","Portland-Vancouver-Salem, OR-WA CSA",NA,NA,NA,NA,NA,NA
+"Sacramento-Roseville-Folsom","CA","06067","06061",NA,NA,NA,"2,363,730","2,149,127","9.99%","Sacramento-Roseville, CA CSA",77,122,243,NA,NA,NA
+"Pittsburgh","PA","42003",NA,NA,NA,NA,"2,317,600","2,356,285","?1.64%","Pittsburgh-New Castle-Weirton, PA-OH-WV CSA",NA,NA,NA,NA,NA,NA
+"Las Vegas-Henderson-Paradise","NV","32003",NA,NA,NA,NA,"2,266,715","1,951,269","16.17%","Las Vegas-Henderson, NV-AZ CSA",214,NA,NA,NA,NA,NA
+"Austin-Round Rock-Georgetown","TX","48453","48491",NA,NA,NA,"2,227,083","1,716,289","29.76%","",NA,NA,NA,NA,NA,NA
+"Cincinnati","OH","39061",NA,NA,NA,NA,"2,221,208","2,137,667","3.91%","Cincinnati-Wilmington-Maysville, OH-KY-IN CSA",NA,NA,NA,NA,NA,NA
+"Kansas City","MO","29095",NA,NA,NA,NA,"2,157,990","2,009,342","7.40%","Kansas City-Overland Park-Kansas City, MO-KS CSA",NA,NA,NA,NA,NA,NA
+"Columbus","OH","39049",NA,NA,NA,NA,"2,122,271","1,901,974","11.58%","Columbus-Marion-Zanesville, OH CSA",NA,NA,NA,NA,NA,NA
+"Indianapolis-Carmel-Anderson","IN","18097","18057","18095",NA,NA,"2,074,537","1,887,877","9.89%","Indianapolis-Carmel-Muncie, IN CSA",NA,NA,NA,NA,NA,NA
+"Cleveland-Elyria","OH","39035","39093",NA,NA,NA,"2,048,449","2,077,240","?1.39%","Cleveland-Akron-Canton, OH CSA",82,NA,NA,NA,NA,NA
+"San Jose-Sunnyvale-Santa Clara","CA","06085",NA,NA,NA,NA,"1,990,660","1,836,911","8.37%","San Jose-San Francisco-Oakland, CA CSA",102,175,178,NA,NA,NA
+"Nashville-Davidson–Murfreesboro–Franklin","TN","47037","47149","47187",NA,NA,"1,934,317","1,646,200","17.50%","Nashville-Davidson–Murfreesboro, TN CSA",NA,NA,NA,NA,NA,NA
+"Virginia Beach-Norfolk-Newport News","VA","51810","51710","51700",NA,NA,"1,768,901","1,713,954","3.21%","Virginia Beach-Norfolk, VA-NC CSA",NA,NA,NA,NA,NA,NA
+"Providence-Warwick","RI","44007","44003",NA,NA,NA,"1,624,578","1,600,852","1.48%","Boston-Worcester-Providence, MA-RI-NH-CT CSA",58,NA,NA,NA,NA,NA
+"Milwaukee-Waukesha","WI","55079","55133",NA,NA,NA,"1,575,179","1,555,908","1.24%","Milwaukee-Racine-Waukesha, WI CSA",227,245,NA,NA,NA,NA
+"Jacksonville","FL","12031",NA,NA,NA,NA,"1,559,514","1,345,596","15.90%","Jacksonville-St. Marys-Palatka, FL-GA CSA",NA,NA,NA,NA,NA,NA
+"Oklahoma City","OK","40109",NA,NA,NA,NA,"1,408,950","1,252,987","12.45%","Oklahoma City-Shawnee, OK CSA",NA,NA,NA,NA,NA,NA
+"Raleigh-Cary","NC","37183","37037",NA,NA,NA,"1,390,785","1,130,490","23.02%","Raleigh-Durham-Cary, NC CSA",92,NA,NA,NA,NA,NA
+"Memphis","TN","47157",NA,NA,NA,NA,"1,346,045","1,316,100","2.28%","Memphis-Forrest City, TN-MS-AR CSA",NA,NA,NA,NA,NA,NA
+"Richmond","VA","51760",NA,NA,NA,NA,"1,291,900","1,186,501","8.88%","",NA,NA,NA,NA,NA,NA
+"New Orleans-Metairie","LA","22071","22051",NA,NA,NA,"1,270,530","1,189,866","6.78%","New Orleans-Metairie-Hammond, LA-MS CSA",NA,NA,NA,NA,NA,NA
+"Louisville/Jefferson County","KY","21111",NA,NA,NA,NA,"1,265,108","1,202,718","5.19%","Louisville/Jefferson County–Elizabethtown–Bardstown, KY-IN CSA",270,NA,NA,NA,NA,NA
+"Salt Lake City","UT","49035",NA,NA,NA,NA,"1,232,696","1,087,873","13.31%","Salt Lake City-Provo-Orem, UT CSA",91,NA,NA,NA,NA,NA
+"Hartford-East Hartford-Middletown","CT","09003","09007",NA,NA,NA,"1,204,877","1,212,381","?0.62%","Hartford-East Hartford, CT CSA",67,84,183,NA,NA,NA
+"Buffalo-Niagara Falls","NY","36029","36063",NA,NA,NA,"1,127,983","1,135,509","?0.66%","Buffalo-Cheektowaga-Cattaraugus, NY CSA",NA,NA,NA,NA,NA,NA
+"Birmingham-Hoover","AL","01073","01117",NA,NA,NA,"1,090,435","1,061,024","2.77%","Birmingham-Hoover-Talladega, AL CSA",190,NA,NA,NA,NA,NA
+"Grand Rapids-Kentwood","MI","26081",NA,NA,NA,NA,"1,077,370","993,670","8.42%","Grand Rapids-Kentwood-Muskegon, MI CSA",245,NA,NA,NA,NA,NA
+"Rochester","NY","36055",NA,NA,NA,NA,"1,069,644","1,079,671","?0.93%","Rochester-Batavia-Seneca Falls, NY CSA",NA,NA,NA,NA,NA,NA
+"Tucson","AZ","04019",NA,NA,NA,NA,"1,047,279","980,263","6.84%","Tucson-Nogales, AZ CSA",10,211,316,NA,NA,NA
+"Fresno","CA","06019",NA,NA,NA,NA,"999,101","930,450","7.38%","Fresno-Madera-Hanford, CA CSA",118,124,175,267,272,NA
+"Tulsa","OK","40143",NA,NA,NA,NA,"998,626","937,478","6.52%","Tulsa-Muskogee-Bartlesville, OK CSA",NA,NA,NA,NA,NA,NA
+"Urban Honolulu","HI","15003",NA,NA,NA,NA,"974,563","953,207","2.24%","",NA,NA,NA,NA,NA,NA
+"Omaha-Council Bluffs","NE","31055","19155",NA,NA,NA,"949,442","865,350","9.72%","Omaha-Council Bluffs-Fremont, NE-IA CSA",NA,NA,NA,NA,NA,NA
+"Worcester","MA","25027",NA,NA,NA,NA,"947,404","916,980","3.32%","Boston-Worcester-Providence, MA-RI-NH-CT CSA",38,84,131,NA,NA,NA
+"Bridgeport-Stamford-Norwalk","CT","09001",NA,NA,NA,NA,"943,332","916,829","2.89%","New York-Newark, NY-NJ-CT-PA CSA",67,86,NA,NA,NA,NA
+"Greenville-Anderson","SC","45045","45007",NA,NA,NA,"920,477","824,112","11.69%","Greenville-Spartanburg-Anderson, SC CSA",161,NA,NA,NA,NA,NA
+"Albuquerque","NM","35001",NA,NA,NA,NA,"918,018","887,077","3.49%","Albuquerque-Santa Fe-Las Vegas, NM CSA",280,NA,NA,NA,NA,NA
+"Bakersfield","CA","06029",NA,NA,NA,NA,"900,202","839,631","7.21%","",2,68,118,123,174,272
+"Albany-Schenectady-Troy","NY","36001","36093","36083",NA,NA,"880,381","870,716","1.11%","Albany-Schenectady, NY CSA",NA,NA,NA,NA,NA,NA
+"Knoxville","TN","47093",NA,NA,NA,NA,"869,046","814,914","6.64%","Knoxville-Morristown-Sevierville, TN CSA",NA,NA,NA,NA,NA,NA
+"McAllen-Edinburg-Mission","TX","48215",NA,NA,NA,NA,"868,707","774,769","12.12%","McAllen-Edinburg, TX CSA",128,NA,NA,NA,NA,NA
+"Baton Rouge","LA","22033",NA,NA,NA,NA,"854,884","825,905","3.51%","",NA,NA,NA,NA,NA,NA
+"New Haven-Milford","CT","09009",NA,NA,NA,NA,"854,757","862,477","?0.90%","New York-Newark, NY-NJ-CT-PA CSA",48,59,NA,NA,NA,NA
+"Oxnard-Thousand Oaks-Ventura","CA","06111",NA,NA,NA,NA,"846,006","823,318","2.76%","Los Angeles-Long Beach, CA CSA",2,62,123,NA,NA,NA
+"El Paso","TX","48141",NA,NA,NA,NA,"844,124","804,123","4.97%","El Paso-Las Cruces, TX-NM CSA",210,NA,NA,NA,NA,NA
+"Allentown-Bethlehem-Easton","PA","42077","42095",NA,NA,NA,"844,052","821,173","2.79%","",129,NA,NA,NA,NA,NA
+"Columbia","SC","45079",NA,NA,NA,NA,"838,433","767,598","9.23%","Columbia-Orangeburg-Newberry, SC CSA",297,NA,NA,NA,NA,NA
+"North Port-Sarasota-Bradenton","FL","12115","12081",NA,NA,NA,"836,995","702,281","19.18%","North Port-Sarasota, FL CSA",229,NA,NA,NA,NA,NA
+"Dayton-Kettering","OH","39113","39057",NA,NA,NA,"807,611","799,232","1.05%","Dayton-Springfield-Kettering, OH CSA",307,NA,NA,NA,NA,NA
+"Charleston-North Charleston","SC","45019","45015","45035",NA,NA,"802,122","664,607","20.69%","",NA,NA,NA,NA,NA,NA
+"Greensboro-High Point","NC","37081","37151","37057","37067",NA,"771,851","723,801","6.64%","Greensboro–Winston-Salem–High Point, NC CSA",87,251,NA,NA,NA,NA
+"Cape Coral-Fort Myers","FL","12071",NA,NA,NA,NA,"770,577","618,754","24.54%","Cape Coral-Fort Myers-Naples, FL CSA",142,229,NA,NA,NA,NA
+"Stockton","CA","06077",NA,NA,NA,NA,"762,148","685,306","11.21%","San Jose-San Francisco-Oakland, CA CSA",26,102,NA,NA,NA,NA
+"Boise City","ID","16015",NA,NA,NA,NA,"749,202","616,561","21.51%","Boise City-Mountain Home-Ontario, ID-OR CSA",NA,NA,NA,NA,NA,NA
+"Colorado Springs","CO","08041",NA,NA,NA,NA,"745,791","645,613","15.52%","",256,NA,NA,NA,NA,NA
+"Little Rock-North Little Rock-Conway","AR","05119","05045",NA,NA,NA,"742,384","699,757","6.09%","Little Rock-North Little Rock, AR CSA",369,NA,NA,NA,NA,NA
+"Lakeland-Winter Haven","FL","12105",NA,NA,NA,NA,"724,777","602,095","20.38%","Orlando-Lakeland-Deltona, FL CSA",18,23,309,347,NA,NA
+"Akron","OH","39153",NA,NA,NA,NA,"703,479","703,200","0.04%","Cleveland-Akron-Canton, OH CSA",34,136,NA,NA,NA,NA
+"Des Moines-West Des Moines","IA","19057","19153","19049","19181","19121","699,292","606,475","15.30%","Des Moines-Ames-West Des Moines, IA CSA",NA,NA,NA,NA,NA,NA
+"Springfield","MA","25013",NA,NA,NA,NA,"697,382","692,942","0.64%","",48,58,319,NA,NA,NA
+"Ogden-Clearfield","UT","49057","49011",NA,NA,NA,"683,864","597,159","14.52%","Salt Lake City-Provo-Orem, UT CSA",293,NA,NA,NA,NA,NA
+"Poughkeepsie-Newburgh-Middletown","NY","36027","36071",NA,NA,NA,"679,158","670,301","1.32%","New York-Newark, NY-NJ-CT-PA CSA",59,241,319,NA,NA,NA
+"Winston-Salem","NC","37067",NA,NA,NA,NA,"676,008","640,595","5.53%","Greensboro–Winston-Salem–High Point, NC CSA",75,NA,NA,NA,NA,NA
+"Deltona-Daytona Beach-Ormond Beach","FL","12127",NA,NA,NA,NA,"668,365","590,289","13.23%","Orlando-Lakeland-Deltona, FL CSA",23,96,149,NA,NA,NA
+"Madison","WI","55025",NA,NA,NA,NA,"664,865","605,435","9.82%","Madison-Janesville-Beloit, WI CSA",262,NA,NA,NA,NA,NA
+"Syracuse","NY","36067",NA,NA,NA,NA,"648,593","662,577","?2.11%","Syracuse-Auburn, NY CSA",NA,NA,NA,NA,NA,NA
+"Provo-Orem","UT","49049",NA,NA,NA,NA,"648,252","526,810","23.05%","Salt Lake City-Provo-Orem, UT CSA",47,NA,NA,NA,NA,NA
+"Durham-Chapel Hill","NC","37063","37135",NA,NA,NA,"644,367","564,273","14.19%","Raleigh-Durham-Cary, NC CSA",42,NA,NA,NA,NA,NA
+"Toledo","OH","39095",NA,NA,NA,NA,"641,816","651,429","?1.48%","Toledo-Findlay-Tiffin, OH CSA",279,NA,NA,NA,NA,NA
+"Wichita","KS","20173",NA,NA,NA,NA,"640,218","623,061","2.75%","Wichita-Winfield, KS CSA",NA,NA,NA,NA,NA,NA
+"Augusta-Richmond County","GA","13245",NA,NA,NA,NA,"608,980","564,873","7.81%","",NA,NA,NA,NA,NA,NA
+"Palm Bay-Melbourne-Titusville","FL","12009",NA,NA,NA,NA,"601,942","543,376","10.78%","Orlando-Lakeland-Deltona, FL CSA",23,88,265,NA,NA,NA
+"Jackson","MS","28059",NA,NA,NA,NA,"594,806","586,320","1.45%","Jackson-Vicksburg-Brookhaven, MS CSA",126,130,NA,NA,NA,NA
+"Harrisburg-Carlisle","PA","42043","42041",NA,NA,NA,"577,941","549,475","5.18%","Harrisburg-York-Lebanon, PA CSA",104,121,295,NA,NA,NA
+"Spokane-Spokane Valley","WA","53063",NA,NA,NA,NA,"568,521","514,752","10.45%","Spokane-Spokane Valley-Coeur d'Alene, WA-ID CSA",260,NA,NA,NA,NA,NA
+"Chattanooga","TN","47065",NA,NA,NA,NA,"565,194","528,143","7.02%","Chattanooga-Cleveland-Dalton, TN-GA-AL CSA",289,320,NA,NA,NA,NA
+"Scranton–Wilkes-Barre","PA","42069","42079",NA,NA,NA,"553,885","563,631","?1.73%","",250,NA,NA,NA,NA,NA
+"Modesto","CA","06099",NA,NA,NA,NA,"550,660","514,453","7.04%","San Jose-San Francisco-Oakland, CA CSA",35,77,175,NA,NA,NA
+"Lansing-East Lansing","MI","26065","26045","26037",NA,NA,"550,391","534,684","2.94%","",266,NA,NA,NA,NA,NA
+"Lancaster","PA","42071",NA,NA,NA,NA,"545,724","519,445","5.06%","",98,121,129,295,NA,NA
+"Portland-South Portland","ME","23005",NA,NA,NA,NA,"538,500","514,098","4.75%","Portland-Lewiston-South Portland, ME CSA",346,NA,NA,NA,NA,NA
+"Youngstown-Warren-Boardman","OH","39099","39155",NA,NA,NA,"536,081","565,773","?5.25%","Youngstown-Warren, OH-PA CSA",136,NA,NA,NA,NA,NA
+"Fayetteville-Springdale-Rogers","AR","05143","05007",NA,NA,NA,"534,904","440,121","21.54%","",NA,NA,NA,NA,NA,NA
+"Fayetteville","NC","37051",NA,NA,NA,NA,"526,719","481,061","9.49%","Fayetteville-Lumberton-Laurinburg, NC CSA",NA,NA,NA,NA,NA,NA
+"Lexington-Fayette","KY","21067",NA,NA,NA,NA,"517,056","472,099","9.52%","Lexington-Fayette–Richmond–Frankfort, KY CSA",NA,NA,NA,NA,NA,NA
+"Pensacola-Ferry Pass-Brent","FL","12033",NA,NA,NA,NA,"502,629","448,991","11.95%","Pensacola-Ferry Pass, FL-AL CSA",203,NA,NA,NA,NA,NA
+"Myrtle Beach-Conway-North Myrtle Beach","SC","45051",NA,NA,NA,NA,"496,901","376,722","31.90%","Myrtle Beach-Conway, SC-NC CSA",NA,NA,NA,NA,NA,NA
+"Santa Rosa-Petaluma","CA","06097",NA,NA,NA,NA,"494,336","483,878","2.16%","San Jose-San Francisco-Oakland, CA CSA",122,300,NA,NA,NA,NA
+"Port St. Lucie","FL","12111",NA,NA,NA,NA,"489,297","424,107","15.37%","Miami-Port St. Lucie-Fort Lauderdale, FL CSA",265,NA,NA,NA,NA,NA
+"Lafayette","LA","22055",NA,NA,NA,NA,"489,207","466,750","4.81%","Lafayette-Opelousas-Morgan City, LA CSA",NA,NA,NA,NA,NA,NA
+"Reno","NV","32031",NA,NA,NA,NA,"475,642","425,417","11.81%","Reno-Carson City-Fernley, NV CSA",384,NA,NA,NA,NA,NA
+"Huntsville","AL","01089",NA,NA,NA,NA,"471,824","417,593","12.99%","Huntsville-Decatur, AL CSA",273,NA,NA,NA,NA,NA
+"Springfield","MO","29077",NA,NA,NA,NA,"470,300","436,712","7.69%","",NA,NA,NA,NA,NA,NA
+"Visalia","CA","06107",NA,NA,NA,NA,"466,195","442,179","5.43%","",54,62,272,NA,NA,NA
+"Asheville","NC","37021",NA,NA,NA,NA,"462,680","424,858","8.90%","Asheville-Marion-Brevard, NC CSA",NA,NA,NA,NA,NA,NA
+"Killeen-Temple","TX","48027",NA,NA,NA,NA,"460,303","405,300","13.57%","",177,NA,NA,NA,NA,NA
+"York-Hanover","PA","42133",NA,NA,NA,NA,"449,058","434,972","3.24%","Harrisburg-York-Lebanon, PA CSA",98,104,351,NA,NA,NA
+"Vallejo","CA","06095",NA,NA,NA,NA,"447,643","413,344","8.30%","San Jose-San Francisco-Oakland, CA CSA",26,112,300,NA,NA,NA
+"Santa Maria-Santa Barbara","CA","06083",NA,NA,NA,NA,"446,499","423,895","5.33%","",62,68,174,NA,NA,NA
+"Salinas","CA","06053",NA,NA,NA,NA,"434,061","415,057","4.58%","",54,174,178,272,NA,NA
+"Salem","OR","41047","41053",NA,NA,NA,"433,903","390,738","11.05%","Portland-Vancouver-Salem, OR-WA CSA",312,NA,NA,NA,NA,NA
+"Mobile","AL","01097",NA,NA,NA,NA,"429,536","430,573","?0.24%","Mobile-Daphne-Fairhope, AL CSA",97,203,NA,NA,NA,NA
+"Corpus Christi","TX","48355",NA,NA,NA,NA,"429,024","405,027","5.92%","Corpus Christi-Kingsville-Alice, TX CSA",NA,NA,NA,NA,NA,NA
+"Brownsville-Harlingen","TX","48061",NA,NA,NA,NA,"423,163","406,220","4.17%","Brownsville-Harlingen-Raymondville, TX CSA",65,NA,NA,NA,NA,NA
+"Reading","PA","42011",NA,NA,NA,NA,"421,164","411,442","2.36%","Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA",70,104,295,NA,NA,NA
+"Gulfport-Biloxi","MS","28047",NA,NA,NA,NA,"417,665","388,488","7.51%","",97,NA,NA,NA,NA,NA
+"Manchester-Nashua","NH","33011",NA,NA,NA,NA,"417,025","400,721","4.07%","Boston-Worcester-Providence, MA-RI-NH-CT CSA",58,NA,NA,NA,NA,NA
+"Salisbury","MD","24045",NA,NA,NA,NA,"415,726","373,802","11.22%","Salisbury-Cambridge, MD-DE CSA",NA,NA,NA,NA,NA,NA
+"Fort Wayne","IN","18003",NA,NA,NA,NA,"413,263","388,621","6.34%","Fort Wayne-Huntington-Auburn, IN CSA",NA,NA,NA,NA,NA,NA
+"Flint","MI","26049",NA,NA,NA,NA,"405,813","425,790","?4.69%","Detroit-Warren-Ann Arbor, MI CSA",228,NA,NA,NA,NA,NA
+"Peoria","IL","17143",NA,NA,NA,NA,"400,561","416,255","?3.77%","",NA,NA,NA,NA,NA,NA
+"Canton-Massillon","OH","39151",NA,NA,NA,NA,"397,520","404,422","?1.71%","Cleveland-Akron-Canton, OH CSA",82,106,NA,NA,NA,NA
+"Anchorage","AK","02020",NA,NA,NA,NA,"396,317","380,821","4.07%","",NA,NA,NA,NA,NA,NA
+"Shreveport-Bossier City","LA","22017","22015",NA,NA,NA,"394,706","398,604","?0.98%","Shreveport-Bossier City-Minden, LA CSA",NA,NA,NA,NA,NA,NA
+"Savannah","GA","13051",NA,NA,NA,NA,"393,353","347,611","13.16%","Savannah-Hinesville-Statesboro, GA CSA",377,NA,NA,NA,NA,NA
+"Beaumont-Port Arthur","TX","48245","48361",NA,NA,NA,"392,563","388,745","0.98%","",NA,NA,NA,NA,NA,NA
+"Tallahassee","FL","12073",NA,NA,NA,NA,"387,227","367,413","5.39%","",NA,NA,NA,NA,NA,NA
+"Naples-Marco Island","FL","12021",NA,NA,NA,NA,"384,902","321,520","19.71%","Cape Coral-Fort Myers-Naples, FL CSA",7,76,NA,NA,NA,NA
+"Eugene-Springfield","OR","41039",NA,NA,NA,NA,"382,067","351,715","8.63%","",226,312,366,NA,NA,NA
+"Davenport-Moline-Rock Island","IA","19163","17161",NA,NA,NA,"379,172","379,690","?0.14%","Davenport-Moline, IA-IL CSA",NA,NA,NA,NA,NA,NA
+"Montgomery","AL","01101",NA,NA,NA,NA,"373,290","374,536","?0.33%","Montgomery-Selma-Alexander City, AL CSA",NA,NA,NA,NA,NA,NA
+"Hickory-Lenoir-Morganton","NC","37035","37027","37023",NA,NA,"369,711","365,497","1.15%","",NA,NA,NA,NA,NA,NA
+"Ann Arbor","MI","26161",NA,NA,NA,NA,"367,601","344,791","6.62%","Detroit-Warren-Ann Arbor, MI CSA",14,266,279,NA,NA,NA
+"Trenton-Princeton","NJ","34021",NA,NA,NA,NA,"367,430","366,513","0.25%","New York-Newark, NY-NJ-CT-PA CSA",NA,NA,NA,NA,NA,NA
+"Ocala","FL","12083",NA,NA,NA,NA,"365,579","331,298","10.35%","",88,154,281,309,NA,NA
+"Fort Collins","CO","08069",NA,NA,NA,NA,"356,899","299,630","19.11%","",155,156,358,NA,NA,NA
+"Huntington-Ashland","WV","54011","21019",NA,NA,NA,"355,873","370,908","?4.05%","Charleston-Huntington-Ashland, WV-OH-KY CSA",NA,NA,NA,NA,NA,NA
+"Lincoln","NE","31109",NA,NA,NA,NA,"336,374","302,157","11.32%","Lincoln-Beatrice, NE CSA",NA,NA,NA,NA,NA,NA
+"Rockford","IL","17201",NA,NA,NA,NA,"336,116","349,431","?3.81%","Rockford-Freeport-Rochelle, IL CSA",262,NA,NA,NA,NA,NA
+"Gainesville","FL","12001",NA,NA,NA,NA,"329,128","305,076","7.88%","Gainesville-Lake City, FL CSA",149,NA,NA,NA,NA,NA
+"Boulder","CO","08013",NA,NA,NA,NA,"326,196","294,567","10.74%","Denver-Aurora, CO CSA",150,156,NA,NA,NA,NA
+"Greeley","CO","08123",NA,NA,NA,NA,"324,492","252,825","28.35%","Denver-Aurora, CO CSA",150,155,358,NA,NA,NA
+"South Bend-Mishawaka","IN","18141",NA,NA,NA,NA,"323,613","319,224","1.37%","South Bend-Elkhart-Mishawaka, IN-MI CSA",219,271,343,NA,NA,NA
+"Green Bay","WI","55009",NA,NA,NA,NA,"322,906","306,241","5.44%","Green Bay-Shawano, WI CSA",195,NA,NA,NA,NA,NA
+"Lubbock","TX","48303",NA,NA,NA,NA,"322,257","290,805","10.82%","Lubbock-Plainview-Levelland, TX CSA",NA,NA,NA,NA,NA,NA
+"Columbus","GA","13215",NA,NA,NA,NA,"321,048","307,788","4.31%","Columbus-Auburn-Opelika, GA-AL CSA",261,NA,NA,NA,NA,NA
+"Spartanburg","SC","45083",NA,NA,NA,NA,"319,785","284,307","12.48%","Greenville-Spartanburg-Anderson, SC CSA",60,NA,NA,NA,NA,NA
+"Evansville","IN","18163",NA,NA,NA,NA,"315,086","311,552","1.13%","",NA,NA,NA,NA,NA,NA
+"Roanoke","VA","51161",NA,NA,NA,NA,"313,222","308,707","1.46%","",257,NA,NA,NA,NA,NA
+"Clarksville","TN","47125",NA,NA,NA,NA,"307,820","273,949","12.36%","",NA,NA,NA,NA,NA,NA
+"Kingsport-Bristol","TN","47163","47073",NA,NA,NA,"307,202","309,544","?0.76%","Johnson City-Kingsport-Bristol, TN-VA CSA",222,NA,NA,NA,NA,NA
+"Kennewick-Richland","WA","53005",NA,NA,NA,NA,"299,612","253,340","18.26%","Kennewick-Richland-Walla Walla, WA CSA",191,383,NA,NA,NA,NA
+"Wilmington","NC","37129",NA,NA,NA,NA,"297,533","254,884","16.73%","",NA,NA,NA,NA,NA,NA
+"Olympia-Lacey-Tumwater","WA","53067",NA,NA,NA,NA,"290,536","252,264","15.17%","Seattle-Tacoma, WA CSA",NA,NA,NA,NA,NA,NA
+"Utica-Rome","NY","36065",NA,NA,NA,NA,"289,990","299,397","?3.14%","",NA,NA,NA,NA,NA,NA
+"Duluth","MN","27137",NA,NA,NA,NA,"288,732","290,637","?0.66%","",NA,NA,NA,NA,NA,NA
+"Hagerstown-Martinsburg","MD","24043","54003",NA,NA,NA,"288,104","269,140","7.05%","Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA",268,362,NA,NA,NA,NA
+"Longview","TX","48183",NA,NA,NA,NA,"286,657","280,000","2.38%","",198,NA,NA,NA,NA,NA
+"Crestview-Fort Walton Beach-Destin","FL","12091",NA,NA,NA,NA,"284,809","235,865","20.75%","",NA,NA,NA,NA,NA,NA
+"San Luis Obispo-Paso Robles","CA","06079",NA,NA,NA,NA,"283,111","269,637","5.00%","",62,123,124,272,NA,NA
+"Merced","CA","06047",NA,NA,NA,NA,"277,680","255,793","8.56%","San Jose-San Francisco-Oakland, CA CSA",35,54,102,267,NA,NA
+"Laredo","TX","48479",NA,NA,NA,NA,"276,652","250,304","10.53%","",NA,NA,NA,NA,NA,NA
+"Waco","TX","48309",NA,NA,NA,NA,"273,920","252,772","8.37%","",120,NA,NA,NA,NA,NA
+"Santa Cruz-Watsonville","CA","06087",NA,NA,NA,NA,"273,213","262,382","4.13%","San Jose-San Francisco-Oakland, CA CSA",35,124,NA,NA,NA,NA
+"Cedar Rapids","IA","19113",NA,NA,NA,NA,"273,032","257,940","5.85%","Cedar Rapids-Iowa City, IA CSA",246,NA,NA,NA,NA,NA
+"Bremerton-Silverdale-Port Orchard","WA","53035",NA,NA,NA,NA,"271,473","251,133","8.10%","Seattle-Tacoma, WA CSA",15,NA,NA,NA,NA,NA
+"Erie","PA","42049",NA,NA,NA,NA,"269,728","280,566","?3.86%","Erie-Meadville, PA CSA",NA,NA,NA,NA,NA,NA
+"Sioux Falls","SD","46099",NA,NA,NA,NA,"268,232","228,261","17.51%","",NA,NA,NA,NA,NA,NA
+"Norwich-New London","CT","09011",NA,NA,NA,NA,"265,206","274,055","?3.23%","Hartford-East Hartford, CT CSA",48,NA,NA,NA,NA,NA
+"Kalamazoo-Portage","MI","26077",NA,NA,NA,NA,"265,066","250,331","5.89%","Kalamazoo-Battle Creek-Portage, MI CSA",306,NA,NA,NA,NA,NA
+"Amarillo","TX","48375",NA,NA,NA,NA,"265,053","251,933","5.21%","Amarillo-Pampa-Borger, TX CSA",NA,NA,NA,NA,NA,NA
+"College Station-Bryan","TX","48041",NA,NA,NA,NA,"264,728","228,660","15.77%","",NA,NA,NA,NA,NA,NA
+"Atlantic City-Hammonton","NJ","34001",NA,NA,NA,NA,"263,670","274,549","?3.96%","Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA",282,367,NA,NA,NA,NA
+"Lynchburg","VA","51680",NA,NA,NA,NA,"263,566","252,634","4.33%","",NA,NA,NA,NA,NA,NA
+"Charleston","WV","54039",NA,NA,NA,NA,"257,074","278,009","?7.53%","Charleston-Huntington-Ashland, WV-OH-KY CSA",335,NA,NA,NA,NA,NA
+"Tuscaloosa","AL","01125",NA,NA,NA,NA,"252,047","239,207","5.37%","",50,NA,NA,NA,NA,NA
+"Yakima","WA","53077",NA,NA,NA,NA,"250,873","243,231","3.14%","",15,166,NA,NA,NA,NA
+"Fort Smith","AR","05131",NA,NA,NA,NA,"250,368","248,208","0.87%","",NA,NA,NA,NA,NA,NA
+"Fargo","ND","38017",NA,NA,NA,NA,"246,145","208,777","17.90%","Fargo-Wahpeton, ND-MN CSA",NA,NA,NA,NA,NA,NA
+"Binghamton","NY","36007",NA,NA,NA,NA,"238,691","251,725","?5.18%","",NA,NA,NA,NA,NA,NA
+"Appleton","WI","55087",NA,NA,NA,NA,"237,974","225,666","5.45%","Appleton-Oshkosh-Neenah, WI CSA",158,248,NA,NA,NA,NA
+"Prescott Valley-Prescott","AZ","04025",NA,NA,NA,NA,"235,099","211,033","11.40%","",10,214,291,NA,NA,NA
+"Lafayette-West Lafayette","IN","18157",NA,NA,NA,NA,"233,002","210,297","10.80%","Lafayette-West Lafayette-Frankfort, IN CSA",NA,NA,NA,NA,NA,NA
+"Tyler","TX","48423",NA,NA,NA,NA,"232,751","209,714","10.98%","Tyler-Jacksonville, TX CSA",172,NA,NA,NA,NA,NA
+"Topeka","KS","20177",NA,NA,NA,NA,"231,969","233,870","?0.81%","",326,NA,NA,NA,NA,NA
+"Macon-Bibb County","GA","13021",NA,NA,NA,NA,"229,996","232,293","?0.99%","Macon-Bibb County–Warner Robins, GA CSA",231,NA,NA,NA,NA,NA
+"Bellingham","WA","53073",NA,NA,NA,NA,"229,247","201,140","13.97%","",313,NA,NA,NA,NA,NA
+"Champaign-Urbana","IL","17019",NA,NA,NA,NA,"226,033","217,810","3.78%","",249,379,NA,NA,NA,NA
+"Daphne-Fairhope-Foley","AL","01003",NA,NA,NA,NA,"223,234","182,265","22.48%","Mobile-Daphne-Fairhope, AL CSA",110,126,NA,NA,NA,NA
+"Hilton Head Island-Bluffton-Beaufort","SC","45013",NA,NA,NA,NA,"222,195","187,010","18.81%","",NA,NA,NA,NA,NA,NA
+"Rochester","MN","27109",NA,NA,NA,NA,"221,921","206,877","7.27%","Rochester-Austin, MN CSA",NA,NA,NA,NA,NA,NA
+"Medford","OR","41029",NA,NA,NA,NA,"220,944","203,206","8.73%","Medford-Grants Pass, OR CSA",370,NA,NA,NA,NA,NA
+"Burlington-South Burlington","VT","50007",NA,NA,NA,NA,"220,411","211,261","4.33%","Burlington-South Burlington-Barre, VT CSA",NA,NA,NA,NA,NA,NA
+"Chico","CA","06007",NA,NA,NA,NA,"219,186","220,000","?0.37%","",243,NA,NA,NA,NA,NA
+"Charlottesville","VA","51540",NA,NA,NA,NA,"218,615","201,559","8.46%","",NA,NA,NA,NA,NA,NA
+"Las Cruces","NM","35013",NA,NA,NA,NA,"218,195","209,233","4.28%","El Paso-Las Cruces, TX-NM CSA",69,NA,NA,NA,NA,NA
+"Yuma","AZ","04027",NA,NA,NA,NA,"213,787","195,751","9.21%","",10,53,234,NA,NA,NA
+"Athens-Clarke County","GA","13059",NA,NA,NA,NA,"213,750","192,541","11.02%","Atlanta–Athens-Clarke County–Sandy Springs, GA-AL CSA",NA,NA,NA,NA,NA,NA
+"Barnstable Town","MA","25001",NA,NA,NA,NA,"212,990","215,888","?1.34%","Boston-Worcester-Providence, MA-RI-NH-CT CSA",NA,NA,NA,NA,NA,NA
+"Lake Havasu City-Kingman","AZ","04015",NA,NA,NA,NA,"212,181","200,186","5.99%","Las Vegas-Henderson, NV-AZ CSA",28,196,242,291,NA,NA
+"Lake Charles","LA","22019",NA,NA,NA,NA,"210,409","199,607","5.41%","Lake Charles-Jennings, LA CSA",NA,NA,NA,NA,NA,NA
+"Columbia","MO","29019",NA,NA,NA,NA,"208,173","190,387","9.34%","Columbia-Moberly-Mexico, MO CSA",278,NA,NA,NA,NA,NA
+"Houma-Thibodaux","LA","22109",NA,NA,NA,NA,"208,075","208,178","?0.05%","",218,NA,NA,NA,NA,NA
+"Springfield","IL","22057",NA,NA,NA,NA,"206,868","210,170","?1.57%","Springfield-Jacksonville-Lincoln, IL CSA",217,NA,NA,NA,NA,NA
+"Elkhart-Goshen","IN","18039",NA,NA,NA,NA,"206,341","197,559","4.45%","South Bend-Elkhart-Mishawaka, IN-MI CSA",157,NA,NA,NA,NA,NA
+"Florence","SC","45041",NA,NA,NA,NA,"204,911","205,566","?0.32%","",297,NA,NA,NA,NA,NA
+"Gainesville","GA","13139",NA,NA,NA,NA,"204,441","179,684","13.78%","Atlanta–Athens-Clarke County–Sandy Springs, GA-AL CSA",NA,NA,NA,NA,NA,NA
+"Johnson City","TN","47179","47019","47163",NA,NA,"203,649","198,716","2.48%","Johnson City-Kingsport-Bristol, TN-VA CSA",165,NA,NA,NA,NA,NA
+"St. Cloud","MN","27141",NA,NA,NA,NA,"201,964","189,093","6.81%","Minneapolis-St. Paul, MN-WI CSA",16,NA,NA,NA,NA,NA
+"Monroe","LA","22073",NA,NA,NA,NA,"200,261","204,420","?2.03%","Monroe-Ruston, LA CSA",NA,NA,NA,NA,NA,NA
+"Jacksonville","NC","37133",NA,NA,NA,NA,"197,938","177,772","11.34%","",NA,NA,NA,NA,NA,NA
+"Bend","OR","41017",NA,NA,NA,NA,"197,692","157,733","25.33%","Bend-Prineville, OR CSA",143,312,NA,NA,NA,NA
+"Racine","WI","55101",NA,NA,NA,NA,"196,311","195,408","0.46%","Milwaukee-Racine-Waukesha, WI CSA",39,NA,NA,NA,NA,NA
+"Saginaw","MI","26145",NA,NA,NA,NA,"190,539","200,169","?4.81%","Saginaw-Midland-Bay City, MI CSA",134,350,374,NA,NA,NA
+"Punta Gorda","FL","12015",NA,NA,NA,NA,"188,910","159,978","18.08%","North Port-Sarasota, FL CSA",72,76,347,NA,NA,NA
+"Terre Haute","IN","18167",NA,NA,NA,NA,"186,367","189,764","?1.79%","",NA,NA,NA,NA,NA,NA
+"Warner Robins","GA","13153",NA,NA,NA,NA,"185,409","167,595","10.63%","Macon-Bibb County–Warner Robins, GA CSA",200,NA,NA,NA,NA,NA
+"Midland","TX","48329",NA,NA,NA,NA,"182,603","141,671","28.89%","Midland-Odessa, TX CSA",259,NA,NA,NA,NA,NA
+"Billings","MT","30111",NA,NA,NA,NA,"181,667","167,167","8.67%","",NA,NA,NA,NA,NA,NA
+"El Centro","CA","06025",NA,NA,NA,NA,"181,215","174,528","3.83%","",13,17,211,NA,NA,NA
+"Dover","DE","10001",NA,NA,NA,NA,"180,786","162,310","11.38%","Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA",282,367,NA,NA,NA,NA
+"Greenville","NC","37147",NA,NA,NA,NA,"180,742","168,148","7.49%","Greenville-Kinston-Washington, NC CSA",288,321,NA,NA,NA,NA
+"Redding","CA","06089",NA,NA,NA,NA,"180,080","177,223","1.61%","Redding-Red Bluff, CA CSA",NA,NA,NA,NA,NA,NA
+"Joplin","MO","29097","29145",NA,NA,NA,"179,564","175,518","2.31%","Joplin-Miami, MO-OK CSA",NA,NA,NA,NA,NA,NA
+"Bowling Green","KY","21227",NA,NA,NA,NA,"179,240","158,599","13.01%","Bowling Green-Glasgow, KY CSA",NA,NA,NA,NA,NA,NA
+"Jackson","TN","47113",NA,NA,NA,NA,"178,644","179,694","?0.58%","",NA,NA,NA,NA,NA,NA
+"Kingston","NY","36111",NA,NA,NA,NA,"177,573","182,493","?2.70%","New York-Newark, NY-NJ-CT-PA CSA",86,NA,NA,NA,NA,NA
+"St. George","UT","49053",NA,NA,NA,NA,"177,556","138,115","28.56%","",214,NA,NA,NA,NA,NA
+"Yuba City","CA","06101",NA,NA,NA,NA,"175,639","166,892","5.24%","Sacramento-Roseville, CA CSA",26,208,NA,NA,NA,NA
+"Panama City","FL","12005",NA,NA,NA,NA,"174,705","168,852","3.47%","",NA,NA,NA,NA,NA,NA
+"Muskegon","MI","26121",NA,NA,NA,NA,"173,566","172,188","0.80%","Grand Rapids-Kentwood-Muskegon, MI CSA",39,51,NA,NA,NA,NA
+"Iowa City","IA","19103",NA,NA,NA,NA,"173,105","152,586","13.45%","Cedar Rapids-Iowa City, IA CSA",179,NA,NA,NA,NA,NA
+"Abilene","TX","48441",NA,NA,NA,NA,"172,060","165,252","4.12%","",NA,NA,NA,NA,NA,NA
+"Oshkosh-Neenah","WI","55139",NA,NA,NA,NA,"171,907","166,994","2.94%","Appleton-Oshkosh-Neenah, WI CSA",195,349,NA,NA,NA,NA
+"Bloomington","IL","17113",NA,NA,NA,NA,"171,517","169,572","1.15%","Bloomington-Pontiac, IL CSA",202,NA,NA,NA,NA,NA
+"East Stroudsburg","PA","42089",NA,NA,NA,NA,"170,271","169,842","0.25%","New York-Newark, NY-NJ-CT-PA CSA",101,NA,NA,NA,NA,NA
+"Burlington","NC","37001",NA,NA,NA,NA,"169,509","151,131","12.16%","Greensboro–Winston-Salem–High Point, NC CSA",75,NA,NA,NA,NA,NA
+"Eau Claire","WI","55035",NA,NA,NA,NA,"169,304","161,151","5.06%","Eau Claire-Menomonie, WI CSA",NA,NA,NA,NA,NA,NA
+"Bloomington","IN","18105",NA,NA,NA,NA,"169,230","159,549","6.07%","Bloomington-Bedford, IN CSA",NA,NA,NA,NA,NA,NA
+"Hattiesburg","MS","28035",NA,NA,NA,NA,"168,849","162,410","3.96%","Hattiesburg-Laurel, MS CSA",NA,NA,NA,NA,NA,NA
+"Waterloo-Cedar Falls","IA","19013",NA,NA,NA,NA,"168,522","167,819","0.42%","",NA,NA,NA,NA,NA,NA
+"Pueblo","CO","08101",NA,NA,NA,NA,"168,424","159,063","5.89%","Pueblo-Cañon City, CO CSA",79,NA,NA,NA,NA,NA
+"Blacksburg-Christiansburg","VA","51121",NA,NA,NA,NA,"167,531","162,958","2.81%","",163,NA,NA,NA,NA,NA
+"Kahului-Wailuku-Lahaina","HI","15009",NA,NA,NA,NA,"167,417","154,834","8.13%","",NA,NA,NA,NA,NA,NA
+"Odessa","TX","48135",NA,NA,NA,NA,"166,223","137,130","21.22%","Midland-Odessa, TX CSA",232,NA,NA,NA,NA,NA
+"Coeur d'Alene","ID","16055",NA,NA,NA,NA,"165,697","138,494","19.64%","Spokane-Spokane Valley-Coeur d'Alene, WA-ID CSA",99,NA,NA,NA,NA,NA
+"Auburn-Opelika","AL","01081",NA,NA,NA,NA,"164,542","140,247","17.32%","Columbus-Auburn-Opelika, GA-AL CSA",160,NA,NA,NA,NA,NA
+"Janesville-Beloit","WI","55105",NA,NA,NA,NA,"163,354","160,331","1.89%","Madison-Janesville-Beloit, WI CSA",89,153,NA,NA,NA,NA
+"Wausau-Weston","WI","55073",NA,NA,NA,NA,"163,285","162,806","0.29%","Wausau-Stevens Point-Wisconsin Rapids, WI CSA",NA,NA,NA,NA,NA,NA
+"State College","PA","42027",NA,NA,NA,NA,"162,385","153,990","5.45%","State College-DuBois, PA CSA",328,NA,NA,NA,NA,NA
+"Sebastian-Vero Beach","FL","12061",NA,NA,NA,NA,"159,923","138,028","15.86%","Miami-Port St. Lucie-Fort Lauderdale, FL CSA",96,113,NA,NA,NA,NA
+"Jackson","MI","26075",NA,NA,NA,NA,"158,510","160,248","?1.08%","",103,147,306,NA,NA,NA
+"Madera","CA","06039",NA,NA,NA,NA,"157,327","150,865","4.28%","Fresno-Madera-Hanford, CA CSA",54,175,NA,NA,NA,NA
+"Chambersburg-Waynesboro","PA","42055",NA,NA,NA,NA,"155,027","149,618","3.62%","Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA",171,351,NA,NA,NA,NA
+"Grand Junction","CO","08077",NA,NA,NA,NA,"154,210","146,723","5.10%","",NA,NA,NA,NA,NA,NA
+"Elizabethtown-Fort Knox","KY","21093","21163",NA,NA,NA,"153,928","148,338","3.77%","Louisville/Jefferson County–Elizabethtown–Bardstown, KY-IN CSA",46,NA,NA,NA,NA,NA
+"Niles","MI","26021","26027",NA,NA,NA,"153,401","156,813","?2.18%","South Bend-Elkhart-Mishawaka, IN-MI CSA",3,157,343,NA,NA,NA
+"Hanford-Corcoran","CA","06031",NA,NA,NA,NA,"152,940","152,982","?0.03%","Fresno-Madera-Hanford, CA CSA",54,62,118,124,174,NA
+"Decatur","AL","01103",NA,NA,NA,NA,"152,603","153,829","?0.80%","Huntsville-Decatur, AL CSA",116,NA,NA,NA,NA,NA
+"Bangor","ME","23019",NA,NA,NA,NA,"152,148","153,923","?1.15%","",NA,NA,NA,NA,NA,NA
+"Alexandria","LA","22079",NA,NA,NA,NA,"152,037","153,922","?1.22%","",NA,NA,NA,NA,NA,NA
+"Idaho Falls","ID","16019",NA,NA,NA,NA,"151,530","133,265","13.71%","Idaho Falls-Rexburg-Blackfoot, ID CSA",NA,NA,NA,NA,NA,NA
+"Wichita Falls","TX","48485",NA,NA,NA,NA,"151,254","151,306","?0.03%","",NA,NA,NA,NA,NA,NA
+"Jefferson City","MO","29051",NA,NA,NA,NA,"151,235","149,807","0.95%","",216,NA,NA,NA,NA,NA
+"Monroe","MI","26115",NA,NA,NA,NA,"150,500","152,021","?1.00%","Detroit-Warren-Ann Arbor, MI CSA",14,93,147,NA,NA,NA
+"Santa Fe","NM","35049",NA,NA,NA,NA,"150,358","144,170","4.29%","Albuquerque-Santa Fe-Las Vegas, NM CSA",61,NA,NA,NA,NA,NA
+"Homosassa Springs","FL","12017",NA,NA,NA,NA,"149,657","141,236","5.96%","",149,309,NA,NA,NA,NA
+"Vineland-Bridgeton","NJ","34011",NA,NA,NA,NA,"149,527","156,898","?4.70%","Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA",187,235,367,NA,NA,NA
+"Dothan","AL","01069",NA,NA,NA,NA,"149,358","145,639","2.55%","Dothan-Ozark, AL CSA",NA,NA,NA,NA,NA,NA
+"Texarkana","TX","48037",NA,NA,NA,NA,"148,761","149,198","?0.29%","",NA,NA,NA,NA,NA,NA
+"Florence-Muscle Shoals","AL","01077","01033",NA,NA,NA,"147,970","147,137","0.57%","",NA,NA,NA,NA,NA,NA
+"Valdosta","GA","13185",NA,NA,NA,NA,"147,292","139,588","5.52%","",NA,NA,NA,NA,NA,NA
+"Albany","GA","13095",NA,NA,NA,NA,"146,726","153,857","?4.63%","",NA,NA,NA,NA,NA,NA
+"Rocky Mount","NC","37065","37127",NA,NA,NA,"145,770","152,392","?4.35%","Rocky Mount-Wilson-Roanoke Rapids, NC CSA",236,NA,NA,NA,NA,NA
+"Dalton","GA","13313",NA,NA,NA,NA,"144,724","142,227","1.76%","Chattanooga-Cleveland-Dalton, TN-GA-AL CSA",100,320,NA,NA,NA,NA
+"Sioux City","IA","19193",NA,NA,NA,NA,"144,701","143,577","0.78%","",NA,NA,NA,NA,NA,NA
+"Flagstaff","AZ","04005",NA,NA,NA,NA,"143,476","134,421","6.74%","",196,214,NA,NA,NA,NA
+"Morristown","TN","47063",NA,NA,NA,NA,"142,749","136,608","4.50%","Knoxville-Morristown-Sevierville, TN CSA",NA,NA,NA,NA,NA,NA
+"Logan","UT","49005",NA,NA,NA,NA,"142,165","125,442","13.33%","",85,NA,NA,NA,NA,NA
+"Rapid City","SD","46103",NA,NA,NA,NA,"142,107","126,382","12.44%","Rapid City-Spearfish, SD CSA",NA,NA,NA,NA,NA,NA
+"Lebanon","PA","42075",NA,NA,NA,NA,"141,793","133,568","6.16%","Harrisburg-York-Lebanon, PA CSA",98,104,129,NA,NA,NA
+"Winchester","VA","51840",NA,NA,NA,NA,"140,566","128,472","9.41%","Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA",NA,NA,NA,NA,NA,NA
+"Sumter","SC","45085",NA,NA,NA,NA,"140,466","142,427","?1.38%","",71,220,NA,NA,NA,NA
+"Morgantown","WV","54061",NA,NA,NA,NA,"139,044","129,709","7.20%","Morgantown-Fairmont, WV CSA",NA,NA,NA,NA,NA,NA
+"Wheeling","WV","54069","54051",NA,NA,NA,"138,948","147,950","?6.08%","",334,NA,NA,NA,NA,NA
+"Napa","CA","06055",NA,NA,NA,NA,"137,744","136,484","0.92%","San Jose-San Francisco-Oakland, CA CSA",112,122,NA,NA,NA,NA
+"La Crosse-Onalaska","WI","55063",NA,NA,NA,NA,"136,616","133,665","2.21%","",NA,NA,NA,NA,NA,NA
+"Sherman-Denison","TX","48181",NA,NA,NA,NA,"136,212","120,877","12.69%","Dallas-Fort Worth, TX-OK CSA",NA,NA,NA,NA,NA,NA
+"Carbondale-Marion","IL","17077","17199",NA,NA,NA,"135,764","139,157","?2.44%","",NA,NA,NA,NA,NA,NA
+"Harrisonburg","VA","51660",NA,NA,NA,NA,"134,964","125,228","7.77%","Harrisonburg-Staunton-Waynesboro, VA CSA",NA,NA,NA,NA,NA,NA
+"Hammond","LA","22105",NA,NA,NA,NA,"134,758","121,097","11.28%","New Orleans-Metairie-Hammond, LA-MS CSA",NA,NA,NA,NA,NA,NA
+"Battle Creek","MI","26025",NA,NA,NA,NA,"134,159","136,146","?1.46%","Kalamazoo-Battle Creek-Portage, MI CSA",184,266,NA,NA,NA,NA
+"Springfield","OH","39023",NA,NA,NA,NA,"134,083","138,333","?3.07%","Dayton-Springfield-Kettering, OH CSA",73,NA,NA,NA,NA,NA
+"Jonesboro","AR","05031",NA,NA,NA,NA,"133,860","121,026","10.60%","Jonesboro-Paragould, AR CSA",NA,NA,NA,NA,NA,NA
+"The Villages","FL","12119",NA,NA,NA,NA,"132,420","93,420","41.75%","Orlando-Lakeland-Deltona, FL CSA",81,149,281,NA,NA,NA
+"Manhattan","KS","20161",NA,NA,NA,NA,"130,285","127,081","2.52%","",NA,NA,NA,NA,NA,NA
+"Johnstown","PA","42021",NA,NA,NA,NA,"130,192","143,679","?9.39%","Johnstown-Somerset, PA CSA",328,NA,NA,NA,NA,NA
+"Albany-Lebanon","OR","41043",NA,NA,NA,NA,"129,749","116,672","11.21%","Portland-Vancouver-Salem, OR-WA CSA",125,143,226,366,NA,NA
+"Mount Vernon-Anacortes","WA","53057",NA,NA,NA,NA,"129,205","116,901","10.53%","Seattle-Tacoma, WA CSA",201,330,NA,NA,NA,NA
+"Bismarck","ND","38015",NA,NA,NA,NA,"128,949","110,625","16.56%","",NA,NA,NA,NA,NA,NA
+"Lawton","OK","40031",NA,NA,NA,NA,"126,415","130,291","?2.97%","",NA,NA,NA,NA,NA,NA
+"Sierra Vista-Douglas","AZ","04003",NA,NA,NA,NA,"125,922","131,346","?4.13%","",53,NA,NA,NA,NA,NA
+"St. Joseph","MO","29021",NA,NA,NA,NA,"125,223","127,329","?1.65%","Kansas City-Overland Park-Kansas City, MO-KS CSA",NA,NA,NA,NA,NA,NA
+"Glens Falls","NY","36113",NA,NA,NA,NA,"125,148","128,923","?2.93%","Albany-Schenectady, NY CSA",NA,NA,NA,NA,NA,NA
+"Pittsfield","MA","25003",NA,NA,NA,NA,"124,944","131,219","?4.78%","",84,86,NA,NA,NA,NA
+"Cleveland","TN","47011",NA,NA,NA,NA,"124,942","115,788","7.91%","Chattanooga-Cleveland-Dalton, TN-GA-AL CSA",100,289,NA,NA,NA,NA
+"New Bern","NC","37049",NA,NA,NA,NA,"124,284","126,802","?1.99%","New Bern-Morehead City, NC CSA",236,NA,NA,NA,NA,NA
+"Farmington","NM","35045",NA,NA,NA,NA,"123,958","130,044","?4.68%","",NA,NA,NA,NA,NA,NA
+"Ames","IA","19169",NA,NA,NA,NA,"123,351","115,848","6.48%","Des Moines-Ames-West Des Moines, IA CSA",NA,NA,NA,NA,NA,NA
+"Goldsboro","NC","37191",NA,NA,NA,NA,"123,131","122,623","0.41%","",NA,NA,NA,NA,NA,NA
+"Staunton","VA","51015",NA,NA,NA,NA,"123,120","118,502","3.90%","Harrisonburg-Staunton-Waynesboro, VA CSA",NA,NA,NA,NA,NA,NA
+"Lawrence","KS","20045",NA,NA,NA,NA,"122,259","110,826","10.32%","Kansas City-Overland Park-Kansas City, MO-KS CSA",199,NA,NA,NA,NA,NA
+"San Angelo","TX","48451",NA,NA,NA,NA,"122,027","112,966","8.02%","",NA,NA,NA,NA,NA,NA
+"Altoona","PA","42013",NA,NA,NA,NA,"121,829","127,089","?4.14%","",264,311,NA,NA,NA,NA
+"Mansfield","OH","39139",NA,NA,NA,NA,"121,154","124,475","?2.67%","Mansfield-Ashland-Bucyrus, OH CSA",NA,NA,NA,NA,NA,NA
+"Wenatchee","WA","53007",NA,NA,NA,NA,"120,629","110,884","8.79%","",15,313,NA,NA,NA,NA
+"Missoula","MT","30063",NA,NA,NA,NA,"119,600","109,299","9.42%","",NA,NA,NA,NA,NA,NA
+"Owensboro","KY","21059",NA,NA,NA,NA,"119,440","114,752","4.09%","",NA,NA,NA,NA,NA,NA
+"Brunswick","GA","13127",NA,NA,NA,NA,"118,779","112,370","5.70%","",NA,NA,NA,NA,NA,NA
+"Weirton-Steubenville","WV","54009","54029","39081",NA,NA,"116,074","124,454","?6.73%","Pittsburgh-New Castle-Weirton, PA-OH-WV CSA",299,NA,NA,NA,NA,NA
+"Beckley","WV","54081",NA,NA,NA,NA,"115,767","124,898","?7.31%","",189,NA,NA,NA,NA,NA
+"Sheboygan","WI","55117",NA,NA,NA,NA,"115,340","115,507","?0.14%","",349,NA,NA,NA,NA,NA
+"Muncie","IN","18035",NA,NA,NA,NA,"114,135","117,671","?3.00%","Indianapolis-Carmel-Muncie, IN CSA",NA,NA,NA,NA,NA,NA
+"Anniston-Oxford","AL","01015","01121",NA,NA,NA,"113,605","118,572","?4.19%","",353,NA,NA,NA,NA,NA
+"California-Lexington Park","MD","24037",NA,NA,NA,NA,"113,510","105,151","7.95%","Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA",NA,NA,NA,NA,NA,NA
+"Williamsport","PA","42081",NA,NA,NA,NA,"113,299","116,111","?2.42%","Williamsport-Lock Haven, PA CSA",373,NA,NA,NA,NA,NA
+"Twin Falls","ID","16083",NA,NA,NA,NA,"111,290","99,604","11.73%","",NA,NA,NA,NA,NA,NA
+"Longview","WA","53015",NA,NA,NA,NA,"110,593","102,410","7.99%","Portland-Vancouver-Salem, OR-WA CSA",NA,NA,NA,NA,NA,NA
+"Michigan City-La Porte","IN","18091",NA,NA,NA,NA,"109,888","111,467","?1.42%","Chicago-Naperville, IL-IN-WI CSA",157,271,NA,NA,NA,NA
+"Kankakee","IL","17091",NA,NA,NA,NA,"109,862","113,449","?3.16%","Chicago-Naperville, IL-IN-WI CSA",NA,NA,NA,NA,NA,NA
+"Watertown-Fort Drum","NY","36045",NA,NA,NA,NA,"109,834","116,229","?5.50%","",NA,NA,NA,NA,NA,NA
+"Lewiston-Auburn","ME","23001",NA,NA,NA,NA,"108,277","107,702","0.53%","Portland-Lewiston-South Portland, ME CSA",105,NA,NA,NA,NA,NA
+"Sebring-Avon Park","FL","12055",NA,NA,NA,NA,"106,221","98,786","7.53%","",81,229,NA,NA,NA,NA
+"Decatur","IL","17115",NA,NA,NA,NA,"104,009","110,768","?6.10%","",NA,NA,NA,NA,NA,NA
+"Fond du Lac","WI","55039",NA,NA,NA,NA,"103,403","101,633","1.74%","",248,336,NA,NA,NA,NA
+"Bay City","MI","26017",NA,NA,NA,NA,"103,126","107,771","?4.31%","Saginaw-Midland-Bay City, MI CSA",228,374,NA,NA,NA,NA
+"Gettysburg","PA","42001",NA,NA,NA,NA,"103,009","101,407","1.58%","Harrisburg-York-Lebanon, PA CSA",121,268,NA,NA,NA,NA
+"Lima","OH","39003",NA,NA,NA,NA,"102,351","106,331","?3.74%","Lima-Van Wert-Celina, OH CSA",NA,NA,NA,NA,NA,NA
+"Gadsden","AL","01055",NA,NA,NA,NA,"102,268","104,430","?2.07%","",338,NA,NA,NA,NA,NA
+"Ithaca","NY","36109",NA,NA,NA,NA,"102,180","101,564","0.61%","Ithaca-Cortland, NY CSA",372,NA,NA,NA,NA,NA
+"Mankato","MN","27013","27103","27079",NA,NA,"101,927","96,740","5.36%","Mankato-New Ulm, MN CSA",NA,NA,NA,NA,NA,NA
+"Grand Forks","ND","38035",NA,NA,NA,NA,"100,815","98,461","2.39%","",NA,NA,NA,NA,NA,NA
+"Victoria","TX","48469",NA,NA,NA,NA,"99,742","94,003","6.11%","Victoria-Port Lavaca, TX CSA",NA,NA,NA,NA,NA,NA
+"Cheyenne","WY","56021",NA,NA,NA,NA,"99,500","91,738","8.46%","",150,156,NA,NA,NA,NA
+"Hot Springs","AR","05051",NA,NA,NA,NA,"99,386","96,024","3.50%","Hot Springs-Malvern, AR CSA",NA,NA,NA,NA,NA,NA
+"Rome","GA","13115",NA,NA,NA,NA,"98,498","96,317","2.26%","Atlanta–Athens-Clarke County–Sandy Springs, GA-AL CSA",NA,NA,NA,NA,NA,NA
+"Dubuque","IA","19061",NA,NA,NA,NA,"97,311","93,653","3.91%","",NA,NA,NA,NA,NA,NA
+"Cumberland","MD","24001",NA,NA,NA,NA,"97,284","103,299","?5.82%","",171,NA,NA,NA,NA,NA
+"Fairbanks","AK","02090",NA,NA,NA,NA,"96,849","97,581","?0.75%","",NA,NA,NA,NA,NA,NA
+"Cape Girardeau","MO","29031",NA,NA,NA,NA,"96,765","96,275","0.51%","Cape Girardeau-Sikeston, MO-IL CSA",NA,NA,NA,NA,NA,NA
+"Pocatello","ID","16005",NA,NA,NA,NA,"95,489","90,656","5.33%","",NA,NA,NA,NA,NA,NA
+"Corvallis","OR","41003",NA,NA,NA,NA,"93,053","85,579","8.73%","Portland-Vancouver-Salem, OR-WA CSA",143,312,NA,NA,NA,NA
+"Ocean City","NJ","34009",NA,NA,NA,NA,"92,039","97,265","?5.37%","Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA",187,235,282,NA,NA,NA
+"Parkersburg-Vienna","WV","54107",NA,NA,NA,NA,"89,339","92,673","?3.60%","Parkersburg-Marietta-Vienna, WV-OH CSA",NA,NA,NA,NA,NA,NA
+"Pine Bluff","AR","05069",NA,NA,NA,NA,"87,804","100,258","?12.42%","Little Rock-North Little Rock, AR CSA",80,NA,NA,NA,NA,NA
+"Grants Pass","OR","41033",NA,NA,NA,NA,"87,487","82,713","5.77%","Medford-Grants Pass, OR CSA",206,NA,NA,NA,NA,NA
+"Columbus","IN","18005",NA,NA,NA,NA,"83,779","76,794","9.10%","Indianapolis-Carmel-Muncie, IN CSA",NA,NA,NA,NA,NA,NA
+"Elmira","NY","36015",NA,NA,NA,NA,"83,456","88,830","?6.05%","Elmira-Corning, NY CSA",354,NA,NA,NA,NA,NA
+"Bloomsburg-Berwick","PA","42037",NA,NA,NA,NA,"83,194","85,562","?2.77%","Bloomsburg-Berwick-Sunbury, PA CSA",340,NA,NA,NA,NA,NA
+"Midland","MI","26111",NA,NA,NA,NA,"83,156","83,629","?0.57%","Saginaw-Midland-Bay City, MI CSA",228,350,NA,NA,NA,NA
+"Kokomo","IN","18067",NA,NA,NA,NA,"82,544","82,752","?0.25%","Kokomo-Peru, IN CSA",NA,NA,NA,NA,NA,NA
+"Great Falls","MT","30013",NA,NA,NA,NA,"81,366","81,327","0.05%","",NA,NA,NA,NA,NA,NA
+"Hinesville","GA","13179",NA,NA,NA,NA,"80,994","77,917","3.95%","Savannah-Hinesville-Statesboro, GA CSA",139,NA,NA,NA,NA,NA
+"Casper","WY","56025",NA,NA,NA,NA,"79,858","75,450","5.84%","",NA,NA,NA,NA,NA,NA
+"Danville","IL","17183",NA,NA,NA,NA,"75,758","81,625","?7.19%","",202,NA,NA,NA,NA,NA
+"Grand Island","NE","31079",NA,NA,NA,NA,"75,553","72,726","3.89%","",NA,NA,NA,NA,NA,NA
+"Lewiston","ID","16069",NA,NA,NA,NA,"62,990","60,888","3.45%","",NA,NA,NA,NA,NA,NA
+"Enid","OK","40047",NA,NA,NA,NA,"61,056","60,580","0.79%","",NA,NA,NA,NA,NA,NA
+"Walla Walla","WA","53071",NA,NA,NA,NA,"60,760","58,781","3.37%","",166,NA,NA,NA,NA,NA
+"Carson City","NV","32510",NA,NA,NA,NA,"55,916","55,274","1.16%","Reno-Carson City-Fernley, NV CSA",115,NA,NA,NA,NA,NA

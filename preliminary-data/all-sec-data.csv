@@ -1,0 +1,1220 @@
+season,player,school,position
+2003,Eli Manning,Ole Miss,QB
+2003,Matt Mauck,LSU,QB
+2003,David Greene,Georgia,RB
+2003,Carnell Williams,Auburn,RB
+2003,Cedric Cobbs,Arkansas,RB
+2003,Shaud Williams,Alabama,RB
+2003,Nick Turner,Miss. St.,RB
+2003,Cedric Houston,Tennessee,WR
+2003,Michael Clayton,LSU,WR
+2003,Chris Collins,Ole Miss,WR
+2003,Devery Henderson,LSU,WR
+2003,Justin Jenkins,Miss. St.,C
+2003,George Wilson,Arkansas,C
+2003,Scott Wells,Tennessee,G
+2003,Bill Wilkerson,LSU,G
+2003,Mike Degory,Florida,G
+2003,Stephen Peterman,LSU,G
+2003,Monreko Crittenden,Auburn,T
+2003,Travelle Wharton,South Carolina,T
+2003,Justin Smiley,Alabama,T
+2003,Max Jean-Gilles,Georgia,T
+2003,Shawn Andrews,Arkansas,T
+2003,Antonio Hall,Kentucky,TE
+2003,Wesley Britt,Alabama,TE
+2003,Max Starks,Florida,DE
+2003,Michael Munoz,Tennessee,DE
+2003,Ben Troupe,Florida,DE
+2003,Ben Watson,Georgia,DE
+2003,Jason Peters,Arkansas,DT
+2003,David Pollack,Georgia,DT
+2003,Marcus Spears,LSU,DT
+2003,Antwan Odom,Alabama,DT
+2003,Bobby McCray,Florida,DT
+2003,Reggie Torbor,Auburn,DT
+2003,Vincent Burns,Kentucky,LB
+2003,Chad Lavalais,LSU,LB
+2003,Jesse Mitchell,Ole Miss,LB
+2003,DeMarco McNeil,Auburn,LB
+2003,Jovan Haye,Vanderbilt,LB
+2003,Karlos Dansby,Auburn,LB
+2003,Odell Thurman,Georgia,LB
+2003,Channing Crowder,Florida,LB
+2003,Derrick Pope,Alabama,LB
+2003,Dontarrious Thomas,Auburn,CB
+2003,Caleb Miller,Arkansas,CB
+2003,Kevin Simon,Tennessee,CB
+2003,DeMeco Ryans,Alabama,CB
+2003,Kevin Burnett,Tennessee,CB
+2003,Keiwan Ratliff,Florida,S
+2003,Corey Webster,LSU,S
+2003,Ahmad Carroll,Arkansas,S
+2003,Sean Jones,Georgia,S
+2003,Thomas Davis,Georgia,K
+2003,Tony Bua,Arkansas,K
+2003,Gibril Wilson,Tennessee,P
+2003,Rashad Baker,Tennessee,P
+2003,Gus Scott,Florida,P
+2003,LaRon Landry,LSU,ST
+2003,Daryl Dixon,Florida,ST
+2003,Muhammed Abdullah,Kentucky,ST
+2003,Jonathan Nichols,Ole Miss,QB
+2003,Billy Bennett,Georgia,QB
+2003,Dustin Colquitt,Tennessee,RB
+2003,Eric Wilbur,Florida,RB
+2003,Cody Ridgeway,Ole Miss,RB
+2003,Derek Abney,Kentucky,RB
+2003,Skyler Green,LSU,WR
+2004,Jason Campbell,Auburn,WR
+2004,Chris Leak,Florida,WR
+2004,Matt Jones,Arkansas,WR
+2004,David Greene,Georgia,WR
+2004,Carnell Williams,Auburn,C
+2004,Ciatrick Fason,Florida,C
+2004,Ronnie Brown,Auburn,C
+2004,Kenneth Darby,Alabama,C
+2004,Cedric Houston,Tennessee,G
+2004,Jerious Norwood,Miss. St.,G
+2004,Reggie Brown,Georgia,G
+2004,Troy Williamson,South Carolina,G
+2004,Fred Gibson,Georgia,T
+2004,O. J. Small,Florida,T
+2004,Ben Wilkerson,LSU,T
+2004,Mike Degory,Florida,T
+2004,Max Jean-Gilles,Georgia,T
+2004,Evan Mathis,Alabama,T
+2004,Mo Mitchell,Florida,TE
+2004,Tim Duckworth,Auburn,TE
+2004,Evan Mathis,Alabama,TE
+2004,Doug Buckles,Ole Miss,DE
+2004,Danny Lindsay,Auburn,DE
+2004,Marcus McNeill,Auburn,DE
+2004,Michael Munoz,Tennessee,DE
+2004,Andrew Whitworth,LSU,DE
+2004,Wesley Britt,Alabama,DT
+2004,Marcus Johnson,Ole Miss,DT
+2004,Justin Geisinger,Vanderbilt,DT
+2004,Leonard Pope,Georgia,DT
+2004,David Jones,LSU,DT
+2004,Cooper Wallace,Auburn,DT
+2004,David Pollack,Georgia,DT
+2004,Marcus Spears,LSU,LB
+2004,Jeb Huckeba,Arkansas,LB
+2004,Parys Haralson,Tennessee,LB
+2004,Willie Evans,Miss. St.,LB
+2004,Jesse Mahelona,Tennessee,LB
+2004,Ronald Fields,Miss. St.,LB
+2004,Tommy Jackson,Auburn,LB
+2004,Kyle Williams,LSU,LB
+2004,Claude Wroten,LSU,LB
+2004,McKinley Boykin,Ole Miss,CB
+2004,Stanley McCover,Auburn,CB
+2004,Kevin Burnett,Tennessee,CB
+2004,Cornelius Wortham,Alabama,CB
+2004,Moses Osemwegie,Vanderbilt,CB
+2004,Channing Crowder,Florida,CB
+2004,Odell Thurman,Georgia,S
+2004,Lionel Turner,LSU,S
+2004,Travis Winters,Auburn,S
+2004,Omar Gaither,Tennessee,S
+2004,DeMeco Ryans,Alabama,S
+2004,Freddie Roach,Alabama,S
+2004,Earl Everett,Florida,K
+2004,Carlos Rogers,Auburn,K
+2004,Corey Webster,LSU,K
+2004,Jason Allen,Tennessee,P
+2004,Thomas Davis,Georgia,P
+2004,Junior Rosegreen,Auburn,ST
+2004,Ko Simpson,South Carolina,ST
+2004,LaRon Landry,LSU,ST
+2004,Roman Harper,Alabama,ST
+2004,Muhammed Abdullah,Kentucky,ST
+2004,Bryan Bostick,Alabama,ST
+2004,Jonathan Nichols,Ole Miss,ST
+2004,Jared Cook,Miss. St.,QB
+2004,Dustin Colquitt,Tennessee,QB
+2004,Carnell Williams,Auburn,RB
+2004,Tyrone Prothro,Alabama,RB
+2005,Jay Cutler,Vanderbilt,RB
+2005,D.J. Shockley,Georgia,RB
+2005,Chris Leak,Florida,RB
+2005,Kenny Irons,Auburn,WR
+2005,Darren McFadden,Arkansas,WR
+2005,Kenneth Darby,Alabama,WR
+2005,Jerious Norwood,Miss. St.,WR
+2005,Rafael Little,Kentucky,WR
+2005,Sidney Rice,South Carolina,C
+2005,Chad Jackson,Florida,C
+2005,Earl Bennett,Vanderbilt,G
+2005,D.J. Hall,Alabama,G
+2005,Tyrone Prothro,Alabama,G
+2005,Mike Degory,Florida,G
+2005,Rudy Niswanger,LSU,G
+2005,Max Jean-Gilles,Georgia,T
+2005,Tim Duckworth,Auburn,T
+2005,Kyle Roper,Arkansas,T
+2005,Will Arnold,LSU,T
+2005,Marcus McNeill,Auburn,T
+2005,Arron Sears,Tennessee,TE
+2005,Andrew Whitworth,LSU,TE
+2005,Tre Stallings,Ole Miss,TE
+2005,Daniel Inman,Georgia,DE
+2005,Randy Hand,Florida,DE
+2005,Brian Stamper,Vanderbilt,DE
+2005,Leonard Pope,Georgia,DE
+2005,Dustin Dunning,Vanderbilt,DE
+2005,Willie Evans,Miss. St.,DT
+2005,Quentin Moses,Georgia,DT
+2005,Jeremy Mincey,Florida,DT
+2005,Parys Haralson,Tennessee,DT
+2005,Marquies Gunn,Auburn,LB
+2005,Mark Anderson,Alabama,LB
+2005,Claude Wroten,LSU,LB
+2005,Kyle Williams,LSU,LB
+2005,Jason Hall,Tennessee,LB
+2005,Keith Jackson,Arkansas,LB
+2005,Justin Harrell,Tennessee,LB
+2005,T. J. Jackson,Auburn,LB
+2005,DeMeco Ryans,Alabama,LB
+2005,Patrick Willis,Ole Miss,CB
+2005,Moses Osemwegie,Vanderbilt,CB
+2005,Sam Olajubutu,Arkansas,CB
+2005,Freddie Roach,Alabama,CB
+2005,Kevin Simon,Tennessee,CB
+2005,Travis Williams,Auburn,S
+2005,Omar Gaither,Tennessee,S
+2005,Dee Webb,Florida,S
+2005,Demario Minter,Georgia,S
+2005,Tim Jennings,Georgia,S
+2005,David Irons,Auburn,K
+2005,Johnathan Joseph,South Carolina,K
+2005,Greg Blue,Georgia,P
+2005,Ko Simpson,South Carolina,P
+2005,LaRon Landry,LSU,P
+2005,Roman Harper,Alabama,ST
+2005,Muhammed Abdullah,Kentucky,ST
+2005,Will Herring,Auburn,ST
+2005,Brandon Couto,Georgia,QB
+2005,Chris Hetland,Florida,QB
+2005,Kody Bliss,Auburn,RB
+2005,Gordon Ely-Kelso,Georgia,RB
+2005,Skyler Green,LSU,RB
+2005,Raphael Little,Kentucky,RB
+2005,Felix Jones,Arkansas,WR
+2006,JaMarcus Russell,LSU,WR
+2006,Andre Woodson,Kentucky,WR
+2006,Chris Leak,Florida,WR
+2006,Darren McFadden,Arkansas,C
+2006,BenJarvus Green-Ellis,Ole Miss,C
+2006,Kenny Irons,Auburn,C
+2006,Felix Jones,Arkansas,G
+2006,Robert Meachem,Tennessee,G
+2006,Earl Bennett,Vanderbilt,G
+2006,Dwayne Bowe,LSU,G
+2006,Dallas Baker,Florida,G
+2006,Keenan Burton,Kentucky,T
+2006,D.J. Hall,Alabama,T
+2006,Sidney Rice,South Carolina,T
+2006,Jonathan Luigs,Arkansas,T
+2006,Steve Ressler,Florida,TE
+2006,Nick Jones,Georgia,TE
+2006,Ben Grubbs,Auburn,DE
+2006,Tim Duckworth,Auburn,DE
+2006,Will Arnold,LSU,DE
+2006,Stephen Parker, Arkansas,DE
+2006,Arron Sears,Tennessee,DE
+2006,Tony Ugoh,Arkansas,DE
+2006,Daniel Inman,Georgia,DT
+2006,Zac Tubbs,Arkansas,DT
+2006,Michael Oher,Ole Miss,DT
+2006,Brian Johnson,LSU,DT
+2006,Phil Trautwein,Florida,DT
+2006,Antoine Caldwell,Alabama,LB
+2006,Michael Aitcheson,Kentucky,LB
+2006,Jacob Tamme,Kentucky,LB
+2006,Martrez Milner,Georgia,LB
+2006,Andy Boyd,South Carolina,LB
+2006,Richard Dickson,LSU,LB
+2006,Quentin Groves,Auburn,LB
+2006,Jamaal Anderson,Arkansas,LB
+2006,Turk McBride,Tennessee,LB
+2006,Titus Brown,Miss. St,LB
+2006,Charles Johnson,Georgia,CB
+2006,Derrick Harvey,Florida,CB
+2006,Tyson Jackson,LSU,CB
+2006,Glenn Dorsey,LSU,CB
+2006,Ray McDonald,Florida,CB
+2006,Keith Jackson,Arkansas,CB
+2006,Deljuan Robinson,Miss. St.,CB
+2006,Antwain Robinson,Arkansas,CB
+2006,Patrick Willis,Ole Miss,S
+2006,Sam Olajubutu,Arkansas,S
+2006,Quinton Culberson,Miss. St.,S
+2006,Earl Everett,Florida,K
+2006,Jasper Brinkley,South Carolina,K
+2006,Wesley Woodyard,Kentucky,P
+2006,Brandon Siler,Florida,P
+2006,Tony Taylor,Georgia,ST
+2006,Will Herring,Auburn,ST
+2006,Jonathan Goff,Vanderbilt,ST
+2006,Ali Highsmith,LSU,ST
+2006,Simeon Castille,Alabama,QB
+2006,Ryan Smith,Florida,QB
+2006,Chris Houston,Arkansas,QB
+2006,Jonathan Wade,Tennessee,RB
+2006,Fred Bennett,South Carolina,RB
+2006,David Irons,Auburn,RB
+2006,Reggie Nelson,Florida,RB
+2006,LaRon Landry,LSU,RB
+2006,Tra Battle,Georgia,WR
+2006,Jonathan Hefney,Tennessee,WR
+2006,Derek Pegues,Miss. St.,WR
+2006,James Wilhoit,Tennessee,WR
+2006,John Vaughn,Auburn,WR
+2006,Ryan Succop,South Carolina,WR
+2006,Britton Colquitt,Tennessee,C
+2006,Kody Bliss,Auburn,C
+2006,Keenan Burton,Kentucky,C
+2006,Mikey Henderson,Georgia,G
+2006,Felix Jones,Arkansas,G
+2006,Craig Davis,LSU,G
+2007,Tim Tebow,Florida,G
+2007,Andre Woodson,Kentucky,G
+2007,Darren McFadden,Arkansas,G
+2007,Knowshon Moreno,Georgia,G
+2007,Felix Jones,Arkansas,T
+2007,Arian Foster,Tennessee,T
+2007,Jacob Hester,LSU,T
+2007,Kenny McKinley,South Carolina,T
+2007,Earl Bennett,Vanderbilt,T
+2007,Percy Harvin,Florida,TE
+2007,Lucas Taylor,Tennessee,TE
+2007,D.J. Hall,Alabama,DE
+2007,Jonathan Luigs,Arkansas,DE
+2007,Fernando Velasco,Georgia,DE
+2007,Chris Williams,Vanderbilt,DE
+2007,Anthony Parker,Tennessee,DE
+2007,Robert Felton,Arkansas,DE
+2007,Herman Johnson,LSU,DT
+2007,Nate Garner,Arkansas,DT
+2007,Jason Leger,Kentucky,DT
+2007,Mitch Petrus,Arkansas,LB
+2007,Jim Tartt,Florida,LB
+2007,Michael Oher,Ole Miss,LB
+2007,Andre Smith,Alabama,LB
+2007,Eric Young,Tennessee,LB
+2007,Ciron Black,LSU,LB
+2007,Garry Williams,Kentucky,LB
+2007,Carlton Medder,Florida,CB
+2007,Michael Brown,Miss. St.,CB
+2007,Jacob Tamme,Kentucky,CB
+2007,Cornelius Ingram,Florida,CB
+2007,Greg Hardy,Ole Miss,CB
+2007,Wallace Gilberry,Alabama,S
+2007,Quentin Groves,Auburn,S
+2007,Eric Norwood,South Carolina,S
+2007,Titus Brown,Miss. St,S
+2007,Derrick Harvey,Florida,S
+2007,Glenn Dorsey,LSU,K
+2007,Geno Atkins,Georgia,K
+2007,Pat Sims,Auburn,P
+2007,Marcus Harrison,Arkansas,P
+2007,Peria Jerry,Ole Miss,ST
+2007,Jeremy Jarmon,Kentucky,ST
+2007,Wesley Woodyard,Kentucky,ST
+2007,Ali Highsmith,LSU,ST
+2007,Jerod Mayo,Tennessee,QB
+2007,Brandon Spikes,Florida,QB
+2007,Jonathan Goff,Vanderbilt,RB
+2007,Rico McCoy,Tennessee,RB
+2007,Daniel Ellerbe,Georgia,RB
+2007,Darry Beckwith,LSU,RB
+2007,Jamar Chaney,Miss. St.,WR
+2007,Chevis Jackson,LSU ,WR
+2007,D.J. Moore,Vanderbilt,WR
+2007,Captain Munnerlyn,South Carolina,WR
+2007,Simeon Castille,Alabama,WR
+2007,Craig Steltz,LSU,WR
+2007,Rashad Johnson,Alabama,WR
+2007,Derek Pegues,Miss. St.,C
+2007,Jonathan Hefney,Tennessee,C
+2007,Michael Grant,Arkansas,C
+2007,Emanuel Cook,South Carolina,G
+2007,Eric Berry,Tennessee,G
+2007,Patrick Lee,Auburn,G
+2007,Matt Hewitt,Arkansas,G
+2007,Colt David,LSU,T
+2007,Daniel Lincoln,Tennessee,T
+2007,Patrick Fisher,LSU,T
+2007,Ryan Shoemaker,Auburn,T
+2007,Britton Colquitt,Tennessee,T
+2007,Felix Jones,Arkansas,T
+2007,Percy Harvin,Florida,T
+2007,Brandon James,Florida,T
+2008,Tim Tebow,Florida,TE
+2008,Matthew Stafford,Georgia,TE
+2008,Knowshon Moreno,Georgia,TE
+2008,Glen Coffee,Alabama,DE
+2008,Charles Scott,LSU,DE
+2008,Michael Smith,Arkansas,DE
+2008,A. J. Green,Georgia,DE
+2008,Percy Harvin,Florida,DE
+2008,Mohamed Massaquoi,Georgia,DE
+2008,Brandon LaFell,LSU,DE
+2008,Julio Jones,Alabama,DT
+2008,Antoine Caldwell,Alabama,DT
+2008,Jonathan Luigs,Arkansas,DT
+2008,Herman Johnson,LSU,LB
+2008,Clint Boling,Georgia,LB
+2008,Mike Johnson,Alabama,LB
+2008,Mike Pouncey,Florida,LB
+2008,Michael Oher,Ole Miss,LB
+2008,Andre Smith,Alabama,LB
+2008,Phil Trautwein,Florida,LB
+2008,Ciron Black,LSU,CB
+2008,Garry Williams,Kentucky,CB
+2008,Anthony Parker,Tennessee,CB
+2008,John Jerry,Ole Miss,CB
+2008,D.J. Williams,Arkansas,S
+2008,Jared Cook,South Carolina,S
+2008,Richard Dickson,LSU,S
+2008,Antonio Coleman,Auburn,S
+2008,Robert Ayers,Tennessee,K
+2008,Rahim Allen,LSU,K
+2008,Jermaine Cunningham,Florida,K
+2008,Carlos Dunlap,Florida,P
+2008,Greg Hardy,Ole Miss,P
+2008,Terrence Cody,Alabama,ST
+2008,Peria Jerry,Ole Miss,ST
+2008,Myron Pryor,Kentucky,ST
+2008,Malcolm Sheppard,Arkansas,QB
+2008,SenDerrick Marks,Auburn,QB
+2008,Brandon Spikes,Florida,RB
+2008,Rolando McClain,Alabama,RB
+2008,Eric Norwood,South Carolina,RB
+2008,Rennie Curran,Georgia,RB
+2008,Micah Johnson,Kentucky,RB
+2008,Dominic Douglas,Miss. St.,WR
+2008,Patrick Benoist,Vanderbilt,WR
+2008,Darry Beckwith,LSU,WR
+2008,Jasper Brinkley,South Carolina,WR
+2008,Rico McCoy,Tennessee,WR
+2008,Trevard Lindley,Kentucky,C
+2008,D.J. Moore,Vanderbilt,C
+2008,Javier Arenas,Alabama,C
+2008,Joe Haden,Florida,G
+2008,Rashad Johnson,Alabama,G
+2008,Eric Berry,Tennessee ,G
+2008,Emanuel Cook,South Carolina,G
+2008,Reshad Jones,Georgia,G
+2008,Ahmad Black,Florida,T
+2008,Derek Pegues,Miss. St.,T
+2008,Joshua Shene,Ole Miss,T
+2008,Colt David,LSU,T
+2008,Tim Masthay,Kentucky,T
+2008,Brian Mimbs,Ole Miss,TE
+2008,Jeremy Davis,Arkansas,TE
+2008,Chas Henry,Florida,TE
+2008,Percy Harvin,Florida,DE
+2008,Dexter McCluster,Ole Miss,DE
+2008,Brandon James,Florida,DE
+2008,Javier Arenas,Alabama,DE
+2009,Tim Tebow,Florida,DE
+2009,Ryan Mallett,Arkansas,DE
+2009,Mark Ingram Jr.,Alabama,DE
+2009,Anthony Dixon,Miss. St.,DE
+2009,Dexter McCluster,Ole Miss,DE
+2009,Montario Hardesty,Tennessee,DT
+2009,Ben Tate,Auburn,DT
+2009,A. J. Green,Georgia,LB
+2009,Shay Hodge,Ole Miss,LB
+2009,Brandon LaFell,LSU,LB
+2009,Joe Adams,Arkansas,LB
+2009,Riley Cooper,Florida,LB
+2009,Julio Jones,Alabama,LB
+2009,Maurkice Pouncey,Florida,LB
+2009,Ryan Pugh,Auburn,LB
+2009,Ben Jones,Georgia,LB
+2009,Mike Pouncey,Florida,LB
+2009,Mike Johnson,Alabama,CB
+2009,Mitch Petrus,Arkansas,CB
+2009,Clint Boling,Georgia,CB
+2009,Zipp Duncan,Kentucky,CB
+2009,Ciron Black,LSU,CB
+2009,John Jerry,Ole Miss,S
+2009,Chris Scott,Tennessee,S
+2009,James Carpenter,Alabama,S
+2009,Lee Ziemba,Auburn,S
+2009,Derek Sherrod,Miss. St.,S
+2009,Aaron Hernandez,Florida,S
+2009,Colin Peek,Alabama,K
+2009,D.J. Williams,Arkansas,K
+2009,Antonio Coleman,Auburn,K
+2009,Carlos Dunlap,Florida,P
+2009,Jermaine Cunningham,Florida,P
+2009,Justin Houston,Georgia,P
+2009,Pernell McPhee,Miss. St.,ST
+2009,Terrence Cody,Alabama,ST
+2009,Dan Williams,Tennessee,ST
+2009,Corey Peters,Kentucky,QB
+2009,Geno Atkins,Georgia,QB
+2009,Malcolm Sheppard,Arkansas,QB
+2009,Jerrell Powe,Ole Miss,RB
+2009,Cliff Matthews,South Carolina,RB
+2009,Rolando McClain,Alabama,RB
+2009,Eric Norwood,South Carolina,RB
+2009,Rennie Curran,Georgia,RB
+2009,Brandon Spikes,Florida,WR
+2009,Rico McCoy,Tennessee,WR
+2009,Sam Maxwell,Kentucky,WR
+2009,Micah Johnson,Kentucky,WR
+2009,Chris Marve,Vanderbilt,WR
+2009,Ryan Stamper,Florida,C
+2009,Joe Haden,Florida,C
+2009,Javier Arenas,Alabama,G
+2009,Myron Lewis,Vanderbilt,G
+2009,Patrick Peterson,LSU,G
+2009,Walt McFadden,Auburn,G
+2009,Chris Culliver,LSU,T
+2009,Trevard Lindley,Kentucky,T
+2009,Eric Berry,Tennessee ,T
+2009,Mark Barron,Alabama,T
+2009,Chad Jones,LSU,T
+2009,Leigh Tiffin,Alabama,T
+2009,Blair Walsh,Georgia,T
+2009,Drew Butler,Georgia,TE
+2009,Chas Henry,Florida,TE
+2009,Brett Upson,Vanderbilt,TE
+2009,Javier Arenas,Alabama,TE
+2009,Randall Cobb,Kentucky,TE
+2009,Dexter McCluster,Ole Miss,DE
+2009,Derrick Locke,Kentucky,DE
+2009,Warren Norman,Vanderbilt,DE
+2010,Cam Newton,Auburn,DE
+2010,Ryan Mallett,Arkansas,DE
+2010,Marcus Lattimore,South Carolina,DE
+2010,Knile Davis,Arkansas,DE
+2010,Stevan Ridley,LSU,DE
+2010,Mark Ingram Jr,Alabama,DT
+2010,Alshon Jeffery,South Carolina,DT
+2010,Julio Jones,Alabama,DT
+2010,Randall Cobb,Kentucky,LB
+2010,A. J. Green,Georgia,LB
+2010,Ryan Pugh,Auburn,LB
+2010,Mike Pouncey,Florida,LB
+2010,William Vlachos,Alabama,LB
+2010,Barrett Jones,Alabama,LB
+2010,Clint Boling,Georgia,LB
+2010,Larry Warford,Kentucky,LB
+2010,Garrett Chisolm,South Carolina,LB
+2010,Lee Ziemba,Auburn,LB
+2010,Derek Sherrod,Miss. St.,LB
+2010,DeMarcus Love,Arkansas,CB
+2010,James Carpenter,Alabama,CB
+2010,Joseph Barksdale,LSU,CB
+2010,Byron Isom,Auburn,CB
+2010,Bradley Sowell,Ole Miss,CB
+2010,D.J. Williams,Arkansas,CB
+2010,Brandon Barden,Vanderbilt,S
+2010,Orson Charles,Georgia,S
+2010,Devin Taylor,South Carolina,S
+2010,Pernell McPhee,Miss. St.,S
+2010,Malik Jackson,Tennessee,S
+2010,Jake Bequette,Arkansas,K
+2010,Antoine Carter,Auburn,K
+2010,Cliff Matthews,South Carolina,K
+2010,Drake Nevis,LSU,P
+2010,Nick Fairley,Auburn,P
+2010,Marcell Dareus,Alabama,ST
+2010,Jerrell Powe,Ole Miss,ST
+2010,Justin Houston,Georgia,ST
+2010,Kelvin Sheppard,LSU,ST
+2010,Danny Trevathan,Kentucky,QB
+2010,Chris White,Miss. St.,QB
+2010,Dont'a Hightower,Alabama,RB
+2010,Josh Bynes,Auburn,RB
+2010,Akeem Dent,Georgia,RB
+2010,Chris Marve,Vanderbilt,RB
+2010,Jerry Franklin,Arkansas,WR
+2010,Patrick Peterson,LSU,WR
+2010,Janoris Jenkins,Florida,WR
+2010,Stephon Gilmore,South Carolina,WR
+2010,Morris Claiborne,LSU,WR
+2010,Casey Hayward,Vanderbilt,C
+2010,Dre Kirkpatrick,Alabama,C
+2010,Ahmad Black,Florida,C
+2010,Mark Barron,Alabama,G
+2010,Robert Lester,Alabama,G
+2010,Prentiss Waggner,Tennessee,G
+2010,Tramain Thomas,Arkansas,G
+2010,Janzen Jackson,Tennessee,G
+2010,Josh Jasper,LSU,T
+2010,Blair Walsh,Georgia,T
+2010,Chas Henry,Florida,T
+2010,Tyler Campbell,Ole Miss,T
+2010,Drew Butler,Georgia,TE
+2010,Patrick Peterson,LSU,TE
+2010,Randall Cobb,Kentucky,DE
+2010,Trent Richardson,Alabama,DE
+2011,Tyler Wilson,Arkansas,DE
+2011,Aaron Murray,Georgia,DE
+2011,Trent Richardson,Alabama,DE
+2011,Michael Dyer,Auburn,DT
+2011,Zac Stacy,Vanderbilt,DT
+2011,Marcus Lattimore,South Carolina,DT
+2011,Vick Ballard,Miss. St.,DT
+2011,Spencer Ware,LSU,DT
+2011,Jarius Wright,Arkansas,LB
+2011,Da'Rick Rogers,Tennessee,LB
+2011,Rueben Randle,LSU,LB
+2011,Alshon Jeffery,South Carolina,LB
+2011,Marquis Maze,Alabama,LB
+2011,William Vlachos,Alabama,LB
+2011,Ben Jones,Georgia,LB
+2011,Barrett Jones,Alabama,LB
+2011,Will Blackwell,LSU,LB
+2011,Alvin Bailey,Arkansas,CB
+2011,Larry Warford,Kentucky,CB
+2011,Gabe Jackson,Miss. St.,CB
+2011,Chance Warmack,Alabama,CB
+2011,Cordy Glenn,Georgia,CB
+2011,Rokevious Watkins,South Carolina,S
+2011,Alex Hurst,LSU,S
+2011,Chris Faulk,LSU,S
+2011,Brandon Mosley,Auburn,S
+2011,Orson Charles,Georgia,S
+2011,Philip Lutzenkirchen,Auburn,S
+2011,Melvin Ingram,South Carolina,K
+2011,Sam Montgomery,LSU,K
+2011,Corey Lemonier,Auburn,K
+2011,Jake Bequette,Arkansas,P
+2011,Barkevious Mingo,LSU,P
+2011,Jadeveon Clowney,South Carolina,ST
+2011,Tim Fugger,Vanderbilt,ST
+2011,Fletcher Cox,Miss. St.,ST
+2011,Malik Jackson,Tennessee,QB
+2011,Josh Chapman,Alabama,QB
+2011,Michael Brockers,LSU,RB
+2011,Jarvis Jones,Georgia,RB
+2011,Courtney Upshaw,Alabama,RB
+2011,Danny Trevathan,Kentucky,RB
+2011,Dont'a Hightower,Alabama,RB
+2011,Chris Marve,Vanderbilt,RB
+2011,Jerry Franklin,Arkansas,WR
+2011,Ryan Baker,LSU,WR
+2011,Tyrann Mathieu,LSU,WR
+2011,Morris Claiborne,LSU,WR
+2011,Dre Kirkpatrick,Alabama,WR
+2011,Casey Hayward,Vanderbilt,C
+2011,Johnthan Banks,Miss. St.,C
+2011,Brandon Boykin,Georgia,G
+2011,Mark Barron,Alabama,G
+2011,Bacarri Rambo,Georgia ,G
+2011,Winston Guy,Kentucky,G
+2011,Antonio Allen,South Carolina,G
+2011,Eric Reid,LSU,G
+2011,Caleb Sturgis,Florida,T
+2011,Drew Alleman,LSU,T
+2011,Brad Wing,LSU,T
+2011,Steven Clark,Auburn,T
+2011,Dylan Breeding,Arkansas,T
+2011,Joe Adams,Arkansas,TE
+2011,Chris Rainey,Florida,TE
+2011,Dennis Johnson,Arkansas,DE
+2011,Onterio McCalebb,Auburn,DE
+2011,Marquis Maze,Alabama,DE
+2012,Johnny Manziel,Texas A&M,DE
+2012,AJ McCarron,Alabama,DE
+2012,Mike Gillislee,Florida,DE
+2012,Todd Gurley,Georgia,DE
+2012,Eddie Lacy,Alabama,DT
+2012,Zac Stacy,Vanderbilt,DT
+2012,Cobi Hamilton,Arkansas,DT
+2012,Jordan Matthews,Vanderbilt,DT
+2012,Justin Hunter,Tennessee,LB
+2012,Chad Bumphis,Miss. St.,LB
+2012,Ryan Swope,Texas A&M,LB
+2012,Barrett Jones,Alabama,LB
+2012,Travis Swanson,Arkansas,LB
+2012,T. J. Johnson,South Carolina,LB
+2012,Chance Warmack,Alabama,LB
+2012,Gabe Jackson,Miss. St.,CB
+2012,Larry Warford,Kentucky,CB
+2012,D.J. Fluker,Alabama,CB
+2012,Chris Burnette,Georgia,CB
+2012,Jake Matthews,Texas A&M,CB
+2012,Luke Joeckel,Texas A&M,CB
+2012,Dallas Thomas,Tennessee,S
+2012,Antonio Richardson,Tennessee,S
+2012,Jordan Reed,Florida,S
+2012,Mychal Rivera,Tennessee,S
+2012,Jadeveon Clowney,South Carolina,S
+2012,Damontre Moore,Texas A&M,K
+2012,Sam Montgomery,LSU,K
+2012,Barkevious Mingo,LSU,P
+2012,Corey Lemonier,Auburn,P
+2012,Sharrif Floyd,Florida,P
+2012,Sheldon Richardson,Missouri,ST
+2012,John Jenkins,Georgia,ST
+2012,Jesse Williams,Alabama,ST
+2012,Bennie Logan,LSU,ST
+2012,Jarvis Jones,Georgia,ST
+2012,C. J. Mosley,Alabama,QB
+2012,Kevin Minter,LSU,QB
+2012,Alec Ogletree,Georgia,RB
+2012,Lamin Barrow,LSU,RB
+2012,Cameron Lawrence,Miss. St.,RB
+2012,Denzel Nkemdiche,Ole Miss,RB
+2012,Jon Bostic,Florida,WR
+2012,A. J. Johnson,Tennessee,WR
+2012,Johnthan Banks,Miss. St.,WR
+2012,Dee Milliner,Alabama,WR
+2012,Andre Hal,Vanderbilt ,C
+2012,Marcus Roberson,Florida,C
+2012,Darius Slay,Miss. St.,C
+2012,Matt Elam,Florida,G
+2012,Eric Reid,LSU,G
+2012,D.J. Swearinger,South Carolina,G
+2012,Craig Loston,LSU,G
+2012,Bacarri Rambo,Georgia,T
+2012,Robert Lester,Alabama,T
+2012,Caleb Sturgis,Florida,T
+2012,Carey Spear,Vanderbilt,T
+2012,Drew Alleman,LSU,T
+2012,Kyle Christy,Florida,T
+2012,Dylan Breeding,Arkansas,T
+2012,Cordarrelle Patterson,Tennessee,TE
+2012,Ace Sanders,South Carolina,TE
+2012,LaDarius Perkins,Miss. St.,TE
+2013,Johnny Manziel,Texas A&M,DE
+2013,Aaron Murray,Georgia,DE
+2013,AJ McCarron,Alabama,DE
+2013,Tre Mason,Auburn,DE
+2013,Jeremy Hill,LSU,DE
+2013,T. J. Yeldon,Alabama,DE
+2013,Mike Davis,South Carolina,DT
+2013,Todd Gurley,Georgia,DT
+2013,Jordan Matthews,Vanderbilt,DT
+2013,Mike Evans,Texas A&M,DT
+2013,Jarvis Landry,LSU,LB
+2013,Dorial Green-Beckham,Missouri,LB
+2013,Odell Beckham Jr,LSU,LB
+2013,Travis Swanson,Arkansas,LB
+2013,Reese Dismukes,Auburn,LB
+2013,Cyrus Kouandjio,Alabama,LB
+2013,Gabe Jackson,Miss. St.,LB
+2013,Anthony Steen,Alabama,LB
+2013,Trai Turner,LSU,LB
+2013,Jake Matthews,Texas A&M,CB
+2013,Wesley Johnson,Vanderbilt,CB
+2013,Justin Britt,Missouri,CB
+2013,Greg Robinson,Auburn,CB
+2013,Antonio Richardson,Tennessee,CB
+2013,Ja'Wuan James,Tennessee,CB
+2013,Laremy Tunsil,Ole Miss,S
+2013,Arthur Lynch,Georgia,S
+2013,Evan Engram,Ole Miss,S
+2013,Hunter Henry,Arkansas,S
+2013,C. J. Uzomah,Auburn,S
+2013,Malcolm Johnson,Miss. St.,S
+2013,Michael Sam,Missouri,K
+2013,Dee Ford,Auburn,K
+2013,Jadeveon Clowney,South Carolina,P
+2013,Kony Ealy,Missouri,P
+2013,Bud Dupree,Kentucky,P
+2013,Dante Fowler,Florida,ST
+2013,Trey Flowers,Arkansas,ST
+2013,Chris Smith,Arkansas,ST
+2013,Kelcy Quarles,South Carolina,QB
+2013,Anthony Johnson,LSU,QB
+2013,Ed Stinson,Alabama,RB
+2013,C. J. Mosley,Alabama,RB
+2013,A. J. Johnson,Tennessee,RB
+2013,Ramik Wilson,Georgia,RB
+2013,Avery Williamson,Kentucky,RB
+2013,Lamin Barrow,LSU,WR
+2013,Trey DePriest,Alabama,WR
+2013,Serderius Bryant,Ole Miss,WR
+2013,Sharrod Golightly,South Carolina,WR
+2013,Denzel Nkemdiche,Ole Miss,WR
+2013,Andrew Wilson,Missouri,WR
+2013,Jordan Jenkins,Georgia,C
+2013,E. J. Gaines,Missouri,C
+2013,Vernon Hargreaves III,Florida,C
+2013,Andre Hal,Vanderbilt,G
+2013,Chris Davis,Auburn,G
+2013,Victor Hampton,South Carolina,G
+2013,Loucheiz Purifoy,Florida,G
+2013,Cody Prewitt,Ole Miss ,G
+2013,Kenny Ladler,Vanderbilt,T
+2013,Ha Ha Clinton-Dix,Alabama,T
+2013,Landon Collins,Alabama,T
+2013,Nickoe Whitley,Miss. St.,T
+2013,Marshall Morgan,Georgia,T
+2013,Zach Hocker,Arkansas,T
+2013,Michael Palardy,Tennessee,TE
+2013,Cody Mandell,Alabama,TE
+2013,Drew Kaser,Texas A&M,TE
+2013,Odell Beckham Jr,LSU,DE
+2013,Christion Jones,Alabama,DE
+2013,Marcus Murphy,Missouri,DE
+2013,Solomon Patton,Florida,DE
+2014,Dak Prescott,Miss. St.,DE
+2014,Blake Sims,Alabama,DT
+2014,Cameron Artis-Payne,Auburn,DT
+2014,Nick Chubb,Georgia,DT
+2014,Josh Robinson,Miss. St.,DT
+2014,Jonathan Williams,Arkansas,DT
+2014,T. J. Yeldon,Alabama,DT
+2014,Amari Cooper,Alabama,DT
+2014,Pharoh Cooper,South Carolina,LB
+2014,Bud Sasser,Missouri,LB
+2014,Josh Reynolds,Texas A&M,LB
+2014,Sammie Coates,Auburn,LB
+2014,Reese Dismukes,Auburn,LB
+2014,David Andrews,Georgia,LB
+2014,Max Garcia,Florida,LB
+2014,Arie Kouandjio,Alabama,LB
+2014,Ben Beckwith,Miss. St.,LB
+2014,A. J. Cann,South Carolina,CB
+2014,Greg Pyke,Georgia,CB
+2014,Vadal Alexander,LSU,CB
+2014,Lael Collins,LSU,CB
+2014,Laremy Tunsil,Ole Miss,CB
+2014,Cedric Ogbuehi,Texas A&M,CB
+2014,Austin Shepherd,Alabama,CB
+2014,Mitch Morse,Missouri,S
+2014,Evan Engram,Ole Miss,S
+2014,Steven Scheu,Vanderbilt,S
+2014,Hunter Henry,Arkansas,K
+2014,Shane Ray,Missouri,K
+2014,Bud Dupree,Kentucky,P
+2014,Preston Smith,Miss. St.,P
+2014,Dante Fowler,Florida,P
+2014,Derek Barnett,Tennessee,ST
+2014,Myles Garrett,Texas A&M,ST
+2014,Trey Flowers,Arkansas,ST
+2014,Markus Golden,Missouri,ST
+2014,Jonathan Allen,Alabama,ST
+2014,Robert Nkemdiche,Ole Miss,QB
+2014,Darius Philon,Arkansas,QB
+2014,Martrell Spaight,Arkansas,RB
+2014,Amarlo Herrera,Georgia,RB
+2014,Benardrick McKinney,Miss. St.,RB
+2014,Reggie Ragland,Alabama,RB
+2014,Trey DePriest,Alabama,WR
+2014,Antonio Morrison,Florida,WR
+2014,Ramik Wilson,Georgia,WR
+2014,Kwon Alexander,LSU,WR
+2014,Kentrell Brothers,Missouri,WR
+2014,Curt Maggitt,Tennessee,C
+2014,Senquez Golson,Ole Miss,C
+2014,Vernon Hargreaves III,Florida,G
+2014,Damian Swann,Georgia,G
+2014,Jonathan Jones,Auburn,G
+2014,Cyrus Jones,Alabama,G
+2014,Landon Collins,Alabama,T
+2014,Cody Prewitt,Ole Miss ,T
+2014,Braylon Webb,Missouri,T
+2014,Ronald Martin,LSU,T
+2014,Tony Conner,Ole Miss,T
+2014,Jonathon Mincy,Auburn,T
+2014,Austin MacGinnis,Kentucky,T
+2014,Josh Lambo,Texas A&M,TE
+2014,Elliott Fry,South Carolina,TE
+2014,JK Scott,Alabama,TE
+2014,Kyle Christy,Florida,DE
+2014,Jamie Keehn,LSU,DE
+2014,Marcus Murphy,Missouri,DE
+2014,Pharoh Cooper,South Carolina,DE
+2014,Quan Bray,Auburn,DE
+2015,Dak Prescott,Miss. St.,DE
+2015,Chad Kelly,Ole Miss,DT
+2015,Derrick Henry,Alabama,DT
+2015,Leonard Fournette,LSU,DT
+2015,Alex Collins,Arkansas,DT
+2015,Jalen Hurd,Tennessee,DT
+2015,Laquon Treadwell,Ole Miss,LB
+2015,Pharoh Cooper,South Carolina,LB
+2015,Fred Ross,Miss. St.,LB
+2015,Calvin Ridley,Alabama,LB
+2015,Drew Morgan,Arkansas,LB
+2015,Christian Kirk,Texas A&M,LB
+2015,De'Runnya Wilson,Miss. St.,LB
+2015,Ryan Kelly,Alabama,LB
+2015,Brandon Kublanow,Georgia,LB
+2015,Ethan Pocic,LSU,LB
+2015,Sebastian Tretola,Arkansas,CB
+2015,Vadal Alexander,LSU,CB
+2015,Dylan Wiesman,Tennessee,CB
+2015,Braden Smith,Auburn,CB
+2015,Cam Robinson,Alabama,S
+2015,John Theus,Georgia,S
+2015,Dan Skipper,Arkansas,S
+2015,Kyler Kerbyson,Tennessee,S
+2015,Laremy Tunsil,Ole Miss,S
+2015,Shon Coleman,Auburn,S
+2015,Germain Ifedi,Texas A&M,K
+2015,Dominick Jackson,Alabama,K
+2015,Hunter Henry,Arkansas,P
+2015,Jake McGee,Florida,P
+2015,Evan Engram,Ole Miss,P
+2015,Myles Garrett,Texas A&M,P
+2015,Jonathan Bullard,Florida,ST
+2015,Jonathan Allen,Alabama,ST
+2015,Derek Barnett,Tennessee,ST
+2015,Marquis Haynes,Ole Miss,ST
+2015,Charles Harris,Missouri,QB
+2015,Cory Johnson,Kentucky,QB
+2015,A'Shawn Robinson,Alabama,RB
+2015,Robert Nkemdiche,Ole Miss,RB
+2015,Jarran Reed,Alabama,RB
+2015,Reggie Ragland,Alabama,RB
+2015,Kentrell Brothers,Missouri,RB
+2015,Zach Cunningham,Vanderbilt,WR
+2015,Antonio Morrison,Florida,WR
+2015,Skai Moore,South Carolina,WR
+2015,Jalen Reeves-Maybin,Tennessee,WR
+2015,Leonard Floyd,Georgia,WR
+2015,Vernon Hargreaves III,Florida,C
+2015,Jalen Tabor,Florida,C
+2015,Tre'Davious White,LSU,G
+2015,Mike Hilton,Ole Miss,G
+2015,Eddie Jackson,Alabama,G
+2015,Dominick Sanders,Georgia,G
+2015,Trae Elston,Ole Miss,G
+2015,Jamal Adams,LSU,G
+2015,Daniel Carlson,Auburn,G
+2015,Taylor Bertolet,Texas A&M,G
+2015,Adam Griffith,Alabama,T
+2015,Drew Kaser,Texas A&M,T
+2015,Johnny Townsend,Florida,T
+2015,Christian Kirk,Texas A&M,T
+2015,Evan Berry,Tennessee,T
+2015,Pharoh Cooper,South Carolina,T
+2016,Jalen Hurts,Alabama,T
+2016,Joshua Dobbs,Tennessee,TE
+2016,Chad Kelly,Ole Miss,TE
+2016,Derrius Guice,LSU,DE
+2016,Kamryn Pettway,Auburn,DE
+2016,Rawleigh Williams III,Arkansas,DE
+2016,Leonard Fournette,LSU,DE
+2016,Ralph Webb,Vanderbilt,DE
+2016,Christian Kirk,Texas A&M,DE
+2016,Fred Ross,Miss St,DT
+2016,ArDarius Stewart,Alabama,DT
+2016,Calvin Ridley,Alabama,DT
+2016,Josh Reynolds,Texas A&M,DT
+2016,J'Mon Moore,Missouri,DT
+2016,Ethan Pocic,LSU,DT
+2016,Jon Toth,Kentucky,LB
+2016,Frank Ragnow,Arkansas,LB
+2016,Braden Smith,Auburn,LB
+2016,Alex Kozan,Auburn,LB
+2016,Martez Ivey,Florida,LB
+2016,Will Clapp,LSU,LB
+2016,Avery Gennesy,Texas A&M ,LB
+2016,Josh Boutte,LSU,LB
+2016,Ross Pierschbacher,Alabama,LB
+2016,Cam Robinson,Alabama,CB
+2016,Dan Skipper,Arkansas,CB
+2016,Will Holden,Vanderbilt,CB
+2016,Robert Leff,Auburn,CB
+2016,Jonah Williams,Alabama,S
+2016,Evan Engram,Ole Miss,S
+2016,O. J. Howard,Alabama,S
+2016,Jonathan Allen,Alabama,S
+2016,Derek Barnett,Tennessee,S
+2016,Myles Garrett,Texas A&M,S
+2016,Carl Lawson,Auburn,S
+2016,Arden Key,LSU,S
+2016,Charles Harris,Missouri,S
+2016,Montravius Adams,Auburn,K
+2016,Caleb Brantley,Florida,K
+2016,Darius English,South Carolina,P
+2016,Zach Cunningham,Vanderbilt,P
+2016,Reuben Foster,Alabama,P
+2016,Kendell Beckwith,LSU,ST
+2016,Ryan Anderson,Alabama,ST
+2016,Tim Williams,Alabama,ST
+2016,Jordan Jones,Kentucky,QB
+2016,Jarrad Davis,Florida,QB
+2016,Jalen Tabor,Florida,QB
+2016,Tre'Davious White,LSU,RB
+2016,Minkah Fitzpatrick,Alabama,RB
+2016,Aarion Penton,Missouri,RB
+2016,Quincy Wilson,Florida,RB
+2016,Jamal Adams,LSU,WR
+2016,Justin Evans,Texas A&M,WR
+2016,Eddie Jackson,Alabama,WR
+2016,Mike Edwards,Kentucky,WR
+2016,Marcus Maye,Florida,WR
+2016,Daniel Carlson,Auburn,WR
+2016,Gary Wunderlich,Ole Miss,WR
+2016,JK Scott,Alabama,C
+2016,Johnny Townsend,Florida,C
+2016,Christian Kirk,Texas A&M,C
+2016,Isaiah McKenzie,Georgia,G
+2016,Derrius Guice,LSU,G
+2016,Evan Berry,Tennessee,G
+2017,Drew Lock,Missouri,G
+2017,Jarrett Stidham,Auburn,T
+2017,Kerryon Johnson,Auburn,T
+2017,Benny Snell Jr.,Kentucky,T
+2017,Nick Chubb,Georgia,T
+2017,Derrius Guice,LSU,T
+2017,A. J. Brown,Ole Miss,T
+2017,Calvin Ridley,Alabama,T
+2017,J'Mon Moore,Missouri,T
+2017,Christian Kirk,Texas A&M,T
+2017,Will Clapp,LSU,TE
+2017,Bradley Bozeman,Alabama,TE
+2017,Frank Ragnow,Arkansas,TE
+2017,Braden Smith,Auburn,TE
+2017,Ross Pierschbacher,Alabama,DE
+2017,Greg Little,Ole Miss,DE
+2017,Trey Smith,Tennessee,DE
+2017,Garrett Brumfield,LSU,DE
+2017,Jonah Williams,Alabama,DE
+2017,Isaiah Wynn,Georgia,DE
+2017,Martinas Rankin,Miss St,DE
+2017,Martez Ivey,Florida,DT
+2017,Hayden Hurst,South Carolina,DT
+2017,Albert Okwuegbunam,Missouri,DT
+2017,Jeff Holland,Auburn,DT
+2017,Montez Sweat,Miss St,DT
+2017,Marcell Frazier,Missouri,LB
+2017,Marquis Haynes,Ole Miss,LB
+2017,Dante Sawyer,South Carolina,LB
+2017,Da'Shawn Hand,Alabama,LB
+2017,Jeffery Simmons,Miss St,LB
+2017,Daron Payne,Alabama,LB
+2017,Raekwon Davis,Alabama,LB
+2017,Taven Bryan,Florida,LB
+2017,Breeland Speaks,Ole Miss,LB
+2017,Roquan Smith,Georgia,LB
+2017,Devin White,LSU,LB
+2017,Rashaan Evans,Alabama,CB
+2017,Skai Moore,South Carolina,CB
+2017,Arden Key,LSU,CB
+2017,Lorenzo Carter,Georgia,CB
+2017,Josh Allen,Kentucky,CB
+2017,De'Jon Harris,Arkansas,CB
+2017,Charles Wright,Vanderbilt,S
+2017,Tre Williams,Auburn,S
+2017,Armani Watts,Texas A&M,S
+2017,Andraez Williams,LSU,S
+2017,Duke Dawson,Florida,S
+2017,Carlton Davis,Auburn,K
+2017,CJ Henderson,Florida,K
+2017,Levi Wallace,Alabama,K
+2017,Donte Jackson,LSU,P
+2017,Deandre Baker,Georgia,P
+2017,Minkah Fitzpatrick,Alabama,ST
+2017,Ronnie Harrison,Alabama,ST
+2017,J. R. Reed,Georgia,ST
+2017,Daniel Carlson,Auburn,ST
+2017,Eddy Pineiro,Florida,QB
+2017,Johnny Townsend,Florida,QB
+2017,J. K. Scott,Alabama,QB
+2017,Christian Kirk,Texas A&M,RB
+2017,A. J. Brown,Ole Miss,RB
+2017,Mecole Hardman,Georgia,RB
+2017,DJ Chark,LSU,RB
+2018,Tua Tagovailoa,Alabama,RB
+2018,Drew Lock,Missouri,WR
+2018,Benny Snell Jr.,Kentucky,WR
+2018,Trayveon Williams,Texas A&M,WR
+2018,D'Andre Swift,Georgia,WR
+2018,Damien Harris,Alabama,WR
+2018,Ke'Shawn Vaughn,Vanderbilt,C
+2018,A. J. Brown,Ole Miss,C
+2018,Jerry Jeudy,Alabama,G
+2018,Deebo Samuel,South Carolina,G
+2018,Emanuel Hall,Missouri,G
+2018,Kalija Lipscomb,Vanderbilt,G
+2018,Lamont Gaillard,Georgia,T
+2018,Ross Pierschbacher,Alabama,T
+2018,Bunchy Stallings,Kentucky,T
+2018,Tre'Vour Wallace-Simms,Missouri,T
+2018,Zack Bailey,South Carolina,T
+2018,Hjalte Froholdt,Arkansas,T
+2018,Deion Calhoun,Miss St,T
+2018,Greg Little,Ole Miss,TE
+2018,Jonah Williams,Alabama,TE
+2018,Andrew Thomas,Georgia,DE
+2018,Martez Ivey,Florida,DE
+2018,Alex Leatherwood,Alabama,DE
+2018,Jace Sternberger,Texas A&M,DE
+2018,Irv Smith Jr,Alabama,DE
+2018,Jared Pinkney,Vanderbilt,DE
+2018,Jachai Polite,Florida,DT
+2018,Montez Sweat,Miss St,DT
+2018,Isaiah Buggs,Alabama,DT
+2018,Raekwon Davis,Alabama,DT
+2018,Jonathan Ledbetter,Georgia,DT
+2018,Jeffery Simmons,Miss St,DT
+2018,Quinnen Williams,Alabama,LB
+2018,Derrick Brown,Auburn,LB
+2018,Terry Beckner Jr,Missouri,LB
+2018,Josh Allen,Kentucky,LB
+2018,Deshaun Davis,Auburn,LB
+2018,Devin White,LSU,LB
+2018,Cale Garrett,Missouri,LB
+2018,De'Jon Harris,Arkansas,LB
+2018,Dylan Moses,Alabama,CB
+2018,Erroll Thompson,Miss St,CB
+2018,D'Andre Walker,Georgia,CB
+2018,Mack Wilson,Alabama,CB
+2018,Deandre Baker,Georgia,CB
+2018,Greedy Williams,LSU,S
+2018,Cameron Dantzler,Miss St,S
+2018,Joejuan Williams,Vanderbilt,S
+2018,C. J. Henderson,Florida,S
+2018,Grant Delpit,LSU,S
+2018,Johnathan Abram,Miss St,S
+2018,Mike Edwards,Kentucky,K
+2018,Deionte Thompson,Alabama,K
+2018,DeMarkus Acy,Missouri,P
+2018,Cole Tracy,LSU,P
+2018,Rodrigo Blankenship,Georgia,ST
+2018,Braden Mann,Texas A&M,ST
+2018,Zach Von Rosenberg,LSU,ST
+2018,Joseph Charlton,South Carolina,QB
+2018,Deebo Samuel,South Carolina,QB
+2018,Mecole Hardman,Georgia,QB
+2018,Lynn Bowden,Kentucky,QB
+2019,Joe Burrow,LSU,RB
+2019,Tua Tagovailoa,Alabama,RB
+2019,Clyde Edwards-Helaire,LSU,RB
+2019,Kylin Hill,Miss St,RB
+2019,D'Andre Swift,Georgia,RB
+2019,Najee Harris,Alabama,RB
+2019,Ja'Marr Chase,LSU,WR
+2019,Jerry Jeudy,Alabama,WR
+2019,DeVonta Smith,Alabama,WR
+2019,Justin Jefferson,LSU,WR
+2019,Bryan Edwards,South Carolina,C
+2019,Lloyd Cushenberry,LSU,C
+2019,Drake Jackson,Kentucky,G
+2019,Landon Dickerson,Alabama,G
+2019,Trey Hill,Georgia,G
+2019,Trey Smith,Tennessee,G
+2019,Logan Stenberg,Kentucky,G
+2019,Landon Dickerson,Alabama,G
+2019,Damien Lewis,LSU,G
+2019,Andrew Thomas,Georgia,T
+2019,Jedrick Wills Jr,Alabama,T
+2019,Alex Leatherwood,Alabama,T
+2019,Adrian Magee,LSU,T
+2019,Prince Tega Wanogho,Auburn,T
+2019,Isaiah Wilson,Georgia,T
+2019,Kyle Pitts,Florida,TE
+2019,Albert Okwuegbunam,Missouri,TE
+2019,Jalen Wydermyer,Texas A&M,TE
+2019,Marlon Davidson,Auburn,DE
+2019,Jonathan Greenard,Florida,DE
+2019,Raekwon Davis,Alabama,DE
+2019,Chauncey Rivers,Miss St,DE
+2019,D.J. Wonnum,South Carolina,DE
+2019,Derrick Brown,Auburn,DT
+2019,Jordan Elliott,Missouri,DT
+2019,Javon Kinlaw,South Carolina,DT
+2019,Tyler Clark,Georgia,DT
+2019,Benito Jones,Ole Miss,DT
+2019,Rashard Lawrence,LSU,DT
+2019,Justin Madubuike,Texas A&M,DT
+2019,Nick Bolton,Missouri,LB
+2019,Anfernee Jennings,Alabama,LB
+2019,K.J. Britt,Auburn,LB
+2019,K'Lavon Chaisson,LSU,LB
+2019,Daniel Bituli,Tennessee,LB
+2019,De'Jon Harris,Arkansas,LB
+2019,Terrell Lewis,Alabama,LB
+2019,David Reese,Florida,LB
+2019,Monty Rice,Georgia,LB
+2019,Trevon Diggs,Alabama,LB
+2019,C. J. Henderson,Florida,LB
+2019,Derek Stingley Jr,LSU,CB
+2019,Israel Mukuamu,South Carolina,CB
+2019,Kristian Fulton,LSU,CB
+2019,Eric Stokes,Georgia,S
+2019,Xavier McKinney,Alabama,S
+2019,Grant Delpit,LSU,S
+2019,Nigel Warrior,Tennessee,S
+2019,J. R. Reed,Georgia,S
+2019,Jeremiah Dinson,Auburn,S
+2019,JaCoby Stevens,LSU,K
+2019,Rodrigo Blankenship,Georgia,K
+2019,Brent Cimaglia,Tennessee,P
+2019,Cade York,LSU,P
+2019,Max Duffy,Kentucky,ST
+2019,Braden Mann,Texas A&M,ST
+2019,Lynn Bowden Jr,Kentucky,QB
+2019,Jaylen Waddle,Alabama,QB
+2019,Jerrion Ealy,Ole Miss,QB
+2019,Treylon Burks,Arkansas,RB
+2019,Clyde Edwards-Helaire,LSU,RB
+2019,Christian Tutt,Auburn,RB
+2019,Marquez Callaway,Tennessee,RB
+2020,Mac Jones,Alabama,RB
+2020,Kyle Trask,Florida,WR
+2020,Najee Harris,Alabama,WR
+2020,Kevin Harris,South Carolina,WR
+2020,Isaiah Spiller,Texas A&M,WR
+2020,Larry Rountree III,Missouri,WR
+2020,Tank Bigsby,Auburn,C
+2020,Elijah Moore,Ole Miss,C
+2020,DeVonta Smith,Alabama,C
+2020,Treylon Burks,Arkansas,G
+2020,Kadarius Toney,Florida,G
+2020,Landon Dickerson,Alabama,G
+2020,Drake Jackson,Kentucky,G
+2020,Ben Cleveland,Georgia,G
+2020,Trey Smith,Tennessee,T
+2020,Deonte Brown,Alabama,T
+2020,Kenyon Green,Texas A&M,T
+2020,Alex Leatherwood,Alabama,T
+2020,Darian Kinnard,Kentucky,T
+2020,Carson Green,Texas A&M,TE
+2020,Dan Moore Jr,Texas A&M,TE
+2020,Landon Young,Kentucky,TE
+2020,Kyle Pitts,Florida,DE
+2020,Jalen Wydermyer,Texas A&M,DE
+2020,Trajan Jeffcoat,Missouri,DE
+2020,Dayo Odeyingbo,Vanderbilt,DE
+2020,Ali Gaye,LSU,DE
+2020,Brenton Cox Jr,Florida,DE
+2020,Christian Barmore,Alabama,DT
+2020,Bobby Brown III,Texas A&M,DT
+2020,Kingsley Enagbare,South Carolina,DT
+2020,Big Kat Bryant,Auburn,DT
+2020,Jordan Davis,Georgia,LB
+2020,Jonathan Marshall,Arkansas,LB
+2020,Nick Bolton,Missouri,LB
+2020,Grant Morgan,Arkansas,LB
+2020,Dylan Moses,Alabama,LB
+2020,Monty Rice,Georgia,LB
+2020,Azeez Ojulari,Georgia,LB
+2020,Christopher Allen,Alabama,LB
+2020,Willie Anderson Jr,Alabama,LB
+2020,Henry To'o To'o,Tennessee,CB
+2020,Bumper Pool,Arkansas,CB
+2020,Patrick Surtain II,Alabama,CB
+2020,Eric Stokes,Georgia,S
+2020,Derek Stingley Jr,LSU,S
+2020,Kaiir Elam,Florida,S
+2020,Eli Ricks,LSU,S
+2020,Richard LeCounte,Georgia,S
+2020,Jalen Catalon,Arkansas,S
+2020,Malachi Moore,Alabama,S
+2020,Smoke Munday,Auburn,S
+2020,Anders Carlsen,Auburn,S
+2020,Cade York,LSU,K
+2020,Jake Camarda,Georgia,K
+2020,Max Duffy,Kentucky,P
+2020,Zach Von Rosenberg,LSU,P
+2020,Kadarius Toney,Florida,P
+2020,Jerrion Ealy,Ole Miss,ST
+2020,Jaylen Waddle,Alabama,ST

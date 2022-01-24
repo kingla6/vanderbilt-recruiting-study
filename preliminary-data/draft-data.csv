@@ -1,0 +1,128 @@
+Rk,Year,Lg,Rnd,Pick,Tm,Player,Pos,
+1,2019,NFL,2,45,NWE,Joejuan Williams\WillJo13,CB,College Stats
+2,2019,NFL,6,183,SFO,Justin Skule\SkulJu00,T,College Stats
+3,2018,NFL,3,88,GNB,Oren Burks\BurkOr00,ILB,College Stats
+4,2017,NFL,2,57,HOU,Zach Cunningham\CunnZa00,LB,College Stats
+5,2017,NFL,5,157,ARI,Will Holden\HoldWi00,T,College Stats
+6,2016,NFL,7,227,MIN,Stephen Weatherly\WeatSt00,OLB,College Stats
+7,2014,NFL,2,42,PHI,Jordan Matthews\MattJo00,WR,College Stats
+8,2014,NFL,5,173,PIT,Wesley Johnson\JohnWe00,OL,College Stats
+9,2014,NFL,7,216,HOU,Andre Hal\HalxAn00,DB,College Stats
+10,2013,NFL,5,160,STL,Zac Stacy\StacZa00,RB,College Stats
+11,2013,NFL,7,220,SEA,Ryan Seymour\SeymRy00,G,
+12,2012,NFL,2,62,GNB,Casey Hayward\HaywCa00,DB,College Stats
+13,2012,NFL,7,214,IND,Tim Fugger\FuggTi00,DE,College Stats
+14,2010,NFL,3,67,TAM,Myron Lewis\LewiMy99,DB,College Stats
+15,2010,NFL,7,208,NWE,Thomas Welch\WelcTh20,T,College Stats
+16,2009,NFL,4,119,CHI,D.J. Moore\MoorDJ99,DB,College Stats
+17,2008,NFL,1,14,CHI,Chris Williams\WillCh03,T,
+18,2008,NFL,3,70,CHI,Earl Bennett\BennEa00,WR,College Stats
+19,2008,NFL,5,165,NYG,Jonathan Goff\GoffJo99,LB,College Stats
+20,2006,NFL,1,11,DEN,Jay Cutler\CutlJa00,QB,College Stats
+21,2005,NFL,6,189,CAR,Jovan Haye\HayeJo20,DE,College Stats
+22,2005,NFL,6,197,BUF,Justin Geisinger\GeisJu20,G,
+23,2003,NFL,5,166,GNB,Hunter Hillenmeyer\HillHu20,LB,College Stats
+24,2001,NFL,2,47,SFO,Jamie Winborn\WinbJa20,LB,
+25,2001,NFL,4,102,ATL,Matt Stewart\StewMa21,LB,College Stats
+26,2001,NFL,5,160,NYG,John Markham,K,
+27,2001,NFL,6,196,BUF,Jimmy Williams\WillJi22,DB,College Stats
+28,1999,NFL,2,47,GNB,Fred Vinson\VinsFr20,DB,College Stats
+29,1998,NFL,2,33,ARI,Corey Chavous\ChavCo00,DB,College Stats
+30,1998,NFL,3,84,TAM,Jamie Duncan\DuncJa20,LB,College Stats
+31,1998,NFL,5,135,IND,Antony Jordan\JordAn20,LB,
+32,1996,NFL,2,45,MIN,James Manley\ManlJa21,DT,College Stats
+33,1992,NFL,3,77,HOU,Corey Harris\HarrCo20,DB,College Stats
+34,1990,NFL,4,98,NOR,DeMond Winston\WinsDe20,LB,
+35,1990,NFL,12,312,SEA,John Gromos,QB,
+36,1988,NFL,5,120,PHO,Chris Gaines\GainCh20,LB,College Stats
+37,1988,NFL,12,307,CIN,Carl Parker\ParkCa20,WR,College Stats
+38,1986,NFL,1,20,BUF,Will Wolford\WolfWi00,T,College Stats
+39,1986,NFL,8,203,SFO,Jim Popp,TE,
+40,1986,NFL,12,309,IND,Steve Wade,DT,
+41,1985,NFL,2,50,RAM,Chuck Scott\ScotCh22,WR,College Stats
+42,1985,NFL,8,212,STL,Rob Monaco\MonaRo20,C,College Stats
+43,1985,NFL,11,298,STL,Ricky Anderson,K,
+44,1985,NFL,12,324,DAL,Karl Jordan,LB,
+45,1984,NFL,1,8,IND,Leonard Coleman\ColeLe21,DB,
+46,1984,NFL,3*,69,NOR,Steve Bearden,LB,
+47,1983,NFL,5,119,KAN,Jim Arnold\ArnoJi20,P,College Stats
+48,1983,NFL,12,322,ATL,Allama Matthews\MattAl00,TE,College Stats
+49,1982,NFL,6,143,DAL,Ken Hammond,G,
+50,1982,NFL,8,204,CLE,Van Heflin,TE,
+51,1980,NFL,6,160,NWE,Preston Brown\BrowPr20,WR,College Stats
+52,1980,NFL,9,233,NOR,Frank Mordica,RB,
+53,1980,NFL,12,308,CIN,Mike Wright,QB,
+54,1979,NFL,10,270,NWE,Martin Cox,WR,
+55,1979,NFL,12,322,PIT,Ed Smith\SmitEd23,LB,
+56,1978,NFL,4,92,PHI,Dennis Harrison\HarrDe02,DE,
+57,1976,NFL,7,194,SFO,Jay Chesley,DB,
+58,1976,NFL,7,209,PIT,Barry Burton,TE,
+59,1976,NFL,17,471,NYG,Steve Curnutte,DB,
+60,1975,NFL,14,346,KAN,Gene Moshier,G,
+61,1974,NFL,5,118,CLE,Mark Ilgenfritz\IlgeMa20,DE,
+62,1974,NFL,5,129,BAL,Doug Nettles\NettDo20,DB,
+63,1973,NFL,7,172,NYG,Rod Freeman,TE,
+64,1973,NFL,10,245,WAS,Ken Stone\StonKe20,DB,
+65,1973,NFL,15,387,OAK,Dave Leffers,C,
+66,1971,NFL,8,192,CHI,Karl Weiss,T,
+67,1970,NFL,2,27,DAL,Bob Asher\AsheBo20,T,
+68,1970,NFL,6,153,DAL,Pat Toomay\ToomPa20,DE,
+69,1969,NFL,3,71,STL,Chip Healy\HealCh20,LB,College Stats
+70,1968,NFL,3,56,CIN,Gary Davis,QB,
+71,1968,NFL,6,144,MIN,Bob Goodridge\GoodBo00,WR,College Stats
+72,1966,AFL,6,48,NYJ,Dick Lemay,G,
+73,1966,NFL,5,70,WAS,Dick Lemay,T,
+74,1965,NFL,15,202,WAS,Ben Baldwin,B,
+75,1965,NFL,17,230,WAS,Gary Hart,E,
+76,1963,NFL,20,275,CLE,Steve Shaw,B,
+77,1962,AFL,30,236,BUF,Cody Binkley,C,
+78,1961,NFL,15,207,NYG,Cody Binkley,C,
+79,1960,NFL,1,5,GNB,Tom Moore\MoorTo00,HB,College Stats
+80,1959,NFL,3,27,CRD,Jimmy Butler,B,
+81,1959,NFL,6,63,CRD,Tom Redmond\RedmTo20,DE,
+82,1959,NFL,7,77,DET,Ben Donnell\DonnBe20,DE,
+83,1959,NFL,8,90,SFO,Lew Aken,E,
+84,1959,NFL,23,272,RAM,George Deiderich,G,
+85,1959,NFL,25,295,PIT,Ron Miller,E,
+86,1958,NFL,1,12,NYG,Phil King\KingPh00,HB,College Stats
+87,1958,NFL,6,69,BAL,Bob Taylor,E,
+88,1958,NFL,24,279,CRD,Eric Soesbe,T,
+89,1957,NFL,24,287,DET,Joe Scales,B,
+90,1957,NFL,26,307,PIT,Bob Swann,T,
+91,1956,NFL,1,11,RAM,Charlie Horton,B,
+92,1956,NFL,12,137,PHI,Tommy Harkins,E,
+93,1956,NFL,20,230,DET,Joe Stephenson,E,
+94,1956,NFL,26,311,CHI,Don Orr,B,
+95,1956,NFL,29,346,CHI,Billy Krietemeyer,B,
+96,1956,NFL,29,349,CLE,John Battos,E,
+97,1955,NFL,8,94,PHI,Herman Watson,T,
+98,1955,NFL,15,172,WAS,Charley Horton,B,
+99,1955,NFL,19,225,PHI,Terry Fails,E,
+100,1953,NFL,10,121,RAM,Mick Lakos,B,
+101,1952,NFL,1,1,RAM,Billy Wade\WadeBi00,QB,College Stats
+102,1952,NFL,24,283,WAS,Ted Kirkland,E,
+103,1952,NFL,24,285,DET,Bob Werckle,T,
+104,1951,NFL,2,24,RAM,Herb Rich\RichHe20,B,
+105,1951,NFL,2,26,CLE,Bucky Curtis,E,
+106,1951,NFL,10,115,CRD,Ken Cooper\CoopKe20,G,
+107,1950,NFL,6,67,BCL,Herb Rich\RichHe20,DB,
+108,1950,NFL,26,332,NYG,Carl Copp,T,
+109,1949,NFL,10,99,CHI,Lee Malley,B,
+110,1949,NFL,15,143,GNB,Ken Cooper\CoopKe20,G,
+111,1949,NFL,15,151,PHI,Carl Copp,T,
+112,1949,NFL,17,162,DET,Zealand Thigpen,B,
+113,1947,NFL,4,24,DET,Charley Hoover,C,
+114,1947,NFL,8,61,PHI,Al Satterfield\SattAl20,T,
+115,1947,NFL,21,189,PIT,Fred Hamilton,T,
+116,1947,NFL,23,209,PIT,Binks Bushmiaer,B,
+117,1945,NFL,6,51,WAS,John North\NortJo20,E,
+118,1945,NFL,7,61,WAS,John Steber\StebJo20,G,
+119,1945,NFL,31,320,WAS,Bob Cummings,C,
+120,1944,NFL,12,117,CHI,J.P. Moore,B,
+121,1943,NFL,1,10,WAS,Jack Jenkins\JenkJa20,FB,College Stats
+122,1942,NFL,14,130,CHI,Henry Gude\GudeHe20,C,
+123,1941,NFL,20,190,WAS,Ed Hiestand,E,
+124,1940,NFL,16,149,GNB,Ray Andrus,B,
+125,1938,NFL,5,33,BKN,Ed Merlin\MerlEd20,G,
+126,1938,NFL,11,92,PHI,Carl Hinkle,C,
+127,1937,NFL,3,28,CHI,Dick Plasman\PlasDi20,E,

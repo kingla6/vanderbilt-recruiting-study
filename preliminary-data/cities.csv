@@ -1,0 +1,385 @@
+metro_area,state,county_fips1,county_fips2,county_fips3,county_fips4,county_fips5,estimate_2019,actual_2010,growth,combided_statistical_area
+New York City-Newark-Jersey City,NY,36061,34013,34017,,,"19,216,182","18,897,109",1.69%,"New York-Newark, NY-NJ-CT-PA CSA"
+Los Angeles-Long Beach-Anaheim,CA,6037,6059,,,,"13,214,799","12,828,837",3.01%,"Los Angeles-Long Beach, CA CSA"
+Chicago-Naperville-Elgin,IL,17031,17043,17197,17089,,"9,458,539","9,461,105",?0.03%,"Chicago-Naperville, IL-IN-WI CSA"
+Dallas-Fort Worth-Arlington,TX,48113,48439,,,,"7,573,136","6,366,542",18.95%,"Dallas-Fort Worth, TX-OK CSA"
+Houston-The Woodlands-Sugar Land,TX,48201,48339,48157,,,"7,066,141","5,920,416",19.35%,"Houston-The Woodlands, TX CSA"
+Washington-Arlington-Alexandria,DC,11001,51013,51510,,,"6,280,487","5,649,540",11.17%,"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA"
+Miami-Fort Lauderdale-West Palm Beach,FL,12086,12011,12099,,,"6,166,488","5,564,635",10.82%,"Miami-Port St. Lucie-Fort Lauderdale, FL CSA"
+Philadelphia-Camden-Wilmington,PA,42101,34007,10003,,,"6,102,434","5,965,343",2.30%,"Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA"
+Atlanta-Sandy Springs-Alpharetta,GA,13121,,,,,"6,020,364","5,286,728",13.88%,"Atlanta–Athens-Clarke County–Sandy Springs, GA-AL CSA"
+Phoenix-Mesa-Chandler,AZ,4013,,,,,"4,948,203","4,192,887",18.01%,"Phoenix-Mesa, AZ CSA"
+Boston-Cambridge-Newton,MA,25025,25017,,,,"4,873,019","4,552,402",7.04%,"Boston-Worcester-Providence, MA-RI-NH-CT CSA"
+San Francisco-Oakland-Berkeley,CA,6075,6001,,,,"4,731,803","4,335,391",9.14%,"San Jose-San Francisco-Oakland, CA CSA"
+Riverside-San Bernardino-Ontario,CA,6065,6071,,,,"4,650,631","4,224,851",10.08%,"Los Angeles-Long Beach, CA CSA"
+Detroit–Warren–Dearborn,MI,26163,26099,,,,"4,319,629","4,296,250",0.54%,"Detroit-Warren-Ann Arbor, MI CSA"
+Seattle-Tacoma-Bellevue,WA,53033,53053,,,,"3,979,845","3,439,809",15.70%,"Seattle-Tacoma, WA CSA"
+Minneapolis-St. Paul-Bloomington,MN,27053,27123,,,,"3,654,908","3,346,859",9.20%,"Minneapolis-St. Paul, MN-WI CSA"
+San Diego-Chula Vista-Carlsbad,CA,6073,,,,,"3,338,330","3,095,313",7.85%,
+Tampa-St. Petersburg-Clearwater,FL,12057,12103,,,,"3,194,831","2,783,243",14.79%,
+Denver-Aurora-Lakewood,CO,8031,8005,8059,,,"2,967,239","2,543,482",16.66%,"Denver-Aurora, CO CSA"
+St. Louis,MO,29510,,,,,"2,803,228","2,787,701",0.56%,"St. Louis-St. Charles-Farmington, MO-IL CSA"
+Baltimore-Columbia-Towson,MD,24510,24027,24005,,,"2,800,053","2,710,489",3.30%,"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA"
+Charlotte-Concord-Gastonia,NC,37119,37025,37071,,,"2,636,883","2,243,960",17.51%,"Charlotte-Concord, NC-SC CSA"
+Orlando-Kissimmee-Sanford,FL,12095,12097,12117,,,"2,608,147","2,134,411",22.20%,"Orlando-Lakeland-Deltona, FL CSA"
+San Antonio-New Braunfels,TX,48029,48091,,,,"2,550,960","2,142,508",19.06%,
+Portland-Vancouver-Hillsboro,OR,41051,53011,41067,,,"2,492,412","2,226,009",11.97%,"Portland-Vancouver-Salem, OR-WA CSA"
+Sacramento-Roseville-Folsom,CA,6067,6061,,,,"2,363,730","2,149,127",9.99%,"Sacramento-Roseville, CA CSA"
+Pittsburgh,PA,42003,,,,,"2,317,600","2,356,285",?1.64%,"Pittsburgh-New Castle-Weirton, PA-OH-WV CSA"
+Las Vegas-Henderson-Paradise,NV,32003,,,,,"2,266,715","1,951,269",16.17%,"Las Vegas-Henderson, NV-AZ CSA"
+Austin-Round Rock-Georgetown,TX,48453,48491,,,,"2,227,083","1,716,289",29.76%,
+Cincinnati,OH,39061,,,,,"2,221,208","2,137,667",3.91%,"Cincinnati-Wilmington-Maysville, OH-KY-IN CSA"
+Kansas City,MO,29095,,,,,"2,157,990","2,009,342",7.40%,"Kansas City-Overland Park-Kansas City, MO-KS CSA"
+Columbus,OH,39049,,,,,"2,122,271","1,901,974",11.58%,"Columbus-Marion-Zanesville, OH CSA"
+Indianapolis-Carmel-Anderson,IN,18097,18057,18095,,,"2,074,537","1,887,877",9.89%,"Indianapolis-Carmel-Muncie, IN CSA"
+Cleveland-Elyria,OH,39035,39093,,,,"2,048,449","2,077,240",?1.39%,"Cleveland-Akron-Canton, OH CSA"
+San Jose-Sunnyvale-Santa Clara,CA,6085,,,,,"1,990,660","1,836,911",8.37%,"San Jose-San Francisco-Oakland, CA CSA"
+Nashville-Davidson–Murfreesboro–Franklin,TN,47037,47149,47187,,,"1,934,317","1,646,200",17.50%,"Nashville-Davidson–Murfreesboro, TN CSA"
+Virginia Beach-Norfolk-Newport News,VA,51810,51710,51700,,,"1,768,901","1,713,954",3.21%,"Virginia Beach-Norfolk, VA-NC CSA"
+Providence-Warwick,RI,44007,44003,,,,"1,624,578","1,600,852",1.48%,"Boston-Worcester-Providence, MA-RI-NH-CT CSA"
+Milwaukee-Waukesha,WI,55079,55133,,,,"1,575,179","1,555,908",1.24%,"Milwaukee-Racine-Waukesha, WI CSA"
+Jacksonville,FL,12031,,,,,"1,559,514","1,345,596",15.90%,"Jacksonville-St. Marys-Palatka, FL-GA CSA"
+Oklahoma City,OK,40109,,,,,"1,408,950","1,252,987",12.45%,"Oklahoma City-Shawnee, OK CSA"
+Raleigh-Cary,NC,37183,37037,,,,"1,390,785","1,130,490",23.02%,"Raleigh-Durham-Cary, NC CSA"
+Memphis,TN,47157,,,,,"1,346,045","1,316,100",2.28%,"Memphis-Forrest City, TN-MS-AR CSA"
+Richmond,VA,51760,,,,,"1,291,900","1,186,501",8.88%,
+New Orleans-Metairie,LA,22071,22051,,,,"1,270,530","1,189,866",6.78%,"New Orleans-Metairie-Hammond, LA-MS CSA"
+Louisville/Jefferson County,KY,21111,,,,,"1,265,108","1,202,718",5.19%,"Louisville/Jefferson County–Elizabethtown–Bardstown, KY-IN CSA"
+Salt Lake City,UT,49035,,,,,"1,232,696","1,087,873",13.31%,"Salt Lake City-Provo-Orem, UT CSA"
+Hartford-East Hartford-Middletown,CT,9003,9007,,,,"1,204,877","1,212,381",?0.62%,"Hartford-East Hartford, CT CSA"
+Buffalo-Niagara Falls,NY,36029,36063,,,,"1,127,983","1,135,509",?0.66%,"Buffalo-Cheektowaga-Cattaraugus, NY CSA"
+Birmingham-Hoover,AL,1073,1117,,,,"1,090,435","1,061,024",2.77%,"Birmingham-Hoover-Talladega, AL CSA"
+Grand Rapids-Kentwood,MI,26081,,,,,"1,077,370","993,670",8.42%,"Grand Rapids-Kentwood-Muskegon, MI CSA"
+Rochester,NY,36055,,,,,"1,069,644","1,079,671",?0.93%,"Rochester-Batavia-Seneca Falls, NY CSA"
+Tucson,AZ,4019,,,,,"1,047,279","980,263",6.84%,"Tucson-Nogales, AZ CSA"
+Fresno,CA,6019,,,,,"999,101","930,450",7.38%,"Fresno-Madera-Hanford, CA CSA"
+Tulsa,OK,40143,,,,,"998,626","937,478",6.52%,"Tulsa-Muskogee-Bartlesville, OK CSA"
+Urban Honolulu,HI,15003,,,,,"974,563","953,207",2.24%,
+Omaha-Council Bluffs,NE,31055,19155,,,,"949,442","865,350",9.72%,"Omaha-Council Bluffs-Fremont, NE-IA CSA"
+Worcester,MA,25027,,,,,"947,404","916,980",3.32%,"Boston-Worcester-Providence, MA-RI-NH-CT CSA"
+Bridgeport-Stamford-Norwalk,CT,9001,,,,,"943,332","916,829",2.89%,"New York-Newark, NY-NJ-CT-PA CSA"
+Greenville-Anderson,SC,45045,45007,,,,"920,477","824,112",11.69%,"Greenville-Spartanburg-Anderson, SC CSA"
+Albuquerque,NM,35001,,,,,"918,018","887,077",3.49%,"Albuquerque-Santa Fe-Las Vegas, NM CSA"
+Bakersfield,CA,6029,,,,,"900,202","839,631",7.21%,
+Albany-Schenectady-Troy,NY,36001,36093,36083,,,"880,381","870,716",1.11%,"Albany-Schenectady, NY CSA"
+Knoxville,TN,47093,,,,,"869,046","814,914",6.64%,"Knoxville-Morristown-Sevierville, TN CSA"
+McAllen-Edinburg-Mission,TX,48215,,,,,"868,707","774,769",12.12%,"McAllen-Edinburg, TX CSA"
+Baton Rouge,LA,22033,,,,,"854,884","825,905",3.51%,
+New Haven-Milford,CT,9009,,,,,"854,757","862,477",?0.90%,"New York-Newark, NY-NJ-CT-PA CSA"
+Oxnard-Thousand Oaks-Ventura,CA,6111,,,,,"846,006","823,318",2.76%,"Los Angeles-Long Beach, CA CSA"
+El Paso,TX,48141,,,,,"844,124","804,123",4.97%,"El Paso-Las Cruces, TX-NM CSA"
+Allentown-Bethlehem-Easton,PA,42077,42095,,,,"844,052","821,173",2.79%,
+Columbia,SC,45079,,,,,"838,433","767,598",9.23%,"Columbia-Orangeburg-Newberry, SC CSA"
+North Port-Sarasota-Bradenton,FL,12115,12081,,,,"836,995","702,281",19.18%,"North Port-Sarasota, FL CSA"
+Dayton-Kettering,OH,39113,39057,,,,"807,611","799,232",1.05%,"Dayton-Springfield-Kettering, OH CSA"
+Charleston-North Charleston,SC,45019,45015,45035,,,"802,122","664,607",20.69%,
+Greensboro-High Point,NC,37081,37151,37057,37067,,"771,851","723,801",6.64%,"Greensboro–Winston-Salem–High Point, NC CSA"
+Cape Coral-Fort Myers,FL,12071,,,,,"770,577","618,754",24.54%,"Cape Coral-Fort Myers-Naples, FL CSA"
+Stockton,CA,6077,,,,,"762,148","685,306",11.21%,"San Jose-San Francisco-Oakland, CA CSA"
+Boise City,ID,16015,,,,,"749,202","616,561",21.51%,"Boise City-Mountain Home-Ontario, ID-OR CSA"
+Colorado Springs,CO,8041,,,,,"745,791","645,613",15.52%,
+Little Rock-North Little Rock-Conway,AR,5119,5045,,,,"742,384","699,757",6.09%,"Little Rock-North Little Rock, AR CSA"
+Lakeland-Winter Haven,FL,12105,,,,,"724,777","602,095",20.38%,"Orlando-Lakeland-Deltona, FL CSA"
+Akron,OH,39153,,,,,"703,479","703,200",0.04%,"Cleveland-Akron-Canton, OH CSA"
+Des Moines-West Des Moines,IA,19057,19153,19049,19181,19121,"699,292","606,475",15.30%,"Des Moines-Ames-West Des Moines, IA CSA"
+Springfield,MA,25013,,,,,"697,382","692,942",0.64%,
+Ogden-Clearfield,UT,49057,49011,,,,"683,864","597,159",14.52%,"Salt Lake City-Provo-Orem, UT CSA"
+Poughkeepsie-Newburgh-Middletown,NY,36027,36071,,,,"679,158","670,301",1.32%,"New York-Newark, NY-NJ-CT-PA CSA"
+Winston-Salem,NC,37067,,,,,"676,008","640,595",5.53%,"Greensboro–Winston-Salem–High Point, NC CSA"
+Deltona-Daytona Beach-Ormond Beach,FL,12127,,,,,"668,365","590,289",13.23%,"Orlando-Lakeland-Deltona, FL CSA"
+Madison,WI,55025,,,,,"664,865","605,435",9.82%,"Madison-Janesville-Beloit, WI CSA"
+Syracuse,NY,36067,,,,,"648,593","662,577",?2.11%,"Syracuse-Auburn, NY CSA"
+Provo-Orem,UT,49049,,,,,"648,252","526,810",23.05%,"Salt Lake City-Provo-Orem, UT CSA"
+Durham-Chapel Hill,NC,37063,37135,,,,"644,367","564,273",14.19%,"Raleigh-Durham-Cary, NC CSA"
+Toledo,OH,39095,,,,,"641,816","651,429",?1.48%,"Toledo-Findlay-Tiffin, OH CSA"
+Wichita,KS,20173,,,,,"640,218","623,061",2.75%,"Wichita-Winfield, KS CSA"
+Augusta-Richmond County,GA,13245,,,,,"608,980","564,873",7.81%,
+Palm Bay-Melbourne-Titusville,FL,12009,,,,,"601,942","543,376",10.78%,"Orlando-Lakeland-Deltona, FL CSA"
+Jackson,MS,28059,,,,,"594,806","586,320",1.45%,"Jackson-Vicksburg-Brookhaven, MS CSA"
+Harrisburg-Carlisle,PA,42043,42041,,,,"577,941","549,475",5.18%,"Harrisburg-York-Lebanon, PA CSA"
+Spokane-Spokane Valley,WA,53063,,,,,"568,521","514,752",10.45%,"Spokane-Spokane Valley-Coeur d'Alene, WA-ID CSA"
+Chattanooga,TN,47065,,,,,"565,194","528,143",7.02%,"Chattanooga-Cleveland-Dalton, TN-GA-AL CSA"
+Scranton–Wilkes-Barre,PA,42069,42079,,,,"553,885","563,631",?1.73%,
+Modesto,CA,6099,,,,,"550,660","514,453",7.04%,"San Jose-San Francisco-Oakland, CA CSA"
+Lansing-East Lansing,MI,26065,26045,26037,,,"550,391","534,684",2.94%,
+Lancaster,PA,42071,,,,,"545,724","519,445",5.06%,
+Portland-South Portland,ME,23005,,,,,"538,500","514,098",4.75%,"Portland-Lewiston-South Portland, ME CSA"
+Youngstown-Warren-Boardman,OH,39099,39155,,,,"536,081","565,773",?5.25%,"Youngstown-Warren, OH-PA CSA"
+Fayetteville-Springdale-Rogers,AR,5143,5007,,,,"534,904","440,121",21.54%,
+Fayetteville,NC,37051,,,,,"526,719","481,061",9.49%,"Fayetteville-Lumberton-Laurinburg, NC CSA"
+Lexington-Fayette,KY,21067,,,,,"517,056","472,099",9.52%,"Lexington-Fayette–Richmond–Frankfort, KY CSA"
+Pensacola-Ferry Pass-Brent,FL,12033,,,,,"502,629","448,991",11.95%,"Pensacola-Ferry Pass, FL-AL CSA"
+Myrtle Beach-Conway-North Myrtle Beach,SC,45051,,,,,"496,901","376,722",31.90%,"Myrtle Beach-Conway, SC-NC CSA"
+Santa Rosa-Petaluma,CA,6097,,,,,"494,336","483,878",2.16%,"San Jose-San Francisco-Oakland, CA CSA"
+Port St. Lucie,FL,12111,,,,,"489,297","424,107",15.37%,"Miami-Port St. Lucie-Fort Lauderdale, FL CSA"
+Lafayette,LA,22055,,,,,"489,207","466,750",4.81%,"Lafayette-Opelousas-Morgan City, LA CSA"
+Reno,NV,32031,,,,,"475,642","425,417",11.81%,"Reno-Carson City-Fernley, NV CSA"
+Huntsville,AL,1089,,,,,"471,824","417,593",12.99%,"Huntsville-Decatur, AL CSA"
+Springfield,MO,29077,,,,,"470,300","436,712",7.69%,
+Visalia,CA,6107,,,,,"466,195","442,179",5.43%,
+Asheville,NC,37021,,,,,"462,680","424,858",8.90%,"Asheville-Marion-Brevard, NC CSA"
+Killeen-Temple,TX,48027,,,,,"460,303","405,300",13.57%,
+York-Hanover,PA,42133,,,,,"449,058","434,972",3.24%,"Harrisburg-York-Lebanon, PA CSA"
+Vallejo,CA,6095,,,,,"447,643","413,344",8.30%,"San Jose-San Francisco-Oakland, CA CSA"
+Santa Maria-Santa Barbara,CA,6083,,,,,"446,499","423,895",5.33%,
+Salinas,CA,6053,,,,,"434,061","415,057",4.58%,
+Salem,OR,41047,41053,,,,"433,903","390,738",11.05%,"Portland-Vancouver-Salem, OR-WA CSA"
+Mobile,AL,1097,,,,,"429,536","430,573",?0.24%,"Mobile-Daphne-Fairhope, AL CSA"
+Corpus Christi,TX,48355,,,,,"429,024","405,027",5.92%,"Corpus Christi-Kingsville-Alice, TX CSA"
+Brownsville-Harlingen,TX,48061,,,,,"423,163","406,220",4.17%,"Brownsville-Harlingen-Raymondville, TX CSA"
+Reading,PA,42011,,,,,"421,164","411,442",2.36%,"Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA"
+Gulfport-Biloxi,MS,28047,,,,,"417,665","388,488",7.51%,
+Manchester-Nashua,NH,33011,,,,,"417,025","400,721",4.07%,"Boston-Worcester-Providence, MA-RI-NH-CT CSA"
+Salisbury,MD,24045,,,,,"415,726","373,802",11.22%,"Salisbury-Cambridge, MD-DE CSA"
+Fort Wayne,IN,18003,,,,,"413,263","388,621",6.34%,"Fort Wayne-Huntington-Auburn, IN CSA"
+Flint,MI,26049,,,,,"405,813","425,790",?4.69%,"Detroit-Warren-Ann Arbor, MI CSA"
+Peoria,IL,17143,,,,,"400,561","416,255",?3.77%,
+Canton-Massillon,OH,39151,,,,,"397,520","404,422",?1.71%,"Cleveland-Akron-Canton, OH CSA"
+Anchorage,AK,2020,,,,,"396,317","380,821",4.07%,
+Shreveport-Bossier City,LA,22017,22015,,,,"394,706","398,604",?0.98%,"Shreveport-Bossier City-Minden, LA CSA"
+Savannah,GA,13051,,,,,"393,353","347,611",13.16%,"Savannah-Hinesville-Statesboro, GA CSA"
+Beaumont-Port Arthur,TX,48245,48361,,,,"392,563","388,745",0.98%,
+Tallahassee,FL,12073,,,,,"387,227","367,413",5.39%,
+Naples-Marco Island,FL,12021,,,,,"384,902","321,520",19.71%,"Cape Coral-Fort Myers-Naples, FL CSA"
+Eugene-Springfield,OR,41039,,,,,"382,067","351,715",8.63%,
+Davenport-Moline-Rock Island,IA,19163,17161,,,,"379,172","379,690",?0.14%,"Davenport-Moline, IA-IL CSA"
+Montgomery,AL,1101,,,,,"373,290","374,536",?0.33%,"Montgomery-Selma-Alexander City, AL CSA"
+Hickory-Lenoir-Morganton,NC,37035,37027,37023,,,"369,711","365,497",1.15%,
+Ann Arbor,MI,26161,,,,,"367,601","344,791",6.62%,"Detroit-Warren-Ann Arbor, MI CSA"
+Trenton-Princeton,NJ,34021,,,,,"367,430","366,513",0.25%,"New York-Newark, NY-NJ-CT-PA CSA"
+Ocala,FL,12083,,,,,"365,579","331,298",10.35%,
+Fort Collins,CO,8069,,,,,"356,899","299,630",19.11%,
+Huntington-Ashland,WV,54011,21019,,,,"355,873","370,908",?4.05%,"Charleston-Huntington-Ashland, WV-OH-KY CSA"
+Lincoln,NE,31109,,,,,"336,374","302,157",11.32%,"Lincoln-Beatrice, NE CSA"
+Rockford,IL,17201,,,,,"336,116","349,431",?3.81%,"Rockford-Freeport-Rochelle, IL CSA"
+Gainesville,FL,12001,,,,,"329,128","305,076",7.88%,"Gainesville-Lake City, FL CSA"
+Boulder,CO,8013,,,,,"326,196","294,567",10.74%,"Denver-Aurora, CO CSA"
+Greeley,CO,8123,,,,,"324,492","252,825",28.35%,"Denver-Aurora, CO CSA"
+South Bend-Mishawaka,IN,18141,,,,,"323,613","319,224",1.37%,"South Bend-Elkhart-Mishawaka, IN-MI CSA"
+Green Bay,WI,55009,,,,,"322,906","306,241",5.44%,"Green Bay-Shawano, WI CSA"
+Lubbock,TX,48303,,,,,"322,257","290,805",10.82%,"Lubbock-Plainview-Levelland, TX CSA"
+Columbus,GA,13215,,,,,"321,048","307,788",4.31%,"Columbus-Auburn-Opelika, GA-AL CSA"
+Spartanburg,SC,45083,,,,,"319,785","284,307",12.48%,"Greenville-Spartanburg-Anderson, SC CSA"
+Evansville,IN,18163,,,,,"315,086","311,552",1.13%,
+Roanoke,VA,51161,,,,,"313,222","308,707",1.46%,
+Clarksville,TN,47125,,,,,"307,820","273,949",12.36%,
+Kingsport-Bristol,TN,47163,47073,,,,"307,202","309,544",?0.76%,"Johnson City-Kingsport-Bristol, TN-VA CSA"
+Kennewick-Richland,WA,53005,,,,,"299,612","253,340",18.26%,"Kennewick-Richland-Walla Walla, WA CSA"
+Wilmington,NC,37129,,,,,"297,533","254,884",16.73%,
+Olympia-Lacey-Tumwater,WA,53067,,,,,"290,536","252,264",15.17%,"Seattle-Tacoma, WA CSA"
+Utica-Rome,NY,36065,,,,,"289,990","299,397",?3.14%,
+Duluth,MN,27137,,,,,"288,732","290,637",?0.66%,
+Hagerstown-Martinsburg,MD,24043,54003,,,,"288,104","269,140",7.05%,"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA"
+Longview,TX,48183,,,,,"286,657","280,000",2.38%,
+Crestview-Fort Walton Beach-Destin,FL,12091,,,,,"284,809","235,865",20.75%,
+San Luis Obispo-Paso Robles,CA,6079,,,,,"283,111","269,637",5.00%,
+Merced,CA,6047,,,,,"277,680","255,793",8.56%,"San Jose-San Francisco-Oakland, CA CSA"
+Laredo,TX,48479,,,,,"276,652","250,304",10.53%,
+Waco,TX,48309,,,,,"273,920","252,772",8.37%,
+Santa Cruz-Watsonville,CA,6087,,,,,"273,213","262,382",4.13%,"San Jose-San Francisco-Oakland, CA CSA"
+Cedar Rapids,IA,19113,,,,,"273,032","257,940",5.85%,"Cedar Rapids-Iowa City, IA CSA"
+Bremerton-Silverdale-Port Orchard,WA,53035,,,,,"271,473","251,133",8.10%,"Seattle-Tacoma, WA CSA"
+Erie,PA,42049,,,,,"269,728","280,566",?3.86%,"Erie-Meadville, PA CSA"
+Sioux Falls,SD,46099,,,,,"268,232","228,261",17.51%,
+Norwich-New London,CT,9011,,,,,"265,206","274,055",?3.23%,"Hartford-East Hartford, CT CSA"
+Kalamazoo-Portage,MI,26077,,,,,"265,066","250,331",5.89%,"Kalamazoo-Battle Creek-Portage, MI CSA"
+Amarillo,TX,48375,,,,,"265,053","251,933",5.21%,"Amarillo-Pampa-Borger, TX CSA"
+College Station-Bryan,TX,48041,,,,,"264,728","228,660",15.77%,
+Atlantic City-Hammonton,NJ,34001,,,,,"263,670","274,549",?3.96%,"Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA"
+Lynchburg,VA,51680,,,,,"263,566","252,634",4.33%,
+Charleston,WV,54039,,,,,"257,074","278,009",?7.53%,"Charleston-Huntington-Ashland, WV-OH-KY CSA"
+Tuscaloosa,AL,1125,,,,,"252,047","239,207",5.37%,
+Yakima,WA,53077,,,,,"250,873","243,231",3.14%,
+Fort Smith,AR,5131,,,,,"250,368","248,208",0.87%,
+Fargo,ND,38017,,,,,"246,145","208,777",17.90%,"Fargo-Wahpeton, ND-MN CSA"
+Binghamton,NY,36007,,,,,"238,691","251,725",?5.18%,
+Appleton,WI,55087,,,,,"237,974","225,666",5.45%,"Appleton-Oshkosh-Neenah, WI CSA"
+Prescott Valley-Prescott,AZ,4025,,,,,"235,099","211,033",11.40%,
+Lafayette-West Lafayette,IN,18157,,,,,"233,002","210,297",10.80%,"Lafayette-West Lafayette-Frankfort, IN CSA"
+Tyler,TX,48423,,,,,"232,751","209,714",10.98%,"Tyler-Jacksonville, TX CSA"
+Topeka,KS,20177,,,,,"231,969","233,870",?0.81%,
+Macon-Bibb County,GA,13021,,,,,"229,996","232,293",?0.99%,"Macon-Bibb County–Warner Robins, GA CSA"
+Bellingham,WA,53073,,,,,"229,247","201,140",13.97%,
+Champaign-Urbana,IL,17019,,,,,"226,033","217,810",3.78%,
+Daphne-Fairhope-Foley,AL,1003,,,,,"223,234","182,265",22.48%,"Mobile-Daphne-Fairhope, AL CSA"
+Hilton Head Island-Bluffton-Beaufort,SC,45013,,,,,"222,195","187,010",18.81%,
+Rochester,MN,27109,,,,,"221,921","206,877",7.27%,"Rochester-Austin, MN CSA"
+Medford,OR,41029,,,,,"220,944","203,206",8.73%,"Medford-Grants Pass, OR CSA"
+Burlington-South Burlington,VT,50007,,,,,"220,411","211,261",4.33%,"Burlington-South Burlington-Barre, VT CSA"
+Chico,CA,6007,,,,,"219,186","220,000",?0.37%,
+Charlottesville,VA,51540,,,,,"218,615","201,559",8.46%,
+Las Cruces,NM,35013,,,,,"218,195","209,233",4.28%,"El Paso-Las Cruces, TX-NM CSA"
+Yuma,AZ,4027,,,,,"213,787","195,751",9.21%,
+Athens-Clarke County,GA,13059,,,,,"213,750","192,541",11.02%,"Atlanta–Athens-Clarke County–Sandy Springs, GA-AL CSA"
+Barnstable Town,MA,25001,,,,,"212,990","215,888",?1.34%,"Boston-Worcester-Providence, MA-RI-NH-CT CSA"
+Lake Havasu City-Kingman,AZ,4015,,,,,"212,181","200,186",5.99%,"Las Vegas-Henderson, NV-AZ CSA"
+Lake Charles,LA,22019,,,,,"210,409","199,607",5.41%,"Lake Charles-Jennings, LA CSA"
+Columbia,MO,29019,,,,,"208,173","190,387",9.34%,"Columbia-Moberly-Mexico, MO CSA"
+Houma-Thibodaux,LA,22109,,,,,"208,075","208,178",?0.05%,
+Springfield,IL,22057,,,,,"206,868","210,170",?1.57%,"Springfield-Jacksonville-Lincoln, IL CSA"
+Elkhart-Goshen,IN,18039,,,,,"206,341","197,559",4.45%,"South Bend-Elkhart-Mishawaka, IN-MI CSA"
+Florence,SC,45041,,,,,"204,911","205,566",?0.32%,
+Gainesville,GA,13139,,,,,"204,441","179,684",13.78%,"Atlanta–Athens-Clarke County–Sandy Springs, GA-AL CSA"
+Johnson City,TN,47179,47019,47163,,,"203,649","198,716",2.48%,"Johnson City-Kingsport-Bristol, TN-VA CSA"
+St. Cloud,MN,27141,,,,,"201,964","189,093",6.81%,"Minneapolis-St. Paul, MN-WI CSA"
+Monroe,LA,22073,,,,,"200,261","204,420",?2.03%,"Monroe-Ruston, LA CSA"
+Jacksonville,NC,37133,,,,,"197,938","177,772",11.34%,
+Bend,OR,41017,,,,,"197,692","157,733",25.33%,"Bend-Prineville, OR CSA"
+Racine,WI,55101,,,,,"196,311","195,408",0.46%,"Milwaukee-Racine-Waukesha, WI CSA"
+Saginaw,MI,26145,,,,,"190,539","200,169",?4.81%,"Saginaw-Midland-Bay City, MI CSA"
+Punta Gorda,FL,12015,,,,,"188,910","159,978",18.08%,"North Port-Sarasota, FL CSA"
+Terre Haute,IN,18167,,,,,"186,367","189,764",?1.79%,
+Warner Robins,GA,13153,,,,,"185,409","167,595",10.63%,"Macon-Bibb County–Warner Robins, GA CSA"
+Midland,TX,48329,,,,,"182,603","141,671",28.89%,"Midland-Odessa, TX CSA"
+Billings,MT,30111,,,,,"181,667","167,167",8.67%,
+El Centro,CA,6025,,,,,"181,215","174,528",3.83%,
+Dover,DE,10001,,,,,"180,786","162,310",11.38%,"Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA"
+Greenville,NC,37147,,,,,"180,742","168,148",7.49%,"Greenville-Kinston-Washington, NC CSA"
+Redding,CA,6089,,,,,"180,080","177,223",1.61%,"Redding-Red Bluff, CA CSA"
+Joplin,MO,29097,29145,,,,"179,564","175,518",2.31%,"Joplin-Miami, MO-OK CSA"
+Bowling Green,KY,21227,,,,,"179,240","158,599",13.01%,"Bowling Green-Glasgow, KY CSA"
+Jackson,TN,47113,,,,,"178,644","179,694",?0.58%,
+Kingston,NY,36111,,,,,"177,573","182,493",?2.70%,"New York-Newark, NY-NJ-CT-PA CSA"
+St. George,UT,49053,,,,,"177,556","138,115",28.56%,
+Yuba City,CA,6101,,,,,"175,639","166,892",5.24%,"Sacramento-Roseville, CA CSA"
+Panama City,FL,12005,,,,,"174,705","168,852",3.47%,
+Muskegon,MI,26121,,,,,"173,566","172,188",0.80%,"Grand Rapids-Kentwood-Muskegon, MI CSA"
+Iowa City,IA,19103,,,,,"173,105","152,586",13.45%,"Cedar Rapids-Iowa City, IA CSA"
+Abilene,TX,48441,,,,,"172,060","165,252",4.12%,
+Oshkosh-Neenah,WI,55139,,,,,"171,907","166,994",2.94%,"Appleton-Oshkosh-Neenah, WI CSA"
+Bloomington,IL,17113,,,,,"171,517","169,572",1.15%,"Bloomington-Pontiac, IL CSA"
+East Stroudsburg,PA,42089,,,,,"170,271","169,842",0.25%,"New York-Newark, NY-NJ-CT-PA CSA"
+Burlington,NC,37001,,,,,"169,509","151,131",12.16%,"Greensboro–Winston-Salem–High Point, NC CSA"
+Eau Claire,WI,55035,,,,,"169,304","161,151",5.06%,"Eau Claire-Menomonie, WI CSA"
+Bloomington,IN,18105,,,,,"169,230","159,549",6.07%,"Bloomington-Bedford, IN CSA"
+Hattiesburg,MS,28035,,,,,"168,849","162,410",3.96%,"Hattiesburg-Laurel, MS CSA"
+Waterloo-Cedar Falls,IA,19013,,,,,"168,522","167,819",0.42%,
+Pueblo,CO,8101,,,,,"168,424","159,063",5.89%,"Pueblo-Cañon City, CO CSA"
+Blacksburg-Christiansburg,VA,51121,,,,,"167,531","162,958",2.81%,
+Kahului-Wailuku-Lahaina,HI,15009,,,,,"167,417","154,834",8.13%,
+Odessa,TX,48135,,,,,"166,223","137,130",21.22%,"Midland-Odessa, TX CSA"
+Coeur d'Alene,ID,16055,,,,,"165,697","138,494",19.64%,"Spokane-Spokane Valley-Coeur d'Alene, WA-ID CSA"
+Auburn-Opelika,AL,1081,,,,,"164,542","140,247",17.32%,"Columbus-Auburn-Opelika, GA-AL CSA"
+Janesville-Beloit,WI,55105,,,,,"163,354","160,331",1.89%,"Madison-Janesville-Beloit, WI CSA"
+Wausau-Weston,WI,55073,,,,,"163,285","162,806",0.29%,"Wausau-Stevens Point-Wisconsin Rapids, WI CSA"
+State College,PA,42027,,,,,"162,385","153,990",5.45%,"State College-DuBois, PA CSA"
+Sebastian-Vero Beach,FL,12061,,,,,"159,923","138,028",15.86%,"Miami-Port St. Lucie-Fort Lauderdale, FL CSA"
+Jackson,MI,26075,,,,,"158,510","160,248",?1.08%,
+Madera,CA,6039,,,,,"157,327","150,865",4.28%,"Fresno-Madera-Hanford, CA CSA"
+Chambersburg-Waynesboro,PA,42055,,,,,"155,027","149,618",3.62%,"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA"
+Grand Junction,CO,8077,,,,,"154,210","146,723",5.10%,
+Elizabethtown-Fort Knox,KY,21093,21163,,,,"153,928","148,338",3.77%,"Louisville/Jefferson County–Elizabethtown–Bardstown, KY-IN CSA"
+Niles,MI,26021,26027,,,,"153,401","156,813",?2.18%,"South Bend-Elkhart-Mishawaka, IN-MI CSA"
+Hanford-Corcoran,CA,6031,,,,,"152,940","152,982",?0.03%,"Fresno-Madera-Hanford, CA CSA"
+Decatur,AL,1103,,,,,"152,603","153,829",?0.80%,"Huntsville-Decatur, AL CSA"
+Bangor,ME,23019,,,,,"152,148","153,923",?1.15%,
+Alexandria,LA,22079,,,,,"152,037","153,922",?1.22%,
+Idaho Falls,ID,16019,,,,,"151,530","133,265",13.71%,"Idaho Falls-Rexburg-Blackfoot, ID CSA"
+Wichita Falls,TX,48485,,,,,"151,254","151,306",?0.03%,
+Jefferson City,MO,29051,,,,,"151,235","149,807",0.95%,
+Monroe,MI,26115,,,,,"150,500","152,021",?1.00%,"Detroit-Warren-Ann Arbor, MI CSA"
+Santa Fe,NM,35049,,,,,"150,358","144,170",4.29%,"Albuquerque-Santa Fe-Las Vegas, NM CSA"
+Homosassa Springs,FL,12017,,,,,"149,657","141,236",5.96%,
+Vineland-Bridgeton,NJ,34011,,,,,"149,527","156,898",?4.70%,"Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA"
+Dothan,AL,1069,,,,,"149,358","145,639",2.55%,"Dothan-Ozark, AL CSA"
+Texarkana,TX,48037,,,,,"148,761","149,198",?0.29%,
+Florence-Muscle Shoals,AL,1077,1033,,,,"147,970","147,137",0.57%,
+Valdosta,GA,13185,,,,,"147,292","139,588",5.52%,
+Albany,GA,13095,,,,,"146,726","153,857",?4.63%,
+Rocky Mount,NC,37065,37127,,,,"145,770","152,392",?4.35%,"Rocky Mount-Wilson-Roanoke Rapids, NC CSA"
+Dalton,GA,13313,,,,,"144,724","142,227",1.76%,"Chattanooga-Cleveland-Dalton, TN-GA-AL CSA"
+Sioux City,IA,19193,,,,,"144,701","143,577",0.78%,
+Flagstaff,AZ,4005,,,,,"143,476","134,421",6.74%,
+Morristown,TN,47063,,,,,"142,749","136,608",4.50%,"Knoxville-Morristown-Sevierville, TN CSA"
+Logan,UT,49005,,,,,"142,165","125,442",13.33%,
+Rapid City,SD,46103,,,,,"142,107","126,382",12.44%,"Rapid City-Spearfish, SD CSA"
+Lebanon,PA,42075,,,,,"141,793","133,568",6.16%,"Harrisburg-York-Lebanon, PA CSA"
+Winchester,VA,51840,,,,,"140,566","128,472",9.41%,"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA"
+Sumter,SC,45085,,,,,"140,466","142,427",?1.38%,
+Morgantown,WV,54061,,,,,"139,044","129,709",7.20%,"Morgantown-Fairmont, WV CSA"
+Wheeling,WV,54069,54051,,,,"138,948","147,950",?6.08%,
+Napa,CA,6055,,,,,"137,744","136,484",0.92%,"San Jose-San Francisco-Oakland, CA CSA"
+La Crosse-Onalaska,WI,55063,,,,,"136,616","133,665",2.21%,
+Sherman-Denison,TX,48181,,,,,"136,212","120,877",12.69%,"Dallas-Fort Worth, TX-OK CSA"
+Carbondale-Marion,IL,17077,17199,,,,"135,764","139,157",?2.44%,
+Harrisonburg,VA,51660,,,,,"134,964","125,228",7.77%,"Harrisonburg-Staunton-Waynesboro, VA CSA"
+Hammond,LA,22105,,,,,"134,758","121,097",11.28%,"New Orleans-Metairie-Hammond, LA-MS CSA"
+Battle Creek,MI,26025,,,,,"134,159","136,146",?1.46%,"Kalamazoo-Battle Creek-Portage, MI CSA"
+Springfield,OH,39023,,,,,"134,083","138,333",?3.07%,"Dayton-Springfield-Kettering, OH CSA"
+Jonesboro,AR,5031,,,,,"133,860","121,026",10.60%,"Jonesboro-Paragould, AR CSA"
+The Villages,FL,12119,,,,,"132,420","93,420",41.75%,"Orlando-Lakeland-Deltona, FL CSA"
+Manhattan,KS,20161,,,,,"130,285","127,081",2.52%,
+Johnstown,PA,42021,,,,,"130,192","143,679",?9.39%,"Johnstown-Somerset, PA CSA"
+Albany-Lebanon,OR,41043,,,,,"129,749","116,672",11.21%,"Portland-Vancouver-Salem, OR-WA CSA"
+Mount Vernon-Anacortes,WA,53057,,,,,"129,205","116,901",10.53%,"Seattle-Tacoma, WA CSA"
+Bismarck,ND,38015,,,,,"128,949","110,625",16.56%,
+Lawton,OK,40031,,,,,"126,415","130,291",?2.97%,
+Sierra Vista-Douglas,AZ,4003,,,,,"125,922","131,346",?4.13%,
+St. Joseph,MO,29021,,,,,"125,223","127,329",?1.65%,"Kansas City-Overland Park-Kansas City, MO-KS CSA"
+Glens Falls,NY,36113,,,,,"125,148","128,923",?2.93%,"Albany-Schenectady, NY CSA"
+Pittsfield,MA,25003,,,,,"124,944","131,219",?4.78%,
+Cleveland,TN,47011,,,,,"124,942","115,788",7.91%,"Chattanooga-Cleveland-Dalton, TN-GA-AL CSA"
+New Bern,NC,37049,,,,,"124,284","126,802",?1.99%,"New Bern-Morehead City, NC CSA"
+Farmington,NM,35045,,,,,"123,958","130,044",?4.68%,
+Ames,IA,19169,,,,,"123,351","115,848",6.48%,"Des Moines-Ames-West Des Moines, IA CSA"
+Goldsboro,NC,37191,,,,,"123,131","122,623",0.41%,
+Staunton,VA,51015,,,,,"123,120","118,502",3.90%,"Harrisonburg-Staunton-Waynesboro, VA CSA"
+Lawrence,KS,20045,,,,,"122,259","110,826",10.32%,"Kansas City-Overland Park-Kansas City, MO-KS CSA"
+San Angelo,TX,48451,,,,,"122,027","112,966",8.02%,
+Altoona,PA,42013,,,,,"121,829","127,089",?4.14%,
+Mansfield,OH,39139,,,,,"121,154","124,475",?2.67%,"Mansfield-Ashland-Bucyrus, OH CSA"
+Wenatchee,WA,53007,,,,,"120,629","110,884",8.79%,
+Missoula,MT,30063,,,,,"119,600","109,299",9.42%,
+Owensboro,KY,21059,,,,,"119,440","114,752",4.09%,
+Brunswick,GA,13127,,,,,"118,779","112,370",5.70%,
+Weirton-Steubenville,WV,54009,54029,39081,,,"116,074","124,454",?6.73%,"Pittsburgh-New Castle-Weirton, PA-OH-WV CSA"
+Beckley,WV,54081,,,,,"115,767","124,898",?7.31%,
+Sheboygan,WI,55117,,,,,"115,340","115,507",?0.14%,
+Muncie,IN,18035,,,,,"114,135","117,671",?3.00%,"Indianapolis-Carmel-Muncie, IN CSA"
+Anniston-Oxford,AL,1015,1121,,,,"113,605","118,572",?4.19%,
+California-Lexington Park,MD,24037,,,,,"113,510","105,151",7.95%,"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA CSA"
+Williamsport,PA,42081,,,,,"113,299","116,111",?2.42%,"Williamsport-Lock Haven, PA CSA"
+Twin Falls,ID,16083,,,,,"111,290","99,604",11.73%,
+Longview,WA,53015,,,,,"110,593","102,410",7.99%,"Portland-Vancouver-Salem, OR-WA CSA"
+Michigan City-La Porte,IN,18091,,,,,"109,888","111,467",?1.42%,"Chicago-Naperville, IL-IN-WI CSA"
+Kankakee,IL,17091,,,,,"109,862","113,449",?3.16%,"Chicago-Naperville, IL-IN-WI CSA"
+Watertown-Fort Drum,NY,36045,,,,,"109,834","116,229",?5.50%,
+Lewiston-Auburn,ME,23001,,,,,"108,277","107,702",0.53%,"Portland-Lewiston-South Portland, ME CSA"
+Sebring-Avon Park,FL,12055,,,,,"106,221","98,786",7.53%,
+Decatur,IL,17115,,,,,"104,009","110,768",?6.10%,
+Fond du Lac,WI,55039,,,,,"103,403","101,633",1.74%,
+Bay City,MI,26017,,,,,"103,126","107,771",?4.31%,"Saginaw-Midland-Bay City, MI CSA"
+Gettysburg,PA,42001,,,,,"103,009","101,407",1.58%,"Harrisburg-York-Lebanon, PA CSA"
+Lima,OH,39003,,,,,"102,351","106,331",?3.74%,"Lima-Van Wert-Celina, OH CSA"
+Gadsden,AL,1055,,,,,"102,268","104,430",?2.07%,
+Ithaca,NY,36109,,,,,"102,180","101,564",0.61%,"Ithaca-Cortland, NY CSA"
+Mankato,MN,27013,27103,27079,,,"101,927","96,740",5.36%,"Mankato-New Ulm, MN CSA"
+Grand Forks,ND,38035,,,,,"100,815","98,461",2.39%,
+Victoria,TX,48469,,,,,"99,742","94,003",6.11%,"Victoria-Port Lavaca, TX CSA"
+Cheyenne,WY,56021,,,,,"99,500","91,738",8.46%,
+Hot Springs,AR,5051,,,,,"99,386","96,024",3.50%,"Hot Springs-Malvern, AR CSA"
+Rome,GA,13115,,,,,"98,498","96,317",2.26%,"Atlanta–Athens-Clarke County–Sandy Springs, GA-AL CSA"
+Dubuque,IA,19061,,,,,"97,311","93,653",3.91%,
+Cumberland,MD,24001,,,,,"97,284","103,299",?5.82%,
+Fairbanks,AK,2090,,,,,"96,849","97,581",?0.75%,
+Cape Girardeau,MO,29031,,,,,"96,765","96,275",0.51%,"Cape Girardeau-Sikeston, MO-IL CSA"
+Pocatello,ID,16005,,,,,"95,489","90,656",5.33%,
+Corvallis,OR,41003,,,,,"93,053","85,579",8.73%,"Portland-Vancouver-Salem, OR-WA CSA"
+Ocean City,NJ,34009,,,,,"92,039","97,265",?5.37%,"Philadelphia-Reading-Camden, PA-NJ-DE-MD CSA"
+Parkersburg-Vienna,WV,54107,,,,,"89,339","92,673",?3.60%,"Parkersburg-Marietta-Vienna, WV-OH CSA"
+Pine Bluff,AR,5069,,,,,"87,804","100,258",?12.42%,"Little Rock-North Little Rock, AR CSA"
+Grants Pass,OR,41033,,,,,"87,487","82,713",5.77%,"Medford-Grants Pass, OR CSA"
+Columbus,IN,18005,,,,,"83,779","76,794",9.10%,"Indianapolis-Carmel-Muncie, IN CSA"
+Elmira,NY,36015,,,,,"83,456","88,830",?6.05%,"Elmira-Corning, NY CSA"
+Bloomsburg-Berwick,PA,42037,,,,,"83,194","85,562",?2.77%,"Bloomsburg-Berwick-Sunbury, PA CSA"
+Midland,MI,26111,,,,,"83,156","83,629",?0.57%,"Saginaw-Midland-Bay City, MI CSA"
+Kokomo,IN,18067,,,,,"82,544","82,752",?0.25%,"Kokomo-Peru, IN CSA"
+Great Falls,MT,30013,,,,,"81,366","81,327",0.05%,
+Hinesville,GA,13179,,,,,"80,994","77,917",3.95%,"Savannah-Hinesville-Statesboro, GA CSA"
+Casper,WY,56025,,,,,"79,858","75,450",5.84%,
+Danville,IL,17183,,,,,"75,758","81,625",?7.19%,
+Grand Island,NE,31079,,,,,"75,553","72,726",3.89%,
+Lewiston,ID,16069,,,,,"62,990","60,888",3.45%,
+Enid,OK,40047,,,,,"61,056","60,580",0.79%,
+Walla Walla,WA,53071,,,,,"60,760","58,781",3.37%,
+Carson City,NV,32510,,,,,"55,916","55,274",1.16%,"Reno-Carson City-Fernley, NV CSA"
