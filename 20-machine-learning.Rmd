@@ -1,0 +1,151 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(stats)
+library(factoextra)
+```
+
+# National Clustering
+
+```{r}
+recruiting_player <- read.csv('clean-data/recruiting_player.csv') %>% filter(year > 2001 & year < 2021)
+vandy_player <- read.csv('clean-data/final_data.csv')
+```
+
+```{r}
+clust_df <- recruiting_player %>% 
+  filter(!is.na(dist_mi),
+         !state_province %in% c('CA', 'FL', 'GA', 'TX', 'HI', 
+                                'AK', 'DE', 'ME', 'MT', 'ND', 
+                                'NH', 'RI', 'SD', 'VT', 'WY')) %>% 
+  mutate(state_province = factor(state_province)) %>% 
+  group_by(state_province) %>% 
+  summarize(count = n(),
+            avg_rat = mean(rating),
+            avg_dist = mean(dist_mi)) %>% 
+  as.data.frame()
+
+rownames(clust_df) <- clust_df$state_province
+
+clust_df <- clust_df[,-1] %>% scale()
+```
+
+```{r}
+fviz_nbclust(clust_df, kmeans, method = "wss")
+```
+
+```{r}
+set.seed(1234)
+final <- kmeans(clust_df, centers = 4, nstart = 25)
+finalplot <- fviz_cluster(final, data = clust_df, repel = T)
+finalplot +
+  labs(fill = 'Cluster',
+       color = 'Cluster',
+       shape = 'Cluster',
+       title = "Recruit Clustering: 2002-2020 FBS High School Commits",
+       subtitle = "15 Outlier States Ommitted: CA, FL, GA, TX, HI, AK, DE, ME, MT, ND, NH, RI, SD, VT, WY",
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, Google, simplemaps.com, @CFB_Data. Built using cfbscrapR")) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+final$centers %>% round(1)
+```
+
+```{r}
+clust_df <- recruiting_player %>% 
+  filter(year > 2008 & year < 2020,
+         !is.na(dist_mi)
+         ,
+         !state_province %in% c('CA', 'FL', 'GA', 'TX', 'HI',
+                                'AK', 'ME', 'MT', 'WY', 'NM', 
+                                'WI')
+         ) %>% 
+  mutate(state_province = factor(state_province)) %>% 
+  group_by(state_province) %>% 
+  summarize(count = n(),
+            avg_rat = mean(rating),
+            avg_dist = mean(dist_mi)) %>% 
+  as.data.frame()
+
+rownames(clust_df) <- clust_df$state_province
+
+clust_df <- clust_df[,-1] %>% scale()
+```
+
+```{r}
+fviz_nbclust(clust_df, kmeans, method = "wss")
+```
+
+```{r}
+set.seed(1234)
+final <- kmeans(clust_df, centers = 5, nstart = 25)
+finalplot <- fviz_cluster(final, data = clust_df, repel = T)
+finalplot +
+  labs(fill = 'Cluster',
+       color = 'Cluster',
+       shape = 'Cluster',
+       title = "Recruit Clustering: 2009-2019 FBS High School Commits",
+       subtitle = "12 Outlier States Ommitted: CA, FL, GA, TX, HI, AK, ME, MT, VT, WY, NM, WI",
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, Google, simplemaps.com, @CFB_Data. Built using cfbscrapR")) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+final$centers %>% round(1)
+```
+
+# Vandy Clustering
+
+```{r}
+clust_df <- vandy_player %>% 
+  filter(year > 2008 & year < 2020) %>% 
+  mutate(state_province = factor(state_province)) %>% 
+  group_by(state_province) %>% 
+  summarize(count = n(),
+            success_pct = sum(success) / count,
+            failure_pct = sum(failure) / count,
+            max_year = max(year),
+            distinct_year = n_distinct(year)) %>% 
+  as.data.frame()
+
+rownames(clust_df) <- clust_df$state_province
+
+clust_df <- clust_df[,-1] %>% scale()
+```
+
+```{r}
+fviz_nbclust(clust_df, kmeans, method = "wss")
+```
+
+```{r}
+set.seed(1234)
+final <- kmeans(clust_df, centers = 4, nstart = 25)
+finalplot <- fviz_cluster(final, data = clust_df, repel = T)
+finalplot + 
+  labs(fill = 'Cluster',
+       color = 'Cluster',
+       shape = 'Cluster',
+       title = "Vanderbilt Commit Clustering",
+       subtitle = "2009-2019 Vanderbilt High School Commits",
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, Google, simplemaps.com, @CFB_Data. Built using cfbscrapR")) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+final$centers %>% round(1)
+```
+
+
+

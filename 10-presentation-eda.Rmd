@@ -1,0 +1,641 @@
+---
+title: "10-presentation-eda"
+output:
+  html_document:
+    code_folding: hide
+    toc_float: TRUE
+---
+
+```{r}
+knitr::opts_chunk$set(message = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(cfbscrapR)
+library(urbnmapr)
+library(urbnthemes)
+library(ggpubr)
+library(janitor)
+```
+
+```{r}
+recruiting_player <- read.csv('clean-data/recruiting_player_final.csv') %>% 
+  filter(year > 2001 & year < 2021)
+vandy_player <- read.csv('clean-data/final_data.csv')
+```
+
+# Overview
+
+# Data Visualization
+
+## National Recruiting
+
+### Overall Counts
+
+```{r}
+nrow(recruiting_player)
+```
+
+```{r}
+recruiting_player %>% 
+  group_by(state_province) %>% 
+  summarize(count = n()) %>% 
+  left_join(states, by = c('state_province' = 'state_abbv')) %>%
+  ggplot(aes(long, lat, group = group, fill = count)) +
+  geom_polygon(color = NA) +
+  scale_fill_gradient(high = 'black',
+                      low = 'white',
+                      na.value = 'white',
+                      guide = guide_colorbar(title.position = "top"),
+                      aesthetics = 'fill',
+                      limits = c(0, 3000),
+                      oob = scales::squish) +
+  geom_polygon(data = states, mapping = aes(long, lat, group = group),
+               fill = NA, color = "black") +
+  coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
+  theme(legend.title = element_text(),
+        legend.key.width = unit(.5, "in")) +
+  labs(fill = "Recruit Counts",
+       title = "Recruit Counts Heatmap - by State",
+       subtitle = "2002-2020 Recruiting Classes",
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, simplemaps.com, @CFB_Data. Built using cfbscrapR")) +
+  theme_urbn_map() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+recruiting_player %>% 
+  group_by(county_fips) %>% 
+  summarize(count = n()) %>%  
+  mutate(county_fips = as.character(county_fips),
+         county_fips = ifelse(nchar(county_fips) == 4, paste0('0',county_fips), county_fips)) %>% 
+  left_join(counties, by = 'county_fips') %>% 
+  ggplot(aes(long, lat, group = group, fill = count)) +
+  geom_polygon(color = NA) +
+  scale_fill_gradient(high = 'black',
+                      low = 'khaki2',
+                      na.value = 'white',
+                      guide = guide_colorbar(title.position = "top"),
+                      aesthetics = 'fill',
+                      limits = c(0, 1000),
+                      oob = scales::squish) +
+  geom_polygon(data = states, mapping = aes(long, lat, group = group),
+               fill = NA, color = "grey") +
+  coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
+  theme(legend.title = element_text(),
+        legend.key.width = unit(.5, "in")) +
+  labs(fill = "Recruit Counts",
+       title = "Recruit Counts Heatmap - by County",
+       subtitle = "2002-2020 Recruiting Classes",
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, simplemaps.com, @CFB_Data. Built using cfbscrapR")) +
+  theme_urbn_map() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+recruiting_player %>% 
+  group_by(year) %>% 
+  summarize(count = n()) %>% 
+  ggplot(aes(x = year, y = count)) +
+  geom_line()
+```
+
+```{r}
+year_counts <- recruiting_player %>% 
+  mutate(obs = 1) %>% 
+  group_by(state_province) %>% 
+  summarise(count02 = sum(obs[year == 2002]),
+            count03 = sum(obs[year == 2003]),
+            count04 = sum(obs[year == 2004]),
+            count05 = sum(obs[year == 2005]),
+            count06 = sum(obs[year == 2006]),
+            count07 = sum(obs[year == 2007]),
+            count08 = sum(obs[year == 2008]),
+            count09 = sum(obs[year == 2009]),
+            count10 = sum(obs[year == 2010]),
+            count11 = sum(obs[year == 2011]),
+            count12 = sum(obs[year == 2012]),
+            count13 = sum(obs[year == 2013]),
+            count14 = sum(obs[year == 2014]),
+            count15 = sum(obs[year == 2015]),
+            count16 = sum(obs[year == 2016]),
+            count17 = sum(obs[year == 2017]),
+            count18 = sum(obs[year == 2018]),
+            count19 = sum(obs[year == 2019]),
+            count20 = sum(obs[year == 2020]))
+
+growth_data = matrix(nrow = 51, ncol = 19) %>% as.data.frame()
+for(i in 1:nrow(year_counts)){
+  for(j in 1:ncol(year_counts)){
+    if(j == 1) {
+      growth_data[i,j] <- year_counts[i,j]
+    }
+    if(j > 1 & j < ncol(year_counts)){
+      growth_data[i,j] <- ((year_counts[i, j+1] - year_counts[i, j]) / year_counts[i, j]) * 100
+    }
+    else {next}
+  }
+}
+
+growth_data %>% 
+  filter_all(all_vars(!is.infinite(.))) %>% 
+  pivot_longer(!V1, names_to = 'year', values_to = 'growth') %>% 
+  mutate(year = sub('V', '', year) %>% as.numeric()) %>% 
+  #filter(year > 10) %>% 
+  rename(state = V1) %>% 
+  ggplot(aes(x = reorder(state, -growth, FUN = median), y = growth)) +
+  geom_boxplot()
+```
+
+### Ratings
+
+```{r}
+blue_chip_counts <- recruiting_player %>% 
+  filter(stars >= 4) %>% 
+  mutate(year = year %>% as.factor(),
+         state_province = state_province %>% as.factor()) %>% 
+  count(year, state_province, .drop = F)
+
+blue_chip_joined <- recruiting_player %>% 
+  mutate(year = year %>% as.factor(),
+         state_province = state_province %>% as.factor()) %>% 
+  count(year, state_province, .drop = F) %>% 
+  left_join(blue_chip_counts, by = c('year', 'state_province')) %>% 
+  mutate(n.y = ifelse(is.na(n.y), 0, n.y),
+         blue_chip_pct = ifelse(n.x == 0, 0, n.y / n.x * 100)) %>% 
+  rename(total = n.x, blue_chip = n.y)
+
+ggscatter(blue_chip_joined, x = 'total', y = 'blue_chip',
+          add = 'reg.line',
+          add.params = list(color = 'khaki2', fill = 'lightgray'),
+          conf.int = T) +
+  stat_cor(aes(label = ..r.label..)) +
+  labs(title = "Recruit Count vs. Blue Chip Count Scatterplot",
+       subtitle = "2002-2020 Recruiting Classes",
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, simplemaps.com, @CFB_Data. Built using cfbscrapR"),
+       x = 'Recruit Count',
+       y = 'Blue Chip Count') +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+
+```
+
+```{r}
+blue_chip_joined %>% 
+  ggplot(aes(x = reorder(state_province, -blue_chip_pct, FUN = median), y = blue_chip_pct)) +
+  geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 45, size = 6, hjust = 1)) 
+```
+
+```{r}
+recruiting_player %>% 
+  filter(!state_province %in% c('AK', 'ID', 'ME', 'MT', 'ND', 'NH', 'RI', 'SD', 'VT', 'WY')) %>% 
+  mutate(year = year %>% as.factor(),
+         state_province = state_province %>% as.factor()) %>% 
+  ggplot(aes(x = reorder(state_province, -rating, FUN = median), y = rating)) +
+  geom_boxplot() +
+  geom_hline(yintercept= c(.9833, .89, .7968, .7),  col = c('red', 'blue', 'darkgreen', 'orange')) + 
+  annotate("text", x=2, y=1.01, label= "5-star", col = 'red') +
+  annotate("text", x=2, y=.92, label= "4-star", col = 'blue') +
+  annotate("text", x=2, y=.82, label= "3-star", col = 'darkgreen') +
+  annotate("text", x=2, y=.73, label= "2-star", col = 'orange') +
+  ylim(c(.6, 1.02)) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, size = 8, hjust = 1)) +
+  labs(title = "Recruit Rating Boxplots - by State",
+       subtitle = "2002-2020 Recruiting Classes ('Avoid States' Omitted)",
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, simplemaps.com, @CFB_Data. Built using cfbscrapR"),
+       x = 'State',
+       y = 'Rating') + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+
+```
+
+```{r}
+recruiting_player %>% 
+  filter(!state_province %in% c('AK', 'ID', 'ME', 'MT', 'ND', 'NH', 'RI', 'SD', 'VT', 'WY')) %>% 
+  mutate(year = year %>% as.factor(),
+         state_province = state_province %>% as.factor(),
+         position_group = position_group %>% as.factor()) %>% 
+  ggplot(aes(x = reorder(state_province, -rating, FUN = median), y = rating)) +
+  geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 45, size = 6, hjust = 1)) +
+  facet_wrap(~ position_group)
+```
+
+### Distance
+
+```{r}
+recruiting_player %>% 
+  group_by(year) %>% 
+  summarize(mean_dist = mean(dist_mi, na.rm = T)) %>% 
+  ggplot(aes(x = year, y = mean_dist)) +
+  geom_line() +
+  theme(legend.title = element_text(),
+        legend.key.width = unit(.5, "in")) +
+  scale_y_continuous(breaks = seq(350, 500, by = 25)) +
+  labs(title = "Commit Distance Line Plot",
+       subtitle = "2002-2020 FBS High School Commits",
+       x = 'Year',
+       y = 'Average Distance (mi)',
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, Google, simplemaps.com, @CFB_Data. Built using cfbscrapR")) +
+  theme_classic() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+recruiting_player %>% 
+  group_by(state_province) %>% 
+  summarize(dist = median(dist_mi, na.rm = T)) %>% 
+  left_join(states, by = c('state_province' = 'state_abbv')) %>%
+  ggplot(aes(long, lat, group = group, fill = dist)) +
+  geom_polygon(color = NA) +
+  scale_fill_gradient(high = 'black',
+                      low = 'white',
+                      na.value = 'white',
+                      guide = guide_colorbar(title.position = "top"),
+                      aesthetics = 'fill',
+                      limits = c(0, 1000),
+                      oob = scales::squish) +
+  geom_polygon(data = states, 
+               mapping = aes(long, lat, group = group),
+               fill = NA, color = "black") +
+  coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
+  theme(legend.title = element_text(),
+        legend.key.width = unit(.5, "in")) +
+  labs(fill = "Average Distance (mi)",
+       title = "Commit Distance Heatmap - by State",
+       subtitle = "2002-2020 FBS High School Commits",
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, Google, simplemaps.com, @CFB_Data. Built using cfbscrapR")) +
+  theme_urbn_map() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+recruiting_player %>% 
+  ggplot(aes(x = reorder(position_group, -dist_mi), y = dist_mi)) +
+  geom_boxplot()
+```
+
+```{r}
+cor(recruiting_player$rating, recruiting_player$dist_mi, use = 'complete.obs')
+```
+
+```{r}
+dist_table <- recruiting_player %>% 
+  filter(!is.na(dist_mi)) %>% 
+  group_by(state_province) %>% 
+  summarise(count = n(),
+            mean_rat = mean(rating),
+            med_rat = median(rating),
+            mean_dist = mean(dist_mi),
+            med_dist = median(dist_mi))
+
+cor(dist_table$mean_dist, dist_table$count)
+cor(dist_table$med_dist, dist_table$count)
+```
+
+## Vanderbilt Recruiting
+
+### Overall Counts
+
+```{r}
+nrow(vandy_player)
+```
+
+```{r}
+vandy_player %>% 
+  group_by(state_province) %>% 
+  summarize(count = n()) %>% 
+  left_join(states, by = c('state_province' = 'state_abbv')) %>%
+  ggplot(aes(long, lat, group = group, fill = count)) +
+  geom_polygon(color = NA) +
+  scale_fill_gradient(high = 'black',
+                      low = 'khaki1',
+                      na.value = 'white',
+                      guide = guide_colorbar(title.position = "top"),
+                      aesthetics = 'fill') +
+  geom_polygon(data = states, mapping = aes(long, lat, group = group),
+               fill = NA, color = "black") +
+  coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
+  theme(legend.title = element_text(),
+        legend.key.width = unit(.5, "in")) +
+  labs(fill = "Commit Counts",
+       title = "Vanderbilt Commit Counts Heatmap - by State",
+       subtitle = "2002-2020 High School Commits",
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, simplemaps.com, @CFB_Data. Built using cfbscrapR")) +
+  theme_urbn_map() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+vandy_player %>% 
+  group_by(county_fips) %>% 
+  summarize(count = n()) %>% 
+  mutate(county_fips = as.character(county_fips),
+         county_fips = ifelse(nchar(county_fips) == 4, paste0('0',county_fips), county_fips)) %>% 
+  left_join(counties, by = 'county_fips') %>% 
+  ggplot(aes(long, lat, group = group, fill = count)) +
+  geom_polygon(color = NA) +
+  scale_fill_gradient(high = 'black',
+                      low = 'khaki2',
+                      na.value = 'white',
+                      guide = guide_colorbar(title.position = "top"),
+                      aesthetics = 'fill') +
+  # geom_polygon(data = counties, mapping = aes(long, lat, group = group),
+  #              fill = NA, color = "grey") + 
+  geom_polygon(data = states, mapping = aes(long, lat, group = group),
+               fill = NA, color = "grey") +
+  coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
+  theme(legend.title = element_text(),
+        legend.key.width = unit(.5, "in")) +
+  labs(fill = "Commit Counts",
+       title = "Vanderbilt Commit Counts Heatmap - by County",
+       subtitle = "2002-2020 High School Commits",
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, simplemaps.com, @CFB_Data. Built using cfbscrapR")) +
+  theme_urbn_map() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+vandy_player %>% 
+  filter(year >= 2012) %>% 
+  mutate(state_province = state_province %>% as.factor()) %>% 
+  group_by(state_province) %>% 
+  summarize(count = n(),
+            max_year = max(year)) %>% 
+  arrange(-count)
+```
+
+### Ratings and Rankings
+
+```{r}
+rec_rankings <- cfbscrapR::cfb_recruiting_team(team = 'Vanderbilt')
+rec_rankings %>% 
+  filter(year >= 2002,
+         year <= 2020) %>% 
+  mutate(coach = case_when(year %in% 2000:2001 ~ 'Widenhofer',
+                           year %in% 2002:2009 ~ 'Johnson',
+                           year %in% 2010 ~ 'Caldwell',
+                           year %in% 2011:2013 ~ 'Franklin',
+                           year %in% 2014:2020 ~ 'Mason',
+                           year %in% 2021 ~ 'Lea')) %>% 
+  ggplot(aes(x = year, y = rank, group = coach, fill = coach, color = coach)) +
+  geom_col(alpha = .8) +
+  geom_text(aes(label=rank), vjust= -.5, color="black", size=3.5) +
+  theme_classic() +
+  labs(fill = "Head Coach",
+       color = "Head Coach",
+       title = "Vanderbilt Recruit Class Rankings",
+       subtitle = "2002-2020 Recruiting Classes",
+       x = 'Year',
+       y = 'Rank',
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, @CFB_Data. Built using cfbscrapR")) +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+  
+```
+
+```{r}
+rec_rankings[rec_rankings$year > 2001 & rec_rankings$year < 2021, 'rank'] %>% mean()
+rec_rankings[rec_rankings$year >= 2012 & rec_rankings$year < 2021, 'rank'] %>% mean()
+rec_rankings[rec_rankings$year == 2021, 'rank']
+```
+
+```{r}
+vandy_player %>% 
+  group_by(state_province) %>% 
+  ggplot(aes(x = reorder(state_province, -rating, FUN = median), y = rating)) +
+  geom_boxplot()
+```
+
+```{r}
+vandy_player[vandy_player$state_province == 'AR',]
+```
+
+```{r}
+vandy_player %>% 
+  filter(stars >= 4) %>% 
+  mutate(state_province = state_province %>% as.factor()) %>% 
+  group_by(state_province) %>% 
+  summarize(count = n(),
+            max_year = max(year)) %>% 
+  arrange(-count)
+```
+
+```{r}
+vandy_player %>% 
+  filter(stars >= 4) %>% 
+  mutate(position_group = position_group %>% as.factor()) %>% 
+  group_by(position_group) %>% 
+  summarize(count = n(),
+            max_year = max(year)) %>% 
+  arrange(-count)
+```
+
+### Distance
+
+```{r}
+vandy_player$dist_mi %>% mean()
+```
+
+
+```{r}
+vandy_player %>% 
+  group_by(year) %>% 
+  summarize(mean_dist = mean(dist_mi, na.rm = T)) %>% 
+  ggplot(aes(x = year, y = mean_dist)) +
+  geom_line() +
+  geom_hline(yintercept= mean(vandy_player$dist_mi),  col = 'khaki3') +
+  annotate("text", x=2005.5, y=475, 
+           label= "Average - All Commits", col = 'khaki3') +
+  theme(legend.title = element_text(),
+        legend.key.width = unit(.5, "in")) +
+  scale_x_continuous(breaks = seq(2002, 2020, by = 2)) +
+  scale_y_continuous(breaks = seq(300, 900, by = 100)) +
+  labs(title = "Vanderbilt Commit Distance Line Plot",
+       subtitle = "2002-2020 High School Commits",
+       x = 'Year',
+       y = 'Average Distance (mi)',
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, Google, simplemaps.com, @CFB_Data. Built using cfbscrapR")) +
+  theme_classic() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+cor(vandy_player$rating, vandy_player$dist_mi)
+```
+
+```{r}
+vandy_player %>% 
+  group_by(position_group) %>% 
+  ggplot(aes(x = reorder(position_group, -dist_mi, FUN = median), y = dist_mi)) +
+  geom_boxplot() +
+  labs(title = "Vanderbilt Commit Distance Boxplots - by Position Group",
+       subtitle = "2002-2020 High School Commits",
+       x = 'Position Group',
+       y = 'Distance (mi)',
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, @CFB_Data. Built using cfbscrapR")) +
+  theme_classic() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+### Successes and Failures
+
+```{r}
+vandy_player[vandy_player$success == 1, ] %>% nrow()
+vandy_player[vandy_player$failure == 1, ] %>% nrow()
+```
+
+```{r}
+vandy_player %>% 
+  filter(year > 2008 & year < 2020) %>% 
+  summarize(count = n(),
+            n_success = sum(success),
+            n_failure = sum(failure),
+            success_pct = n_success / count * 100,
+            failure_pct = n_failure / count * 100)
+```
+
+```{r}
+vandy_player %>% 
+  filter(year >= 2009 & year < 2020) %>% 
+  group_by(state_province) %>% 
+  summarize(failure_count = sum(failure),
+            success_count = sum(success),
+            count = n()) %>% 
+  pivot_longer(!state_province, names_to = 'count_type', values_to = 'count') %>% 
+  mutate(state_province = as.factor(state_province),
+         count_type = as.factor(count_type)) %>% 
+  ggplot(aes(x = reorder(state_province, -count), y = count, fill = count_type)) +
+  geom_col(position = 'dodge', color = 'black') +
+  scale_fill_manual(labels = c('Total', 'Failure', 'Success'),
+                    values = c('grey', 'black', 'khaki3')) +
+  labs(fill = "Count Type",
+       title = "Vanderbilt Recruiting Successes and Failures",
+       subtitle = "2009-2019 High School Commits",
+       y = 'Count', 
+       x = 'State',
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, Wikipedia, PFR, PFF, @CFB_Data. Built using cfbscrapR")) +
+  theme_classic() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+vandy_player %>% 
+  filter(year >= 2009 & year < 2020) %>% 
+  group_by(position_group) %>% 
+  summarize(failure_count = sum(failure),
+            success_count = sum(success),
+            count = n()) %>% 
+  pivot_longer(!position_group, names_to = 'count_type', values_to = 'count') %>% 
+  mutate(position_group = as.factor(position_group),
+         count_type = as.factor(count_type)) %>% 
+  ggplot(aes(x = reorder(position_group, -count), y = count, fill = count_type)) +
+  geom_col(position = 'dodge', color = 'black') +
+  scale_fill_manual(labels = c('Total', 'Failure', 'Success'),
+                    values = c('grey', 'black', 'khaki3')) +
+  labs(fill = "Count Type",
+       title = "Vanderbilt Recruiting Successes and Failures",
+       subtitle = "2009-2019 High School Commits",
+       y = 'Count', 
+       x = 'Position Group',
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, Wikipedia, PFR, PFF, @CFB_Data. Built using cfbscrapR")) +
+  theme_classic() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+
+```{r}
+vandy_player %>% 
+  filter(success == 1 | failure == 1,
+         year >= 2009 & year < 2020) %>% 
+  group_by(success) %>% 
+  ggplot(aes(x = factor(success), y = rating)) +
+  geom_violin() +
+  geom_hline(yintercept= c(.89, .7968, .7),  col = c('khaki3', 'black', 'grey')) + 
+  annotate("text", x=.5, y=.9, label= "4-star", col = 'khaki3') +
+  annotate("text", x=.5, y=.81, label= "3-star", col = 'black') +
+  annotate("text", x=.5, y=.715, label= "2-star", col = 'grey') +
+  scale_x_discrete(breaks=c("0", "1"),
+                   labels=c("Failure", "Success")) +
+  labs(title = "Vanderbilt Recruiting Successes and Failures Rating Violin Plot",
+       subtitle = "2009-2019 High School Commits",
+       y = 'Rating', 
+       x = '',
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, Wikipedia, PFR, PFF, @CFB_Data. Built using cfbscrapR")) +
+  theme_classic() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+vandy_player %>% 
+  filter(success == 1 | failure == 1,
+         year >= 2009 & year < 2020) %>% 
+  group_by(success) %>% 
+  ggplot(aes(x = factor(success), y = dist_mi)) +
+  geom_boxplot() +
+  scale_x_discrete(breaks=c("0", "1"),
+                   labels=c("Failure", "Success")) +
+  labs(title = "Vanderbilt Recruiting Distance Boxplots - by Success and Failure",
+       subtitle = "2009-2019 High School Commits",
+       y = 'Distance (mi)', 
+       x = '',
+       caption = c("By: Logan King, @loganking_fb\nData from 247sports, Wikipedia, PFR, PFF, Google, @CFB_Data. Built using cfbscrapR")) +
+  theme_classic() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5))
+```
+
+```{r}
+vandy_player %>% 
+  filter(success == 1 | failure == 1,
+         !position_group %in% c('ST')) %>% 
+  ggplot(aes(x = position_group, y = height, fill = factor(success))) +
+  geom_boxplot()
+```
+
+```{r}
+vandy_player %>% 
+  filter(success == 1 | failure == 1,
+         !position_group %in% c('ST')) %>% 
+  ggplot(aes(x = position_group, y = weight, fill = factor(success))) +
+  geom_boxplot()
+```
+
+```{r}
+success_player <- read.csv('clean-data/success.csv') %>% clean_names()
+failure_player <- read.csv('clean-data/failure.csv') %>% clean_names()
+```
+
+```{r}
+rbind(cbind('success', success_player$pgpa), cbind('failure', failure_player$pgpa)) %>% 
+  as.data.frame() %>% 
+  mutate(V1 = V1 %>% as.factor,
+         V2 = V2 %>% as.numeric()) %>% 
+  ggplot(aes(x = V1, y = V2)) +
+  geom_boxplot()
+```
+
+```{r}
+rbind(cbind('success', success_player$pgpa), cbind('failure', failure_player$pgpa)) %>% 
+  as.data.frame() %>% 
+  mutate(V1 = V1 %>% as.factor,
+         V2 = V2 %>% as.numeric()) %>% 
+  ggplot(aes(x = V1, y = V2)) +
+  geom_violin()
+```
+
