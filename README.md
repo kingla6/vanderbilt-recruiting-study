@@ -79,4 +79,4 @@ All files which appear in the repo should be able to run, and not contain error 
 
 # Contact Info
 
-Logan King, Recruiting Assistant - Vaderbilt Football, logan.a.king@vanderbilt.edu
+Logan King, Recruiting Assistant - Vanderbilt Football, logan.a.king@vanderbilt.edu
