@@ -1,0 +1,204 @@
+---
+title: "04-data-join"
+output:
+  html_document:
+    code_folding: hide
+    toc_float: TRUE
+---
+
+```{r}
+knitr::opts_chunk$set(message = FALSE)
+```
+
+# Overview
+
+This notebook combines all data from the preceding notebooks to create a final dataset of Vanderbilt recruiting classes with success and failure data. This dataset is necessary for our analysis of Vanderbilt's recruiting classes - the key focus of this study. 
+
+# Data Join
+
+```{r}
+library(tidyverse)
+library(janitor)
+```
+
+## Success Feature Engineering
+
+This section loads, cleans, and merges data that was collected for ALL-SEC players (`01-all-sec-data`), NFL draft picks (PFR download), and players who have made an NFL appearance (PFR download). Once this data is merged, a success indicator is added for players which appeared on one or more of the merged datafrme components. 
+
+Load Data
+```{r}
+setwd('C:/Users/kingl/Desktop/Projects/football/vanderbilt-recruiting-study/preliminary-data/')
+draft_data <- read.csv('draft-data.csv') %>% clean_names()
+pro_data <- read.csv('pro-data.csv') %>% clean_names()
+all_sec_data <- read.csv('all-sec-data.csv') %>% clean_names()
+```
+
+Clean Data
+```{r}
+all_sec_data <- all_sec_data %>% 
+  filter(school == 'Vanderbilt') %>% 
+  select(player, season) %>% 
+  group_by(player) %>% 
+  summarize(first_season = min(season)) %>% 
+  mutate(first_name = lapply(str_split(player, ' '), `[[`, 1) %>% unlist(),
+         last_name = lapply(str_split(player, ' '), `[[`, 2) %>% unlist(),
+         first_name_cleaned = str_replace_all(first_name, '[^[:alnum:]]', '') %>% tolower(),
+         first_letter_cleaned = substr(first_name_cleaned, 1, 3),
+         last_name_cleaned = str_replace_all(last_name, '[^[:alnum:]]', '') %>% tolower(),
+         year = first_season) %>% 
+  select(first_name_cleaned, first_letter_cleaned, last_name_cleaned, player, year)
+```
+
+Clean Data
+```{r}
+draft_data <- draft_data %>% 
+  mutate(player = lapply(str_split(player, '\\\\'), `[[`, 1) %>% unlist()) %>% 
+  select(player, year) %>% 
+  filter(year > 2001) %>% 
+  mutate(first_name = lapply(str_split(player, ' '), `[[`, 1) %>% unlist(),
+         last_name = lapply(str_split(player, ' '), `[[`, 2) %>% unlist(),
+         first_name_cleaned = str_replace_all(first_name, '[^[:alnum:]]', '') %>% tolower(),
+         first_letter_cleaned = substr(first_name_cleaned, 1, 3),
+         last_name_cleaned = str_replace_all(last_name, '[^[:alnum:]]', '') %>% tolower()) %>% 
+  select(first_name_cleaned, first_letter_cleaned, last_name_cleaned, player, year)
+```
+
+Clean Data
+```{r}
+pro_data <- pro_data %>% 
+  mutate(player = lapply(str_split(player, '\\\\'), `[[`, 1) %>% unlist(),
+         first_year = lapply(str_split(x_1, '-'), `[[`, 1) %>% unlist()) %>% 
+  select(player, first_year) %>% 
+  filter(first_year > 2001) %>% 
+  mutate(first_name = lapply(str_split(player, ' '), `[[`, 1) %>% unlist(),
+         last_name = lapply(str_split(player, ' '), `[[`, 2) %>% unlist(),
+         first_name_cleaned = str_replace_all(first_name, '[^[:alnum:]]', '') %>% tolower(),
+         first_letter_cleaned = substr(first_name_cleaned, 1, 3),
+         last_name_cleaned = str_replace_all(last_name, '[^[:alnum:]]', '') %>% tolower(),
+         year = first_year) %>% 
+  select(first_name_cleaned, first_letter_cleaned, last_name_cleaned, player, year)
+```
+
+Merge Success Data
+```{r}
+success_players <- rbind(draft_data, pro_data, all_sec_data) %>% 
+  group_by(player, first_name_cleaned, first_letter_cleaned, last_name_cleaned) %>% 
+  summarize(year = min(year)) %>% 
+  mutate(success = 1)
+```
+
+## Vanderbilt Recruit - Success Merge
+
+Load Vanderbilt recruit data
+```{r}
+setwd('C:/Users/kingl/Desktop/Projects/football/vanderbilt-recruiting-study/clean-data/')
+recruiting_player <- read.csv('recruiting_player_final.csv') %>% 
+  clean_names() %>% 
+  filter(year > 2001 & year < 2021, 
+         committed_to == 'Vanderbilt',
+         #the following players are removed manually becacuse they are imperfect duplicates
+         !name %in% c('Daniel Dawkins', 'Keyon Henry-Brooks', 'Michael Wright'))
+```
+Clean Vanderbilt recruit name data
+```{r}
+recruiting_player <- recruiting_player %>% 
+  mutate(first_name = lapply(regmatches(name, regexpr(' ', name), invert = T), `[[`, 1) %>% unlist(),
+         last_name = lapply(regmatches(name, regexpr(' ', name), invert = T), `[[`, 2) %>% unlist(),
+         first_name_cleaned = str_replace_all(first_name, '[^[:alnum:]]', '') %>% tolower(),
+         first_letter_cleaned = substr(first_name_cleaned, 1, 3),
+         last_name_suffix_removed = str_replace(last_name, ' Jr.| III', ''),
+         last_name_cleaned = str_replace_all(last_name_suffix_removed, 
+                                             '[^[:alnum:]]', '') %>% tolower()) %>% 
+  select(everything(), -first_name, -last_name, -last_name_suffix_removed)
+```
+
+Merge `recruiting_player` and `success_players` in order to create `joined_data` which will be referenced later when failure data is joined. 
+```{r}
+joined_data <- recruiting_player %>% 
+  left_join(success_players, by = c('first_letter_cleaned', 'last_name_cleaned')) %>% 
+  select(everything(), -player, -first_name_cleaned.y, -year.y) %>% 
+  rename(first_name_cleaned = first_name_cleaned.x)
+```
+
+## Failure Feature Engineering
+
+### `years_failure`
+
+In this section, a failure indicator is constructed using the roster data. This will flag players who were on Vanderbilt's roster for fewer than three years as failures. Players who were grad transfers will be flagged, but will not be affected in later analysis as they were not high school recruits for Vandy. With the roster data available (2009-2020), checks are also put in place to not incorrectly flag players as failures if they were on rosters prior to the data period or joined close to the end of the data period.
+
+Load Data
+```{r}
+setwd('C:/Users/kingl/Desktop/Projects/football/vanderbilt-recruiting-study/clean-data/')
+roster_data <- read.csv('roster_data.csv') %>% clean_names()
+pff_data <- read.csv('pff_data.csv') %>% clean_names()
+```
+
+`years_failure` feature engineering
+```{r}
+#if their three years are less than or equal to 2020, and greater than 2011, then they can be considered a years_failure.
+#Below that range, we can't be sure when a player's first year on a roster was. Above that range, they may still be at the university as their eligibility has not expired
+roster_data <- roster_data %>%
+  mutate(years_failure = ifelse(years_on_roster < 3 &
+                                  first_year + 2 <= 2020 &
+                                  first_year + 2 > 2011, 1, 0))
+```
+
+### `snaps_failure`
+
+The snaps data is joined in with the roster data in this section. 
+```{r}
+failure_data <- roster_data %>% 
+  left_join(pff_data, by = c('first_letter_cleaned', 'last_name_cleaned')) %>% 
+  select(name, first_name_cleaned.x, first_letter_cleaned, last_name_cleaned,
+         first_year.x, last_year, years_on_roster, snaps_failure) %>% 
+  rename(first_name_cleaned = first_name_cleaned.x,
+         first_year = first_year.x) %>% 
+  mutate(years_failure = ifelse(years_on_roster < 3 &
+                                  first_year + 2 <= 2020 &
+                                  first_year + 2 > 2011, 1, 0),
+         snaps_failure = ifelse(is.na(snaps_failure), 0, snaps_failure),
+         snaps_failure = ifelse(first_year >= 2018 & last_year == 2020, 0, snaps_failure),
+         failure = ifelse(snaps_failure + years_failure > 0, 1, 0)) %>%
+  select(name, first_name_cleaned, first_letter_cleaned, 
+         last_name_cleaned, first_year, last_year, failure) %>% 
+  mutate(first_letter_cleaned = case_when(name == 'Jake Sealand' ~ 'jac',
+                                          T ~ first_letter_cleaned),
+         last_name_cleaned = case_when(last_name_cleaned == 'auwaemcmoore' ~ 'auwae',
+                                       T ~ last_name_cleaned))
+
+failure_data <- failure_data %>% 
+  mutate(first_year = ifelse(first_letter_cleaned == 'arc' & last_name_cleaned == 'barnes', 
+                             2009, first_year),
+         first_year = ifelse(first_letter_cleaned == 'mit' & last_name_cleaned == 'parsons', 
+                             2013, first_year),
+         last_year = ifelse(first_letter_cleaned == 'arc' & last_name_cleaned == 'barnes',
+                            2012, last_year),
+         last_year = ifelse(first_letter_cleaned == 'mit' & last_name_cleaned == 'parsons',
+                            2014, last_year)) %>% 
+  select(-name, -first_name_cleaned) %>% 
+  unique()
+```
+
+```{r}
+final_data <- joined_data %>% 
+  left_join(failure_data, by = c('first_letter_cleaned', 'last_name_cleaned')) %>%
+  mutate(failure = case_when(is.na(failure) & year.x >= 2009 ~ 1,
+                             T ~ failure),
+         success = ifelse(is.na(success), 0, success),
+         failure = case_when(is.na(failure) ~ 0,
+                             success == 1 ~ 0,
+                             T ~ failure),
+         failure = case_when(name %in% c('Rajaan Bennett', 'Chad Kanoff') ~ 0,
+                             T ~ failure),
+         success = case_when(name %in% c('Kyle Shurmur', 'Andrew Jelks') ~ 1,
+                             T ~ success)) %>% 
+  rename(year = year.x) %>% 
+  select(-first_letter_cleaned, 
+         -last_name_cleaned, -first_year)
+
+
+```
+
+```{r}
+write.csv(final_data, 'clean-data/final_data.csv', row.names = F)
+```

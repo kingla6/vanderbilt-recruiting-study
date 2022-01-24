@@ -1,0 +1,147 @@
+---
+title: "03-clean-pff-data"
+output:
+  html_document:
+    code_folding: hide
+    toc_float: TRUE
+---
+
+```{r}
+knitr::opts_chunk$set(message = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(janitor)
+```
+
+# Overview
+
+This notebook cleans data which was manually downloaded from PFF for player snaps and snap percentages for Vanderbilt football. After cleaning, the snaps failure feature is engineered which supports the final failure feature for players in `05-data-join`. The threshold for snaps failure, discussed later in this notebook can be altered in the future.
+
+# Data Cleaning
+
+Load data
+```{r}
+setwd('C:/Users/kingl/Desktop/Projects/football/vanderbilt-recruiting-study/preliminary-data/')
+pff_data_o <- read.csv('pff-data-o.csv') %>% 
+  clean_names()
+pff_data_d <- read.csv('pff-data-d.csv') %>% 
+  clean_names()
+pff_data_st <- read.csv('pff-data-st.csv') %>% 
+  clean_names()
+```
+
+Combine datasets for each side of the ball
+```{r}
+#create dataframe with player identification information, eliminate duplicates
+players <- rbind(pff_data_o[,1:3], pff_data_d[,1:3], pff_data_st[,1:3]) %>% unique()
+
+#edit names to match up with data in other files for future joining
+players <- players %>% 
+  mutate(name = case_when(name == 'Gabe Jeudy-Lally' ~ 'Gabe Jeudy',
+                          name == 'Keyon Henry-Brooks' ~ 'Keyon Brooks',
+                          name == "Siah Sa'o" ~ "Josiah Sa'o",
+                          T ~ name))
+
+#join in player snap statistics
+pff_all <- players %>% 
+  left_join(pff_data_o) %>% 
+  left_join(pff_data_d) %>% 
+  left_join(pff_data_st) %>% 
+  mutate(side = case_when(pos %in% c('TE', 'G', 'C', 'WR', 'T', 'QB', 'HB', 'FB') ~ 'O',
+                          pos %in% c('CB', 'ED', 'S', 'LB', 'DI') ~ 'D',
+                          pos %in% c('P', 'LS', 'K', 'ST') ~ 'K'),
+         pct_o = ifelse(side == 'O' & is.na(pct_o), 0, pct_o),
+         pct_d = ifelse(side == 'D' & is.na(pct_d), 0, pct_d))
+```
+## Threshold Analysis
+
+Analysis of the summary statistics for snap count percentages by position. This is intended to help better inform the success or failure snap count threshold. 
+
+```{r}
+#offense
+pff_all %>%
+  filter(side == 'O') %>% 
+  group_by(pos) %>% 
+  summarize(count = n(), 
+            share_min = min(pct_o, na.rm = T),
+            share_1q = quantile(pct_o, .25, na.rm = T),
+            share_median = median(pct_o, na.rm = T),
+            share_mean = mean(pct_o, na.rm = T),
+            share_3q = quantile(pct_o, .75, na.rm = T),
+            share_max = max(pct_o, na.rm = T)) 
+```
+
+```{r}
+#defense
+pff_all %>%
+  filter(side == 'D') %>% 
+  group_by(pos) %>% 
+  summarize(count = n(), 
+            share_min = min(pct_d, na.rm = T),
+            share_1q = quantile(pct_d, .25, na.rm = T),
+            share_median = median(pct_d, na.rm = T),
+            share_mean = mean(pct_d, na.rm = T),
+            share_3q = quantile(pct_d, .75, na.rm = T),
+            share_max = max(pct_d, na.rm = T)) 
+```
+
+```{r}
+#special teams
+pff_all %>%
+  filter(side == 'K') %>% 
+  group_by(pos) %>% 
+  summarize(count = n(), 
+            share_min = min(pct_st, na.rm = T),
+            share_1q = quantile(pct_st, .25, na.rm = T),
+            share_median = median(pct_st, na.rm = T),
+            share_mean = mean(pct_st, na.rm = T),
+            share_3q = quantile(pct_st, .75, na.rm = T),
+            share_max = max(pct_st, na.rm = T)) 
+```
+
+After analysis, a blanket 50% snap threshold is decided on for each position's snap failure threshold (except FB which is 10%) - this can be altered in the future, however. Special teams will be removed from the snaps failure metric because of inconsistent data.
+
+## Feature Engineering
+
+Below, we implement the decided upon thresholds to feature engineer the snaps failure metric. Additional data cleaning is performed to create ease in future data joining.
+```{r}
+pff_final <- pff_all %>% 
+  #filter out special teams
+  filter(side != 'K') %>% 
+  #threshold for success/failure for snap counts is .5 for everyone except fullbacks who are .1
+  mutate(threshold = case_when(pos %in% c('HB', 'TE', 'WR', 
+                                          'DI', 'ED', 'LB', 'CB', 'S', 
+                                          'C', 'G', 'T', 'QB') ~ .5,
+                               pos %in% c('FB') ~ .1),
+         success = case_when(side == 'O' & pct_o >= threshold ~ 1,
+                             side == 'O' & pct_o < threshold ~ 0,
+                             side == 'D' & pct_d >= threshold ~ 1,
+                             side == 'D' & pct_d < threshold ~ 0)) %>% 
+  #group by individual player
+  group_by(name) %>% 
+  #summarize to find if a player had a successful season at any point in their career
+  summarize(success = max(success),
+            first_year = min(year)) %>% 
+  #snaps_failure feature and name cleaning
+  mutate(snaps_failure = 1 - success,
+         first_name = lapply(regmatches(name, regexpr(' ', name), invert = T), `[[`, 1) %>% unlist(),
+         last_name = lapply(regmatches(name, regexpr(' ', name), invert = T), `[[`, 2) %>% unlist(),
+         first_name_cleaned = str_replace_all(first_name, '[^[:alnum:]]', '') %>% tolower(),
+         first_letter_cleaned = substr(first_name_cleaned, 1, 3),
+         last_name_suffix_removed = str_replace(last_name, ' Jr.| III', ''),
+         last_name_cleaned = str_replace_all(last_name_suffix_removed, 
+                                             '[^[:alnum:]]', '') %>% tolower()) %>% 
+  #select relevant columns
+  select(name, first_name_cleaned, first_letter_cleaned, last_name_cleaned, first_year, snaps_failure)
+```
+
+We see a failure rate of `r sum(pff_final$snaps_failure) / nrow(pff_final)` for the current snap count thresholds per player. Should we expect this high of a failure rate? Do we need to alter the snap count threshold?
+
+# Export Final Dataset
+
+```{r}
+write.csv(pff_final, 'clean-data/pff_data.csv', row.names = F)
+```
+

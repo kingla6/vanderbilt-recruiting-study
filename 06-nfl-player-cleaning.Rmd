@@ -1,0 +1,302 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(ggmap)
+library(geosphere)
+library(assertr)
+```
+
+```{r}
+nfl_player_college <- read.csv('preliminary-data/nfl-player-colleges.csv') %>% clean_names()
+nfl_player_high_school <- read.csv('preliminary-data/nfl-player-high-schools.csv') %>% clean_names()
+uscities <- read.csv('preliminary-data/uscities.csv') %>% clean_names()
+uszips <- read.csv('preliminary-data/uszips.csv') %>% clean_names()
+college_mapping <- read.csv('preliminary-data/colleges.csv') %>% clean_names()
+college_locations <- read.csv('preliminary-data/edu_ranks.csv', fileEncoding="UTF-8-BOM") %>%
+  clean_names()
+
+#api key to be used later for recruit locations
+register_google('AIzaSyCWUpQwDz9l8YXm6L0wEwNdpVxfQg6hbWE')
+```
+
+```{r}
+nfl_player_high_school <- nfl_player_high_school %>% 
+  mutate(hs_link = case_when(player_link == '/players/C/CannA.00.htm' ~ 'high_schools.cgi?id=93b99f38',
+                             T ~ hs_link),
+         hs_name = case_when(player_link == '/players/C/CannA.00.htm' ~ 'Bamberg-Ehrhardt',
+                             T ~ hs_name),
+         hs_state = case_when(player_link == '/players/C/CannA.00.htm' ~ 'SC',
+                              player_link == '/players/N/NichRa20.htm' ~ 'FL',
+                              T ~ hs_state))
+```
+
+```{r}
+nfl_player_college %>% 
+  group_by(player_link) %>% 
+  summarize(count = n()) %>% 
+  filter(count>1)
+
+nfl_player_high_school %>% 
+  filter(year_min >= 2006 & year_min < 2020) %>% 
+  group_by(player_link) %>% 
+  summarize(count = n()) %>% 
+  filter(count > 1) %>% 
+  arrange(-count)
+```
+
+Data cleaning of `uscities`
+```{r}
+#the goal is to remove duplicate cities from the uscities dataframe
+
+#figure out which cities are duplicated
+duplicate_cities <- uscities %>% 
+  #group by state and city
+  group_by(state_id, city_ascii) %>% 
+  #find how many times each city, state appears
+  summarise(count = n()) %>% 
+  #display those which appear more than once
+  filter(count>1) %>% 
+  #ungroup
+  ungroup() %>% 
+  #left join data from uscities to the list of duplicates 
+  #(want to keep only the observation of a given city with the largest population)
+  left_join(uscities, by = c('state_id', 'city_ascii')) %>% 
+  #group by state and city again
+  group_by(state_id, city_ascii) %>% 
+  #now find the max population observation for each of the duplicate cities
+  summarise(max_pop = max(population)) %>% 
+  #create unique identifier for city, state by combining the two
+  mutate(city_st = paste0(city_ascii, state_id))
+
+#create indicator column of whether or not observation should remain in dataset
+uscities$keep = NA
+#iterate over rows to determine if the city is part of the list of duplicated cities
+#if the observation is on the list of duplicated cities and does not contain the max population, keep = 0
+#all else, keep = 1
+for(i in 1:nrow(uscities)){
+  if(paste0(uscities$city_ascii[i], uscities$state_id[i]) %in% duplicate_cities$city_st){
+    if(uscities$population[i] != 
+       duplicate_cities$max_pop[duplicate_cities$city_st == paste0(uscities$city_ascii[i],
+                                                                   uscities$state_id[i])]){
+      uscities$keep[i] = 0
+      } else{uscities$keep[i] = 1}
+    } else{uscities$keep[i] = 1}
+}
+
+#filter uscities to only contain observations where keep == 1, update uscities
+uscities <- uscities %>% 
+  filter(keep == 1) %>% 
+  select(-keep)
+```
+Data Cleaning of `uszips` (will be converted to `zip_cities`)
+```{r}
+#the goal is to remove duplicate cities 
+#(we aren't necessarily worried about zip codes, the uszips dataframe contains cities not seen in the uscities dataframe, which helps with our analysis)
+
+#begin with finding the max population of each city
+max_pops <- uszips %>% 
+  #group by state, city, county (since observations are individual zipcodes)
+  group_by(state_id, city, county_fips, county_name) %>% 
+  #find the sum of the population over each group
+  summarize(population = sum(population)) %>% 
+  #ungroup
+  ungroup() %>% 
+  #group by state city and county (grouped as such because some counties have multiple fips codes)
+  group_by(state_id, city, county_name) %>% 
+  #find the max population for each group 
+  summarize(population = max(population))
+
+#this chunk is to join fips codes back into observations gathered from max_pops
+zip_cities <- uszips %>% 
+  #group by state, city, county
+  group_by(state_id, city, county_fips, county_name) %>% 
+  #find max population for each group
+  summarize(population = sum(population)) %>% 
+  #ungroup
+  ungroup() %>% 
+  #inner join max_pops to subset to only those observations
+  inner_join(max_pops,
+             by = c('state_id', 'city', 'county_name', 'population'))
+
+#now figure out which cities in zip_cities are duplicated
+duplicate_zip_cities <- zip_cities %>% 
+  #group by state, city
+  group_by(state_id, city) %>% 
+  #find how many times each group appears
+  summarize(count = n()) %>% 
+  #subset to those which appear multiple times
+  filter(count > 1) %>% 
+  #join  zip cities to combine county and population data
+  left_join(zip_cities, by = c('state_id', 'city')) %>% 
+  #group by state and city
+  group_by(state_id, city) %>% 
+  #find the max population for each group
+  summarize(max_pop = max(population)) %>% 
+  #create unique identifier for city, state by combining the two
+  mutate(city_st = paste0(city, state_id))
+
+#create indicator column of whether or not observation should remain in dataset
+zip_cities$keep = NA
+#iterate over rows to determine if the city is part of the list of duplicated cities
+#if the observation is on the list of duplicated cities and does not contain the max population, keep = 0
+#all else, keep = 1
+for(i in 1:nrow(zip_cities)){
+  if(paste0(zip_cities$city[i], zip_cities$state_id[i]) %in% duplicate_zip_cities$city_st){
+    if(zip_cities$population[i] != 
+       duplicate_zip_cities$max_pop[duplicate_zip_cities$city_st == paste0(zip_cities$city[i],
+                                                                           zip_cities$state_id[i])]){
+      zip_cities$keep[i] = 0
+    } else{zip_cities$keep[i] = 1}
+  } else{zip_cities$keep[i] = 1}
+}
+
+#filter zip_cities to only contain observations where keep == 1, update zip_cities
+zip_cities <- zip_cities %>% 
+  filter(keep == 1) %>% 
+  select(-keep)
+```
+
+```{r}
+nfl_player_high_school <- nfl_player_high_school %>% 
+  mutate(city_updated = mgsub::mgsub(hs_city, 
+                                     pattern = c("[^[:alnum:] ]", " "), 
+                                     replacement = '', recycle = T) %>% tolower())
+
+uscities <- uscities %>% 
+  mutate(city_updated = mgsub::mgsub(city_ascii, 
+                                     pattern = c("[^[:alnum:] ]", " "), 
+                                     replacement = '', recycle = T) %>% tolower())
+
+zip_cities <- zip_cities %>% 
+  mutate(city_updated = mgsub::mgsub(city, 
+                                     pattern = c("[^[:alnum:] ]", " "), 
+                                     replacement = '', recycle = T) %>% tolower())
+```
+
+Join in data from `uscities`
+```{r}
+#join data and create separate dataframes depending on whether or not there is county data
+
+#dataframe for observations with county data
+nfl_player_cty <- nfl_player_high_school %>% 
+  left_join(uscities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
+            by = c('city_updated', 'hs_state' = 'state_id')) %>% 
+  filter(!is.na(county_name))
+
+#dataframe for observations without county data
+nfl_player_n_cty <- nfl_player_high_school %>% 
+  left_join(uscities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
+            by = c('city_updated', 'hs_state' = 'state_id')) %>% 
+  filter(is.na(county_name)) %>% 
+  select(-county_fips, -county_name)
+
+#assert that there are an equivalent amount of rows for the original recruiting_player dataframe and the sum of rows between both new dataframes with/without county data
+assertable::assert_nrows(nfl_player_high_school, nrow(nfl_player_cty) + nrow(nfl_player_n_cty))
+```
+
+Join in `zip_cities` to fill in missing county data
+```{r}
+#join data and create separate dataframes depending on whether or not there is county data
+
+#dataframe for observations with county data
+complete_obs <- nfl_player_n_cty %>% 
+  left_join(zip_cities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
+            by = c('city_updated', 'hs_state' = 'state_id')) %>% 
+  filter(!is.na(county_name))
+
+#dataframe for observations without county data
+incomplete_obs <- nfl_player_n_cty %>% 
+  left_join(zip_cities[, c('city_updated', 'state_id', 'county_fips', 'county_name')],
+            by = c('city_updated', 'hs_state' = 'state_id')) %>% 
+  filter(is.na(county_name)) %>% 
+  select(-county_fips, -county_name)
+```
+
+```{r}
+nrow(incomplete_obs) / nrow(nfl_player_high_school)
+```
+
+```{r}
+export <- nfl_player_high_school %>% 
+  left_join(rbind(nfl_player_cty, complete_obs)) %>% 
+  left_join(nfl_player_college[,c(1,4)], by = 'player_link') %>% 
+  mutate(college = str_remove(college_link, 'schools') %>% str_remove_all('/')) %>% 
+  select(-college_link)
+```
+
+```{r}
+1 - (export %>% filter(year_min >= 2006) %>% complete.cases() %>% sum() / 
+  export %>% filter(year_min >= 2006) %>% nrow())
+```
+
+```{r}
+export %>% filter(year_min >= 2006 & year_min < 2020, is.na(county_name)) %>% nrow() / 
+  export %>% filter(year_min >= 2006 & year_min < 2020) %>% nrow() * 100
+
+export %>% filter(year_min >= 2006 & year_min < 2020, is.na(college)) %>% nrow() / 
+  export %>% filter(year_min >= 2006 & year_min < 2020) %>% nrow() * 100
+```
+
+```{r}
+export <- export %>% 
+  left_join(college_mapping, by = c('college' = 'pfr_school')) %>% 
+  left_join(college_locations, by = c('merge_school' = 'school')) %>%
+  mutate(merge_school = ifelse(merge_school == '', NA, merge_school)) %>% 
+  select(-edu_rank)
+```
+
+Get locations of colleges
+```{r}
+#select unique committed schools and join in school city data
+school_locs <- export %>%
+  select(school_city, state_province) %>%
+  unique() %>%
+  na.omit() %>% 
+  mutate(city_state = paste0(school_city, ', ', state_province)) %>% 
+  mutate_geocode(city_state)
+
+#assert no NA values for latlon data and select/rename relevant columns
+school_lat_lon <- school_locs %>%
+  assert(not_na, lon:lat) %>%
+  select(school_city, state_province, lon, lat) %>%
+  rename(school_lon = lon, school_lat = lat)
+```
+
+Get locations of recruits
+```{r}
+#select unique recruit city states and get latlon data
+player_locs <- export %>%
+  select(hs_city, hs_state) %>%
+  unique() %>% 
+  na.omit() %>% 
+  mutate(city_state = paste0(hs_city, ', ', hs_state)) %>%
+  mutate_geocode(city_state)
+
+#assert no NA values for latlon data and select/rename relevant columns
+player_lat_lon <- player_locs %>%
+  assert(not_na, lon:lat) %>%
+  select(hs_city, hs_state, lon, lat) %>%
+  rename(player_lon = lon, player_lat = lat)
+```
+
+```{r}
+export <- export %>% 
+  left_join(player_lat_lon, by = c('hs_city', 'hs_state')) %>% 
+  left_join(school_lat_lon, by = c('school_city', 'state_province'))
+
+export <- export %>%
+  #distHaversine calculates distance on a globe surface and divided by 1609 converts to mileage
+  mutate(dist_mi = purrr::pmap_dbl(., ~ distm(x = c(..23, ..24), y = c(..25, ..26),
+                                              fun = distHaversine) / 1609),
+         college = ifelse(is.na(merge_school), college, merge_school)) %>% 
+  select(-merge_school)
+```
+
+```{r}
+write.csv(export, 'clean-data/nfl_player.csv', row.names = F)
+```

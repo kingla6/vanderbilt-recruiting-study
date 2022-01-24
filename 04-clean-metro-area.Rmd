@@ -1,0 +1,67 @@
+---
+title: "04-clean-metro-area"
+output:
+  html_document:
+    code_folding: hide
+    toc_float: TRUE
+---
+
+```{r}
+library(tidyverse)
+library(janitor)
+```
+
+
+```{r}
+metro_area <- read.csv('preliminary-data/census_metro_areas.csv') %>% clean_names()
+recruiting_player <- read.csv('clean-data/recruiting_player.csv') %>% clean_names() %>% 
+  mutate(county_fips = ifelse(nchar(county_fips) <5, paste0(0, county_fips), county_fips))
+nfl_data <- read.csv('clean-data/nfl_player.csv') %>% clean_names() %>% 
+  mutate(county_fips = ifelse(nchar(county_fips) <5, paste0(0, county_fips), county_fips))
+```
+
+```{r}
+metro_cleaned <- metro_area %>% 
+  mutate(final_area = ifelse(csa_title == '', cbsa_title, csa_title),
+         fips_state_code = ifelse(nchar(fips_state_code) == 1, paste0(0,fips_state_code), fips_state_code),
+         fips_county_code = case_when(nchar(fips_county_code) == 1 ~ paste0(0, 0, fips_county_code),
+                                      nchar(fips_county_code) == 2 ~ paste0(0, fips_county_code),
+                                      T ~ fips_county_code %>% as.character()),
+         fips_code = paste0(fips_state_code, fips_county_code)) %>% 
+  select(county_county_equivalent, state_name, final_area, fips_code)
+```
+
+```{r}
+export <- recruiting_player %>% 
+  left_join(metro_cleaned, by = c('county_fips' = 'fips_code')) %>% 
+  rename(metro_area = final_area) %>% 
+  select(-county_county_equivalent, -state_name) %>% 
+  mutate(metro_area = ifelse(is.na(metro_area) & !is.na(county_fips), 
+                             paste0('Rural, ', state_province), metro_area))
+```
+
+```{r}
+sum(is.na(export$metro_area))/nrow(export)
+```
+
+```{r}
+write.csv(export, 'clean-data/recruiting_player_final.csv', row.names = F)
+```
+
+```{r}
+export <- nfl_data %>% 
+  left_join(metro_cleaned, by = c('county_fips' = 'fips_code')) %>% 
+  rename(metro_area = final_area) %>% 
+  select(-county_county_equivalent, -state_name) %>% 
+  mutate(metro_area = ifelse(is.na(metro_area) & !is.na(county_fips), 
+                             paste0('Rural, ', hs_state), metro_area))
+```
+
+```{r}
+sum(is.na(export$metro_area))/nrow(export)
+```
+
+```{r}
+write.csv(export, 'clean-data/nfl_player_final.csv', row.names = F)
+```
+

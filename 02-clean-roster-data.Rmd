@@ -1,0 +1,64 @@
+---
+title: "02-clean-roster-data"
+output:
+  html_document:
+    code_folding: hide
+    toc_float: TRUE
+---
+
+```{r}
+knitr::opts_chunk$set(message = FALSE)
+```
+
+# Overview
+
+This notebook collects roster data from the cfbscrapR package (original roster data sourced from ESPN). The point of this data is to support the success/failure analysis in future notebooks. The roster data will be used to determine the number of seasons in which a recruit remained on a roster.
+
+*Many sections commented out, as cfbscrapR is now deprecated.*
+
+# Data Collection
+
+Load relevant packages
+```{r}
+library(tidyverse)
+library(cfbscrapR)
+```
+
+Pull roster data from cfbscrapr
+```{r}
+# #specify years (2009 is the first year for which data is available)
+# years <- seq(2009,2020)
+# #initialize empty dataframe for data to be stored in
+# roster <- NULL
+# 
+# #run function for each year, append to previously initialized dataframe
+# for(i in years) {
+#   roster_temp = cfb_team_roster(team = 'Vanderbilt', year = i)
+#   season = rep(i, nrow(roster_temp))
+#   roster = rbind(roster, cbind(season, roster_temp))
+# }
+```
+
+Clean roster data for use in feature engineering
+```{r}
+# roster_export <- roster %>% 
+#   mutate(first_name_cleaned = str_replace_all(first_name, '[^[:alnum:]]', '') %>% tolower(),
+#          first_letter_cleaned = substr(first_name_cleaned, 1, 3),
+#          last_name_suffix_removed = str_replace(last_name, ' Jr.| III', ''),
+#          last_name_cleaned = str_replace_all(last_name_suffix_removed, 
+#                                              '[^[:alnum:]]', '') %>% tolower()) %>% 
+#   #group by only first and last name because some players are listed with multiple id's/positions
+#   #ensures that no single player is listed twice
+#   group_by(first_name_cleaned, first_letter_cleaned, last_name_cleaned) %>% 
+#   summarize(first_year = min(season),
+#             last_year = max(season),
+#             #years on roster has to add one, because 2020-2020 is still one year on a roster
+#             years_on_roster = last_year - first_year + 1)
+```
+
+# Export Final Dataset
+
+Write csv for complete roster data
+```{r}
+# write.csv(roster_export, 'clean-data/roster_data.csv', row.names = F)
+```
