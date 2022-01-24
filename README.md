@@ -1,8 +1,5 @@
 ## Historical Recruiting Analysis Project
 Project Structure:
-* Question of Interest
-  * Where has Vanderbilt performed well/poor historically?
-  * Where are potential areas to target based on this data?
 * Collect Relevant Data
   * Which data is important?
     * Recruit Data - high school recruiting data
@@ -27,7 +24,9 @@ Study to analyze Vanderbilt recruiting performance over time.
 
 # Goal
 
-Provide an overview of the goals and deliverables of the project. Mention any relevant details or issues. 
+The goal of this project is to answer the following questions:
+  * Where has Vanderbilt performed well/poor historically?
+  * Where are potential areas to target based on this data?
 
 # Background  
 
